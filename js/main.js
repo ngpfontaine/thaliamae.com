@@ -31,10 +31,19 @@ window.onload = function() {
 var touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
 var modalUlOpen = false;
 var modalUl = document.getElementById('modal-upload');
+var containerBgBlur = document.getElementById('container-blur');
 
 // OPEN UPLOAD MODAL VIA BTN
 document.getElementById('btn-upload').addEventListener(touchEvent, function() {
-  modalUlOpen ? (fadeOut(modalUl), modalUlOpen = false) : (fadeIn(modalUl), modalUlOpen = true);
+  modalUlOpen ? (
+		fadeOut(modalUl),
+		modalUlOpen = false,
+		containerBgBlur.classList.remove('active')
+		) : (
+		fadeIn(modalUl),
+		modalUlOpen = true,
+		containerBgBlur.classList.add('active')
+		);
 
   // STOP PROP FOR CHILD
   modalUl.getElementsByClassName('modal-inner')[0].addEventListener(touchEvent, function(event) {
@@ -47,6 +56,7 @@ document.getElementById('btn-upload').addEventListener(touchEvent, function() {
 modalUl.addEventListener(touchEvent, function() {
   fadeOut(modalUl);
   modalUlOpen = false;
+	containerBgBlur.classList.remove('active');
 });
 
 // SEND UPLOAD FORM VIA FAKE BTN

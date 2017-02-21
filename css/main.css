@@ -7,6 +7,18 @@ body {
 	overflow-y: scroll;
 }
 
+#container-blur {
+	transition: filter 0.3s;
+}
+
+#container-blur.active {
+	-webkit-filter: blur(3px);
+	-ms-filter: blur(3px);
+	filter: blur(3px);
+	-moz-filter: blur(3px);
+	-o-filter: blur(3px);
+}
+
 .body-bg-tile {
 	background-image: url('../img/grunge_wall.png');
 	position: fixed;
