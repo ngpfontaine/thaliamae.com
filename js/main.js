@@ -11,6 +11,7 @@ function figsLoad() {
       figs[i].classList.add('show');
       figs[i].getElementsByTagName('figcaption')[0].classList.add('show');
       figsLoad();
+      console.log('figs[' + i +']');
     }
 
     i++;
@@ -19,6 +20,7 @@ function figsLoad() {
 }
 
 window.onload = function() {
+  console.log('window.onload');
 
   setTimeout(function() {
     document.getElementById('loader').classList.add('hide');
