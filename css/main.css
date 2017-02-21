@@ -192,14 +192,15 @@ figure {
 	box-sizing: border-box;
 	position: relative;
 	/*margin-bottom: 20px;*/
-	display: none;
+	/*display: none;*/
+	display: block;
 	opacity: 0;
 	transition: all 0.8s;
 }
 
 figure.show {
 	opacity: 1;
-	display: block;
+	/*display: block;*/
 }
 
 figure .img {

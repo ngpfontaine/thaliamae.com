@@ -9,7 +9,7 @@ function figsLoad() {
     if (i<figsLen) {
       // fadeIn(figs[i]);
       figs[i].classList.add('show');
-      figs[i].getElementsByTagName('figcaption')[0].classList.add('show');
+      // figs[i].getElementsByTagName('figcaption')[0].classList.add('show');
       figsLoad();
       console.log('figs[' + i +']');
     }
