@@ -245,11 +245,21 @@ figcaption.show {
 
 section#modal-upload {
 	position: fixed;
-	background: rgba(0,0,0,0.75);
 	right: 0; top: 0; left: 0; bottom: 0;
 	z-index: 10;
 	display: none;
 	opacity: 0;
+}
+
+.modal-bg-blur {
+	position: fixed;
+	background: rgba(0,0,0,0.75);
+	right: 0; top: 0; left: 0; bottom: 0;
+/*	-webkit-filter: blur(1px);
+	-moz-filter: blur(1px);
+	-o-filter: blur(1px);
+	-ms-filter: blur(1px);
+	filter: blur(1px);*/
 }
 
 .modal-inner {
@@ -264,6 +274,7 @@ section#modal-upload {
 	box-sizing: border-box;
 	border-radius: 7px;
 	box-shadow: 0 3px 15px rgba(20, 34, 38, 0.5);
+	z-index: 11;
 }
 
 form {
