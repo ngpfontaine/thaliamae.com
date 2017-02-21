@@ -20,7 +20,7 @@ body {
 }
 
 .body-bg-tile {
-	background-image: url('../img/grunge_wall.png');
+	background-image: url('../img/assets/grunge_wall.png');
 	position: fixed;
 	right: 0; left: 0; top: 0; bottom: 0;
 	opacity: 0.3;
@@ -171,7 +171,7 @@ nav .btn:hover:after {
 }
 
 .header-bg-tile {
-	background-image: url('../img/confectionary.png');
+	background-image: url('../img/assets/confectionary.png');
 	position: absolute;
 	right: 0; left: 0; top: 0; bottom: 0;
 	opacity: 0.47;
