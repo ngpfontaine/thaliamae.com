@@ -1,0 +1,444 @@
+body {
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
+	/*background: #83b4a5;*/
+	background: #5F9E8A;
+	overflow-y: scroll;
+}
+
+.body-bg-tile {
+	background-image: url('../img/grunge_wall.png');
+	position: fixed;
+	right: 0; left: 0; top: 0; bottom: 0;
+	opacity: 0.3;
+	z-index: 1;
+}
+
+#loader {
+	text-align: center;
+	opacity: 1;
+	transition: opacity 0.2s;
+}
+
+#loader i.fa {
+	position: fixed;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 3em;
+	right: 0; left: 0;
+	margin: 0 auto;
+	transform-origin: 50% 50%;
+	animation: loaderSpin 0.9s linear infinite;
+	animation-fill-mode: forwards;
+	z-index: 2;
+	opacity: 0.3;
+}
+
+#loader.hide {
+	opacity: 0;
+}
+
+@keyframes loaderSpin {
+	0% { transform: rotateZ(0deg); }
+	50% { transform: rotateZ(180deg); }
+	100% { transform: rotateZ(360deg); }
+}
+
+/**************/
+/*** HEADER ***/
+/**************/
+
+header {
+	background: #eef0e3;
+	text-align: center;
+	position: relative;
+	padding-bottom: 8px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+	z-index: 1;
+}
+
+nav {
+	padding: 15px 20px 13px;
+	font-weight: bold;
+	font-size: 1.2em;
+	z-index: 2;
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	border-bottom: 3px dashed #e7e7e7;
+}
+
+nav > div {
+	display: inline-block;
+	margin: 0;
+}
+
+.nav-left, .nav-right {
+	width: 25%;
+}
+
+.nav-right {
+	text-align: right;
+}
+
+nav .link {
+	color: #737475;
+	font-size: 0.75em;
+	letter-spacing: 0.5px;
+	text-decoration: underline;
+	padding: 7px 10px;
+	margin-right: 8px;
+	vertical-align: top;
+	cursor: pointer;
+	display: none;
+}
+
+nav .btn {
+	padding: 7px 13px;
+	box-sizing: border-box;
+	font-size: 0.7em;
+	border-radius: 6px;
+	border: 2px solid #D7D7D7;
+	color: #737475;
+	background: #fff;
+	cursor: pointer;
+	position: relative;
+	bottom: 5px;
+	overflow: hidden;
+	transform: translateY(0);
+	transition: all 0.11s;
+}
+
+nav .btn:active {
+	bottom: 4px;
+}
+
+nav .btn:active:after {
+	display: none;
+}
+
+nav .btn:hover {
+	padding: 7px 16px;
+	margin-right: -3px;
+}
+
+nav .btn .fa {
+	color: #cbcbcb;
+	margin-left: 5px;
+}
+
+nav .btn:after {
+	position: absolute;
+	content: '';
+	width: 90%;
+	height: 5px;
+	bottom: 0;
+	right: 0; left: 0;
+	box-shadow: 0 1px 7px rgba(80, 155, 128, 0.5);
+	margin: 0 auto;
+	z-index: -1;
+}
+
+nav .btn:hover:after {
+	box-shadow: 0 1px 8px rgba(40, 115, 80, 0.7);
+}
+
+.nav-mid {
+	width: 50%;
+	text-align: center;
+}
+
+.header-bg-tile {
+	background-image: url('../img/confectionary.png');
+	position: absolute;
+	right: 0; left: 0; top: 0; bottom: 0;
+	opacity: 0.47;
+	z-index: 1;
+}
+
+header h1 {
+	/*color: #a897b7;*/
+	color: #938faa;
+	margin: 0;
+	font-family: 'Lora', serif;
+	font-size: 2em;
+	letter-spacing: 2px;
+	word-spacing: 4px;
+}
+
+header h4 {
+	font-size: 0.8em;
+	font-weight: normal;
+	margin: 0;
+	color: #b6abab;
+}
+
+article {
+	max-width: 80%;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	padding-top: 20px;
+	z-index: 2;
+	position: relative;
+}
+
+figure {
+	padding: 40px;
+	font-size: 1em;
+	width: 33%;
+	margin: 0;
+	box-sizing: border-box;
+	position: relative;
+	/*margin-bottom: 20px;*/
+	display: none;
+	opacity: 0;
+	transition: all 0.8s;
+}
+
+figure.show {
+	opacity: 1;
+	display: block;
+}
+
+figure .img {
+	overflow: hidden;
+	/*height: 520px;*/
+	height: 26vw;
+	width: 100%;
+	display: block;
+	background: url('../img/tm-0001.jpg') center center;
+	background-size: cover;
+	position: relative;
+	border-radius: 3px;
+}
+
+figcaption {
+	position: absolute;
+	bottom: 8px;
+	left: 8px;
+	color: #fff;
+	opacity: 0;
+	transition: all 2s 2s;
+	display: none;
+}
+
+figcaption.show {
+	opacity: 1;
+}
+
+/*************/
+/*** MODAL ***/
+/*************/
+
+section#modal-upload {
+	position: fixed;
+	background: rgba(0,0,0,0.75);
+	right: 0; top: 0; left: 0; bottom: 0;
+	z-index: 10;
+	display: none;
+	opacity: 0;
+}
+
+.modal-inner {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 0; left: 0;
+	margin: 0 auto;
+	max-width: 400px;
+	background: #eee;
+	padding: 35px;
+	box-sizing: border-box;
+	border-radius: 7px;
+	box-shadow: 0 3px 15px rgba(20, 34, 38, 0.5);
+}
+
+form {
+	text-align: center;
+}
+
+form input {
+	display: block;
+	margin: 0 auto 20px;
+}
+
+form input[type='file'] {
+	margin-bottom: 30px;
+}
+
+.input-file {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.input-file-label i.fa {
+	font-size: 2.2em;
+	margin-bottom: 7px;
+}
+
+.input-file + label {
+	font-size: 1em;
+  color: #888;
+  display: inline-block;
+  background: #ddd;
+  border: 3px dashed #ccc;
+  padding: 12px 20px;
+  margin-bottom: 30px;
+}
+
+.input-file:focus + label,
+.input-file + label:hover {
+  background: #cfcfcf;
+  border-color: #bbb;
+}
+
+.input-file + label {
+	cursor: pointer; /* "hand" cursor */
+}
+
+.inputfile:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+form #ul-i-btn {
+	color: #fff;
+	border: none;
+	padding: 15px 40px 15px 25px;
+	background: #7b79d2;
+	border-radius: 5px;
+	text-transform: uppercase;
+	font-size: 1.2em;
+	font-weight: bold;
+	cursor: pointer;
+	border: 2px solid #7573cc;
+	position: relative;
+	max-width: 250px;
+	margin: 0 auto;
+	transition: all 0.11s;
+
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#977cd6+0,977cd6+13,7b79d2+100 */
+background: #977cd6; /* Old browsers */
+background: -moz-linear-gradient(top,  #977cd6 0%, #977cd6 13%, #7b79d2 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #977cd6 0%,#977cd6 13%,#7b79d2 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #977cd6 0%,#977cd6 13%,#7b79d2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#977cd6', endColorstr='#7b79d2',GradientType=0 ); /* IE6-9 */
+
+
+}
+
+form #ul-i-btn:hover {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9b83d3+0,9b83d3+13,8281d1+100 */
+	background: #9b83d3; /* Old browsers */
+	background: -moz-linear-gradient(top,  #9b83d3 0%, #9b83d3 13%, #8281d1 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #9b83d3 0%,#9b83d3 13%,#8281d1 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #9b83d3 0%,#9b83d3 13%,#8281d1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9b83d3', endColorstr='#8281d1',GradientType=0 ); /* IE6-9 */
+
+}
+
+form #ul-i-btn:active {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#816ab7+0,816ab7+13,6867b2+100 */
+background: #816ab7; /* Old browsers */
+background: -moz-linear-gradient(top,  #816ab7 0%, #816ab7 13%, #6867b2 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #816ab7 0%,#816ab7 13%,#6867b2 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #816ab7 0%,#816ab7 13%,#6867b2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#816ab7', endColorstr='#6867b2',GradientType=0 ); /* IE6-9 */
+
+	border: 2px solid #6563ae;
+
+}
+
+form #ul-i-btn:after {
+	position: absolute;
+	content: '';
+	z-index: -1;
+	width: 89%;
+	height: 5px;
+	bottom: 0;
+	left: 0; right: 0;
+	margin: 0 auto;
+	transition: all 0.11s;
+	box-shadow: 0 2px 7px rgba(17, 39, 24, 0.5);
+}
+
+form #ul-i-btn:hover:after {
+	box-shadow: 0 2px 7px rgba(17, 39, 24, 0.8);
+}
+
+form #ul-i-btn:active:after {
+	display: none;
+}
+
+form #ul-i-btn i.fa {
+	color: #5f649c;
+	margin-left: 8px;
+	font-size: 1.4em;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	margin-left: 12px;
+}
+
+/*******************/
+/*** MEDIA QUERY ***/
+/*******************/
+
+@media (max-width: 1024px) {
+
+	article {
+		max-width: 100%;
+		padding: 20px;
+	}
+
+	figure {
+		padding: 20px;
+	}
+
+}
+
+@media (max-width: 550px) {
+
+	figure {
+		width: 100%;
+		margin-bottom: 0;
+	}
+
+	figure .img {
+		height: 75vw;
+	}
+
+}
+
+@media (max-width: 480px) {
+
+	header {
+		padding-bottom: 5px;
+	}
+
+	nav {
+		padding: 8px;
+	}
+
+	.nav-mid {
+		width: 100%;
+		display: block;
+		margin-bottom: 15px;
+		font-size: 0.85em;
+	}
+
+	.nav-right {
+		width: 100%;
+	}
+
+	.nav-left {
+		display: none;
+	}
+
+}
