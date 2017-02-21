@@ -16,7 +16,7 @@ function figsLoad() {
 
     i++;
 
-  },300);
+  },170);
 }
 
 window.onload = function() {
