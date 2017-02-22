@@ -88,10 +88,14 @@ Array.prototype.forEach.call( inputs, function( input )
 });
 
 window.onscroll = function() {
-	window.pageYOffset > 4 ?
-		document.getElementsByTagName('header')[0].classList.add('scroll')
-		:
-		document.getElementsByTagName('header')[0].classList.remove('scroll');
+  var top = window.pageYOffset;
+  console.log(window.pageYOffset);
+	if (top > 1 && top < 10) {
+    document.getElementsByTagName('header')[0].classList.add('scroll');
+  }
+  else if (top < 1) {
+    document.getElementsByTagName('header')[0].classList.remove('scroll');
+  }
 };
 
 // fade out
