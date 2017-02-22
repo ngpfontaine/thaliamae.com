@@ -259,7 +259,8 @@ figure .img {
 	height: 26vw;
 	width: 100%;
 	display: block;
-	background: url('../img/upload/tm-0001-c.jpg') center center;
+	/*background: url('../img/upload/tm-0001-c.jpg') center center;*/
+	background: #999;
 	background-size: cover;
 	position: relative;
 	border-radius: 3px;
