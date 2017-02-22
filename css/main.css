@@ -72,7 +72,7 @@ header {
 	box-shadow: 0 2px 4px rgba(0,0,0,0.03);
 	z-index: 3;
 	max-height: 150px;
-	transition: all 0.3s ease-out;
+	transition: all 0.3s ease-in-out;
 	position: fixed;
 	right: 0; left: 0; top: 0;
 }
