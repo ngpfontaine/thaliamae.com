@@ -8,7 +8,7 @@ body {
 }
 
 #container-blur {
-	transition: filter 0.3s;
+	transition: filter 0.3s ease-out;
 }
 
 #container-blur.active {
@@ -72,7 +72,7 @@ header {
 	box-shadow: 0 2px 4px rgba(0,0,0,0.03);
 	z-index: 3;
 	max-height: 150px;
-	transition: all 0.3s;
+	transition: all 0.3s ease-out;
 	position: fixed;
 	right: 0; left: 0; top: 0;
 }
@@ -107,7 +107,7 @@ nav {
 	width: 100%;
 	border-bottom: 3px dashed rgba(231, 231, 231, 1);
 	overflow: auto;
-	transition: all 0.3s;
+	transition: all 0.3s ease-out;
 }
 
 nav > div {
@@ -120,7 +120,7 @@ nav > div {
 	position: absolute;
 	right: 20px;
 	bottom: 14px;
-	transition: bottom 0.3s;
+	transition: bottom 0.3s ease-out;
 }
 
 .clear-fix:after {
