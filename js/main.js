@@ -87,6 +87,13 @@ Array.prototype.forEach.call( inputs, function( input )
   });
 });
 
+window.onscroll = function() {
+	window.pageYOffset > 4 ?
+		document.getElementsByTagName('header')[0].classList.add('scroll')
+		:
+		document.getElementsByTagName('header')[0].classList.remove('scroll');
+};
+
 // fade out
 function fadeOut(el){
   el.style.opacity = 1;
