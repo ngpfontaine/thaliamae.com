@@ -497,6 +497,10 @@ form #ul-i-btn i.fa {
 		top: 28px;
 	}
 
+	header.scroll .nav-right {
+	  top: 16px;
+	}
+
 	nav .link {
 		margin-right: 0;
 	}
@@ -525,6 +529,10 @@ form #ul-i-btn i.fa {
 
 	figure {
 		padding: 10px 20px;
+	}
+
+	.nav-right {
+		top: 21px;
 	}
 
 	header.scroll .nav-right {
