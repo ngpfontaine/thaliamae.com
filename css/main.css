@@ -531,10 +531,6 @@ form #ul-i-btn i.fa {
 		padding: 10px 20px;
 	}
 
-	.nav-right {
-		/*top: 21px;*/
-	}
-
 	header.scroll .nav-right {
 	  top: 13px;
 	}
@@ -549,6 +545,10 @@ form #ul-i-btn i.fa {
 
 	nav {
 		padding: 0 6px;
+	}
+
+	.nav-right {
+		top: 21px;
 	}
 
 }
