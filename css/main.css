@@ -94,7 +94,7 @@ header.scroll h4 {
 }
 
 header.scroll .nav-right {
-	bottom: 19px;
+	top: 60px;
 }
 
 nav {
@@ -527,7 +527,7 @@ form #ul-i-btn i.fa {
 	}
 
 	header.scroll .nav-right {
-	  bottom: 7px;
+	  top: 13px;
 	}
 
 	header h1 {
