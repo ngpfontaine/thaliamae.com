@@ -94,7 +94,7 @@ header.scroll h4 {
 }
 
 header.scroll .nav-right {
-	top: 60px;
+	top: 22px;
 }
 
 nav {
@@ -119,7 +119,7 @@ nav > div {
 	text-align: right;
 	position: absolute;
 	right: 20px;
-	bottom: 14px;
+	top: 60px;
 	transition: bottom 0.3s ease-out;
 }
 
