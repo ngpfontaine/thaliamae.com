@@ -89,7 +89,7 @@ Array.prototype.forEach.call( inputs, function( input )
 
 window.onscroll = function() {
   var top = window.pageYOffset;
-  console.log(window.pageYOffset);
+  console.log(top);
 	if (top > 1 && top < 10) {
     document.getElementsByTagName('header')[0].classList.add('scroll');
   }
