@@ -120,7 +120,7 @@ nav > div {
 	position: absolute;
 	right: 20px;
 	top: 60px;
-	transition: top 0.3s ease-out;
+	transition: top 0.2s linear;
 }
 
 .clear-fix:after {
