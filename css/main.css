@@ -85,7 +85,7 @@ header.scroll {
 
 header.scroll nav {
 	padding-top: 5px;
-	border-bottom: none;
+	border-bottom: 3px dashed rgba(231, 231, 231, 0);
 }
 
 header.scroll h4 {
@@ -105,9 +105,9 @@ nav {
 	position: relative;
 	box-sizing: border-box;
 	width: 100%;
-	border-bottom: 3px dashed #e7e7e7;
+	border-bottom: 3px dashed rgba(231, 231, 231, 1);
 	overflow: auto;
-	transition: padding 0.3s;
+	transition: all 0.3s;
 }
 
 nav > div {
