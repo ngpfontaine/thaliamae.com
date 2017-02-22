@@ -106,7 +106,7 @@ nav {
 	box-sizing: border-box;
 	width: 100%;
 	border-bottom: 3px dashed rgba(231, 231, 231, 1);
-	overflow: auto;
+	overflow: hidden;
 	transition: all 0.3s ease-out;
 }
 
