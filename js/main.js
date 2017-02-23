@@ -30,7 +30,7 @@ function figsLoad() {
         cln.getElementsByClassName('img')[0].href = imageName(i);
 
         figCont.appendChild(cln);
-        figCont.getElementsByTagName('figure')[(i-1)].add('show');
+        figCont.getElementsByTagName('figure')[(i-1)].classList.add('show');
 
         i++;
 
