@@ -12,11 +12,11 @@ body {
 }
 
 #container-blur.active {
-	-webkit-filter: blur(3px);
-	-ms-filter: blur(3px);
-	filter: blur(3px);
-	-moz-filter: blur(3px);
-	-o-filter: blur(3px);
+	-webkit-filter: blur(2px);
+	-ms-filter: blur(2px);
+	filter: blur(2px);
+	-moz-filter: blur(2px);
+	-o-filter: blur(2px);
 }
 
 .body-bg-tile {
@@ -72,9 +72,10 @@ header {
 	box-shadow: 0 2px 4px rgba(0,0,0,0.03);
 	z-index: 3;
 	max-height: 150px;
-	transition: all 0.3s ease-in-out;
+	transition: all 0.2s ease-in-out;
 	position: fixed;
 	right: 0; left: 0; top: 0;
+	overflow: hidden;
 }
 
 header.scroll {
@@ -90,11 +91,12 @@ header.scroll nav {
 
 header.scroll h4 {
 	opacity: 0;
-	display: none;
+	/*display: none;*/
 }
 
 header.scroll .nav-right {
-	top: 22px;
+	/*top: 22px;*/
+	transform: translateY(15px);
 }
 
 nav {
@@ -107,7 +109,7 @@ nav {
 	width: 100%;
 	border-bottom: 3px dashed rgba(231, 231, 231, 1);
 	overflow: hidden;
-	transition: all 0.3s ease-out;
+	transition: padding 0.2s ease-out;
 }
 
 nav > div {
@@ -119,8 +121,9 @@ nav > div {
 	text-align: right;
 	position: absolute;
 	right: 20px;
-	top: 60px;
-	transition: top 0.2s linear;
+	/*top: 60px;*/
+	transform: translateY(42px);
+	transition: transform 0.2s linear;
 }
 
 .clear-fix:after {
@@ -220,7 +223,7 @@ header h4 {
 	font-weight: normal;
 	margin: 0;
 	color: #b6abab;
-	transition: opacity 0.2s;
+	transition: opacity 0.3s;
 }
 
 article {
@@ -294,7 +297,7 @@ section#modal-upload {
 
 .modal-bg-blur {
 	position: fixed;
-	background: rgba(0,0,0,0.75);
+	background: rgba(0,0,0,0.65);
 	right: 0; top: 0; left: 0; bottom: 0;
 /*	-webkit-filter: blur(1px);
 	-moz-filter: blur(1px);
@@ -494,11 +497,13 @@ form #ul-i-btn i.fa {
 
 	.nav-right {
 		right: 10px;
-		top: 28px;
+		/*top: 28px;*/
+		transform: translateY(28px);
 	}
 
 	header.scroll .nav-right {
-	  top: 16px;
+	  /*top: 16px;*/
+	  tranform: translateY(16px);
 	}
 
 	nav .link {
@@ -532,7 +537,8 @@ form #ul-i-btn i.fa {
 	}
 
 	header.scroll .nav-right {
-	  top: 16px;
+	  /*top: 16px;*/
+	  transform: translateY(16px);
 	}
 
 	header h1 {
@@ -548,7 +554,8 @@ form #ul-i-btn i.fa {
 	}
 
 	.nav-right {
-		top: 21px;
+		/*top: 21px;*/
+		transform: translateY(21px);
 	}
 
 }
