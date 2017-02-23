@@ -8,6 +8,7 @@ var imgsExist = true;
 
 var i = 1;
 var imgPath = ['./img/upload/tm-', '-c.jpg'];
+var imgTimeout;
 
 // LOOP THROUGH LOADING IMAGES
 function figsLoad() {
@@ -20,7 +21,7 @@ function figsLoad() {
     // UNTIL FLAG IS SET TO FALSE ON IMG LOAD ERROR
     if (imgsExist) {
 
-      var imgTimeout = setTimeout(function() {
+      imgTimeout = setTimeout(function() {
 
         var itm = figTemp.getElementsByTagName('figure')[0];
         var cln = itm.cloneNode(true);
