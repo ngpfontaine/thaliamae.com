@@ -14,6 +14,7 @@ function figsLoad() {
 
   // TEST IMG PATH BY ADDING TO HIDDEN IMG TAG
   figHolder.src = imageName(i);
+  console.log(imageName(i));
   // IF PATH TURNS UP ERROR, NO MORE IMGS EXIST
   figHolder.onerror = function() {
     imgsExist = false;
