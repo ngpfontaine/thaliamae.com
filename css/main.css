@@ -8,7 +8,7 @@ body {
 }
 
 #container-blur {
-	transition: filter 0.3s ease-out;
+	transition: filter 0.1s;
 }
 
 #container-blur.active {
@@ -262,8 +262,8 @@ figure .img {
 	height: 26vw;
 	width: 100%;
 	display: block;
-	background: #999;
-	background: url('../img/upload/tm-0001-c.jpg') center center;
+	/*background: #999;*/
+	background-position: center center;
 	background-size: cover;
 	position: relative;
 	border-radius: 3px;
@@ -283,33 +283,38 @@ figcaption.show {
 	opacity: 1;
 }
 
+#fig-temp-container, #fig-holder {
+	display: none;
+}
+
 /*************/
 /*** MODAL ***/
 /*************/
 
-section#modal-upload {
+#modal-upload {
 	position: fixed;
 	right: 0; top: 0; left: 0; bottom: 0;
-	z-index: 10;
-	display: none;
+	z-index: 0;
+	/*display: none;*/
 	opacity: 0;
+	transition: all 0.3s ease-out;
+}
+
+#modal-upload.show {
+	z-index: 10;
+	opacity: 1;
 }
 
 .modal-bg-blur {
 	position: fixed;
-	background: rgba(0,0,0,0.65);
+	background: rgba(0,0,0,0.75);
 	right: 0; top: 0; left: 0; bottom: 0;
-/*	-webkit-filter: blur(1px);
-	-moz-filter: blur(1px);
-	-o-filter: blur(1px);
-	-ms-filter: blur(1px);
-	filter: blur(1px);*/
 }
 
 .modal-inner {
 	position: absolute;
 	top: 50%;
-	transform: translateY(-50%);
+	transform: translateY(-40%);
 	right: 0; left: 0;
 	margin: 0 auto;
 	max-width: 400px;
@@ -319,6 +324,11 @@ section#modal-upload {
 	border-radius: 7px;
 	box-shadow: 0 3px 15px rgba(20, 34, 38, 0.5);
 	z-index: 11;
+	transition: transform 0.4s ease-out;
+}
+
+#modal-upload.show .modal-inner {
+	transform: translateY(-50%);
 }
 
 form {

@@ -1,23 +1,60 @@
 console.log('thalia mae');
-var figs = document.getElementsByTagName('figure');
-var figsLen = figs.length;
-var i = 0;
+// var figs = document.getElementsByTagName('figure');
+// var figsLen = figs.length;
+var figTemp = document.getElementById('fig-temp-container');
+var figCont = document.getElementById('fig-container');
+var figHolder = document.getElementById('fig-holder');
+var imgsExist = true;
 
+var i = 1;
+var imgPath = ['./img/upload/tm-', '-c.jpg'];
+
+// LOOP THROUGH LOADING IMAGES
 function figsLoad() {
+
+  // TEST IMG PATH BY ADDING TO HIDDEN IMG TAG
+  figHolder.src = imageName(i);
+  // IF PATH TURNS UP ERROR, NO MORE IMGS EXIST
+  figHolder.onerror = function() {
+    imgsExist = false;
+    console.log((i-1) + ' total' + '\nend loading imgs');
+  }
+
   setTimeout(function() {
 
-    if (i<figsLen) {
-      // fadeIn(figs[i]);
-      figs[i].classList.add('show');
-      // figs[i].getElementsByTagName('figcaption')[0].classList.add('show');
+    // UNTIL FLAG IS SET TO FALSE ON IMG LOAD ERROR
+    if (imgsExist) {
+
+      var itm = figTemp.getElementsByTagName('figure')[0];
+      var cln = itm.cloneNode(true);
+
+      cln.getElementsByClassName('img')[0].style.backgroundImage = 'url("' + imageName(i) + '")';
+      cln.classList.add('show');
+
+      figCont.appendChild(cln);
+
+      i++;
+
+      // REPEAT
       figsLoad();
-      console.log('figs[' + i +']');
+
     }
 
-    i++;
-
   },170);
+
 }
+
+// CREATE IMAGE NAMES FROM TEMPLATE
+var imageName = function imageName(input) {
+
+  var number = input.toString();
+  // CONVERT TO 4 DIGITS
+  if (number.length === 1) { number = '000' + number.toString();}
+  else if (number.length === 2) { number = '00' + number.toString(); }
+  else if (number.length === 3) { number = '0' + number.toString(); }
+
+  return imgPath[0] + number + imgPath[1];
+};
 
 window.onload = function() {
   console.log('window.onload');
@@ -25,6 +62,7 @@ window.onload = function() {
   setTimeout(function() {
     document.getElementById('loader').classList.add('hide');
     figsLoad();
+    console.log('start loading imgs...');
   },200);
 }
 
@@ -36,11 +74,13 @@ var containerBgBlur = document.getElementById('container-blur');
 // OPEN UPLOAD MODAL VIA BTN
 document.getElementById('btn-upload').addEventListener(touchEvent, function() {
   modalUlOpen ? (
-		fadeOut(modalUl),
+		// fadeOut(modalUl),
+    modalUl.classList.remove('show'),
 		modalUlOpen = false,
 		containerBgBlur.classList.remove('active')
 		) : (
-		fadeIn(modalUl),
+		// fadeIn(modalUl),
+    modalUl.classList.add('show'),
 		modalUlOpen = true,
 		containerBgBlur.classList.add('active')
 		);
@@ -54,7 +94,8 @@ document.getElementById('btn-upload').addEventListener(touchEvent, function() {
 
 // CLOSE MODAL W/ CONTAINER CLICK
 modalUl.addEventListener(touchEvent, function() {
-  fadeOut(modalUl);
+  // fadeOut(modalUl);
+  modalUl.classList.remove('show'),
   modalUlOpen = false;
 	containerBgBlur.classList.remove('active');
 });
