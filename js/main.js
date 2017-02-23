@@ -27,6 +27,7 @@ function figsLoad() {
         var cln = itm.cloneNode(true);
 
         cln.getElementsByClassName('img')[0].style.backgroundImage = 'url("' + imageName(i) + '")';
+        cln.getElementsByClassName('img')[0].style.href = 'url("' + imageName(i) + '")';
         cln.classList.add('show');
 
         figCont.appendChild(cln);
