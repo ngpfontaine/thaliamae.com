@@ -22,10 +22,10 @@ function figsLoad() {
     clearTimeout(imgTimeout);
   }
 
-  var imgTimeout = setTimeout(function() {
+  // UNTIL FLAG IS SET TO FALSE ON IMG LOAD ERROR
+  if (imgsExist) {
 
-    // UNTIL FLAG IS SET TO FALSE ON IMG LOAD ERROR
-    if (imgsExist) {
+    var imgTimeout = setTimeout(function() {
 
       var itm = figTemp.getElementsByTagName('figure')[0];
       var cln = itm.cloneNode(true);
@@ -40,9 +40,9 @@ function figsLoad() {
       // REPEAT
       figsLoad();
 
-    }
+    },170);
 
-  },170);
+  }
 
 }
 
