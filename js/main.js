@@ -28,9 +28,9 @@ function figsLoad() {
 
         cln.getElementsByClassName('img')[0].style.backgroundImage = 'url("' + imageName(i) + '")';
         cln.getElementsByClassName('img')[0].href = imageName(i);
-        cln.classList.add('show');
 
         figCont.appendChild(cln);
+        figCont.getElementsByTagName('figure')[i].add('show');
 
         i++;
 
