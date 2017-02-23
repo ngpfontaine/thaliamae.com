@@ -15,6 +15,31 @@ function figsLoad() {
   // TEST IMG PATH BY ADDING TO HIDDEN IMG TAG
   figHolder.src = imageName(i);
   console.log(imageName(i));
+
+  figHolder.onload = function() {
+    // UNTIL FLAG IS SET TO FALSE ON IMG LOAD ERROR
+    if (imgsExist) {
+
+      var imgTimeout = setTimeout(function() {
+
+        var itm = figTemp.getElementsByTagName('figure')[0];
+        var cln = itm.cloneNode(true);
+
+        cln.getElementsByClassName('img')[0].style.backgroundImage = 'url("' + imageName(i) + '")';
+        cln.classList.add('show');
+
+        figCont.appendChild(cln);
+
+        i++;
+
+        // REPEAT
+        figsLoad();
+
+      },170);
+
+    }    
+  }
+
   // IF PATH TURNS UP ERROR, NO MORE IMGS EXIST
   figHolder.onerror = function() {
     clearTimeout(imgTimeout);
@@ -22,27 +47,7 @@ function figsLoad() {
     console.log((i-1) + ' total' + '\nend loading imgs');
   }
 
-  // UNTIL FLAG IS SET TO FALSE ON IMG LOAD ERROR
-  if (imgsExist) {
 
-    var imgTimeout = setTimeout(function() {
-
-      var itm = figTemp.getElementsByTagName('figure')[0];
-      var cln = itm.cloneNode(true);
-
-      cln.getElementsByClassName('img')[0].style.backgroundImage = 'url("' + imageName(i) + '")';
-      cln.classList.add('show');
-
-      figCont.appendChild(cln);
-
-      i++;
-
-      // REPEAT
-      figsLoad();
-
-    },170);
-
-  }
 
 }
 
