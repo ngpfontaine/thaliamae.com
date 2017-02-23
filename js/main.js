@@ -19,9 +19,10 @@ function figsLoad() {
   figHolder.onerror = function() {
     imgsExist = false;
     console.log((i-1) + ' total' + '\nend loading imgs');
+    clearTimeout(imgTimeout);
   }
 
-  setTimeout(function() {
+  var imgTimeout = setTimeout(function() {
 
     // UNTIL FLAG IS SET TO FALSE ON IMG LOAD ERROR
     if (imgsExist) {
