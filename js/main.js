@@ -17,9 +17,9 @@ function figsLoad() {
   console.log(imageName(i));
   // IF PATH TURNS UP ERROR, NO MORE IMGS EXIST
   figHolder.onerror = function() {
+    clearTimeout(imgTimeout);
     imgsExist = false;
     console.log((i-1) + ' total' + '\nend loading imgs');
-    clearTimeout(imgTimeout);
   }
 
   // UNTIL FLAG IS SET TO FALSE ON IMG LOAD ERROR
@@ -63,8 +63,9 @@ window.onload = function() {
 
   setTimeout(function() {
     document.getElementById('loader').classList.add('hide');
-    figsLoad();
     console.log('start loading imgs...');
+
+    figsLoad();
   },200);
 }
 
