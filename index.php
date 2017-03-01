@@ -62,31 +62,21 @@
 
 	<?php 
 
-
-		$dir = "/home/nic/docs/github/ngpfontaine/thaliamae.com/img/upload/*.jpg";
-		//get the list of all files with .jpg extension in the directory and safe it in an array named $images
+		$dir = "./img/upload/*.jpg";
 		$images = glob( $dir );
+		$lbNo = 1;
 
-		//extract only the name of the file without the extension and save in an array named $find
 		foreach( $images as $image ):
-		  echo "<figure><a class='img' style='background-image:url('" . $image . "'); /></figure>";
+		  echo "<figure><a class='img' style='background-image:url(\"" . $image . "\");' href=\"" . $image . "\" data-lightbox='image-" . $lbNo . "' ></a></figure>";
+			$lbNo++;
+
 		endforeach;
 
 	?>
 
-		<!-- <figure>
-			<a class='img' data-lightbox='' href=''>
-			</a>
-		</figure> -->
-
-	<?php ?>
-
 	</article>
 
 	</div>
-
-
-	<img id='fig-holder' src=''>
 
 	<section id='modal-upload'>
 		<div class='modal-bg-blur'></div>
@@ -106,7 +96,7 @@
 
 </body>
 
-<!-- <script src='./js/main.js'></script> -->
-<!-- <script async src="./js/lightbox-plus-jquery.min.js"></script> -->
+<script src='./js/main.js'></script>
+<script async src="./js/lightbox-plus-jquery.min.js"></script>
 
 </html>

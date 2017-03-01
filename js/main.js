@@ -1,61 +1,30 @@
 console.log('thalia mae');
-// var figs = document.getElementsByTagName('figure');
-// var figsLen = figs.length;
-var figTemp = document.getElementById('fig-temp-container');
+var figs = document.getElementsByTagName('figure');
+var figsLen = figs.length;
 var figCont = document.getElementById('fig-container');
-var figHolder = document.getElementById('fig-holder');
-var imgsExist = true;
 
-var i = 1;
-var imgPath = ['./img/upload/tm-', '-c.jpg'];
-var imgTimeout;
+var i = 0;
 
 // LOOP THROUGH LOADING IMAGES
-// function figsLoad() {
+function figsLoad() {
 
-//   // TEST IMG PATH BY ADDING TO HIDDEN IMG TAG
-//   figHolder.src = imageName(i);
-//   console.log(imageName(i));
+  imgTimeout = setTimeout(function() {
 
-//   figHolder.onload = function() {
-//     // UNTIL FLAG IS SET TO FALSE ON IMG LOAD ERROR
-//     if (imgsExist) {
+    figs[i].classList.add('show');
+    i++;
+    // REPEAT
+    if (i < figsLen) {
+      figsLoad();
+    }
 
-//       imgTimeout = setTimeout(function() {
+  },170);
 
-//         var itm = figTemp.getElementsByTagName('figure')[0];
-//         var cln = itm.cloneNode(true);
-
-//         cln.getElementsByClassName('img')[0].style.backgroundImage = 'url("' + imageName(i) + '")';
-//         cln.getElementsByClassName('img')[0].href = imageName(i);
-
-//         figCont.appendChild(cln);
-//         figCont.getElementsByTagName('figure')[(i-1)].classList.add('show');
-
-//         i++;
-
-//         // REPEAT
-//         figsLoad();
-
-//       },170);
-
-//     }    
-//   }
-
-//   // IF PATH TURNS UP ERROR, NO MORE IMGS EXIST
-//   figHolder.onerror = function() {
-//     clearTimeout(imgTimeout);
-//     imgsExist = false;
-//     console.log((i-1) + ' total' + '\nend loading imgs');
-//   }
-
-
-
-// }
+}
 
 
 window.onload = function() {
   console.log('window.onload');
+  figsLoad();
 }
 
 var touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
