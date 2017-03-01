@@ -60,14 +60,14 @@
 
 	<article id='fig-container'>
 
-	<?php
+	<?php ?>
 
 		<figure>
 			<a class='img' data-lightbox='' href=''>
 			</a>
 		</figure>
 
-	?>
+	<?php ?>
 
 	</article>
 
