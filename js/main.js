@@ -24,6 +24,8 @@ function figsLoad() {
 
 window.onload = function() {
   console.log('window.onload');
+
+  document.getElementsByTagName('header')[0].classList.add('show');
   
   setTimeout(function() {
     document.getElementById('loader').classList.add('hide');

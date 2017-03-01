@@ -72,10 +72,15 @@ header {
 	box-shadow: 0 2px 4px rgba(0,0,0,0.03);
 	z-index: 3;
 	max-height: 150px;
-	transition: all 0.2s ease-in-out;
+	transition: max-height 0.2s ease-in-out, opacity 0.5s;
 	position: fixed;
 	right: 0; left: 0; top: 0;
 	overflow: hidden;
+	opacity: 0;
+}
+
+header.show {
+	opacity: 1;
 }
 
 header.scroll {
