@@ -36,9 +36,9 @@
 <body>
 
 	<div class='body-bg-tile'></div>
-	<!-- <div id='loader'>
+	<div id='loader'>
 		<i class="fa fa-spinner"></i>
-	</div> -->
+	</div>
 
 	<div id='container-blur'>
 

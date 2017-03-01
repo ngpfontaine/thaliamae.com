@@ -24,7 +24,14 @@ function figsLoad() {
 
 window.onload = function() {
   console.log('window.onload');
-  figsLoad();
+  
+  setTimeout(function() {
+    document.getElementById('loader').classList.add('hide');
+    console.log('start loading imgs...');
+
+    figsLoad();
+  },200);
+
 }
 
 var touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
