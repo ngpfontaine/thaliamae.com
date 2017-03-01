@@ -11,51 +11,69 @@ var imgPath = ['./img/upload/tm-', '-c.jpg'];
 var imgTimeout;
 
 // LOOP THROUGH LOADING IMAGES
-// function figsLoad() {
+function figsLoad() {
 
-//   // TEST IMG PATH BY ADDING TO HIDDEN IMG TAG
-//   figHolder.src = imageName(i);
-//   console.log(imageName(i));
+  // TEST IMG PATH BY ADDING TO HIDDEN IMG TAG
+  figHolder.src = imageName(i);
+  console.log(imageName(i));
 
-//   figHolder.onload = function() {
-//     // UNTIL FLAG IS SET TO FALSE ON IMG LOAD ERROR
-//     if (imgsExist) {
+  figHolder.onload = function() {
+    // UNTIL FLAG IS SET TO FALSE ON IMG LOAD ERROR
+    if (imgsExist) {
 
-//       imgTimeout = setTimeout(function() {
+      imgTimeout = setTimeout(function() {
 
-//         var itm = figTemp.getElementsByTagName('figure')[0];
-//         var cln = itm.cloneNode(true);
+        var itm = figTemp.getElementsByTagName('figure')[0];
+        var cln = itm.cloneNode(true);
 
-//         cln.getElementsByClassName('img')[0].style.backgroundImage = 'url("' + imageName(i) + '")';
-//         cln.getElementsByClassName('img')[0].href = imageName(i);
+        cln.getElementsByClassName('img')[0].style.backgroundImage = 'url("' + imageName(i) + '")';
+        cln.getElementsByClassName('img')[0].href = imageName(i);
 
-//         figCont.appendChild(cln);
-//         figCont.getElementsByTagName('figure')[(i-1)].classList.add('show');
+        figCont.appendChild(cln);
+        figCont.getElementsByTagName('figure')[(i-1)].classList.add('show');
 
-//         i++;
+        i++;
 
-//         // REPEAT
-//         figsLoad();
+        // REPEAT
+        figsLoad();
 
-//       },170);
+      },170);
 
-//     }    
-//   }
+    }    
+  }
 
-//   // IF PATH TURNS UP ERROR, NO MORE IMGS EXIST
-//   figHolder.onerror = function() {
-//     clearTimeout(imgTimeout);
-//     imgsExist = false;
-//     console.log((i-1) + ' total' + '\nend loading imgs');
-//   }
+  // IF PATH TURNS UP ERROR, NO MORE IMGS EXIST
+  figHolder.onerror = function() {
+    clearTimeout(imgTimeout);
+    imgsExist = false;
+    console.log((i-1) + ' total' + '\nend loading imgs');
+  }
 
 
 
-// }
+}
 
+// CREATE IMAGE NAMES FROM TEMPLATE
+var imageName = function imageName(input) {
+
+  var number = input.toString();
+  // CONVERT TO 4 DIGITS
+  if (number.length === 1) { number = '000' + number.toString();}
+  else if (number.length === 2) { number = '00' + number.toString(); }
+  else if (number.length === 3) { number = '0' + number.toString(); }
+
+  return imgPath[0] + number + imgPath[1];
+};
 
 window.onload = function() {
   console.log('window.onload');
+
+  setTimeout(function() {
+    document.getElementById('loader').classList.add('hide');
+    console.log('start loading imgs...');
+
+    figsLoad();
+  },200);
 }
 
 var touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
@@ -66,16 +84,16 @@ var containerBgBlur = document.getElementById('container-blur');
 // OPEN UPLOAD MODAL VIA BTN
 document.getElementById('btn-upload').addEventListener(touchEvent, function() {
   modalUlOpen ? (
-    // fadeOut(modalUl),
+		// fadeOut(modalUl),
     modalUl.classList.remove('show'),
-    modalUlOpen = false,
-    containerBgBlur.classList.remove('active')
-    ) : (
-    // fadeIn(modalUl),
+		modalUlOpen = false,
+		containerBgBlur.classList.remove('active')
+		) : (
+		// fadeIn(modalUl),
     modalUl.classList.add('show'),
-    modalUlOpen = true,
-    containerBgBlur.classList.add('active')
-    );
+		modalUlOpen = true,
+		containerBgBlur.classList.add('active')
+		);
 
   // STOP PROP FOR CHILD
   modalUl.getElementsByClassName('modal-inner')[0].addEventListener(touchEvent, function(event) {
@@ -89,7 +107,7 @@ modalUl.addEventListener(touchEvent, function() {
   // fadeOut(modalUl);
   modalUl.classList.remove('show'),
   modalUlOpen = false;
-  containerBgBlur.classList.remove('active');
+	containerBgBlur.classList.remove('active');
 });
 
 // SEND UPLOAD FORM VIA FAKE BTN
@@ -122,7 +140,7 @@ Array.prototype.forEach.call( inputs, function( input )
 
 window.onscroll = function() {
   var top = window.pageYOffset;
-  if (top > 1 && top < 300) {
+	if (top > 1 && top < 300) {
     document.getElementsByTagName('header')[0].classList.add('scroll');
   }
   else if (top < 1) {
