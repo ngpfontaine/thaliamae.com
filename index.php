@@ -81,7 +81,7 @@
 	<section id='modal-upload'>
 		<div class='modal-bg-blur'></div>
 		<div class='modal-inner'>
-			<form id='form-upload' action='upload.php' enctype='multipart/form-data'>
+			<form id='form-upload' action='upload.php' enctype='multipart/form-data' method='post'>
 
 				<input type='file' id='ul-i-file' name='file' class='input-file' data-multiple-caption="{count} files selected" multiple>
 				<label for='ul-i-file' class='input-file-label'><i class="fa fa-file-image-o"></i>
