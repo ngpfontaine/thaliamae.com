@@ -1,7 +1,6 @@
 <?php
-echo exec('whoami');
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
 
 	$target_dir = "./img/upload/";
 	$target_file = $target_dir . basename($_FILES["file"]["name"]);
@@ -44,6 +43,8 @@ ini_set('display_errors', 1);
       echo "The file ". basename( $_FILES["file"]["name"]). " has been uploaded.";
       // REDIRECT
       // header("Location: " . $_SERVER['REQUEST_URI']);
+      header("HTTP/1.1 303 See Other");
+      header("Location: http://$_SERVER[HTTP_HOST]/");
     } else {
       echo "Sorry, there was an error uploading your file.";
     }
