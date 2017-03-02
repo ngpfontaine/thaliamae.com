@@ -1,4 +1,8 @@
 <?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 	$target_dir = "./img/upload/";
 	$target_file = $target_dir . basename($_FILES["file"]["name"]);
 	$uploadOk = 1;
