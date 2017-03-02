@@ -62,7 +62,7 @@
 
 	<?php 
 
-		$dir = "./img/upload/*.jpg";
+		$dir = "./img/upload/*";
 		$images = glob( $dir );
 		$lbNo = 1;
 
