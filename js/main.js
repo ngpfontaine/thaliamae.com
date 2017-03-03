@@ -5,23 +5,6 @@ var figCont = document.getElementById('fig-container');
 
 var i = 0;
 
-// LOOP THROUGH LOADING IMAGES
-function figsLoad() {
-
-  imgTimeout = setTimeout(function() {
-
-    figs[i].classList.add('show');
-    i++;
-    // REPEAT
-    if (i < figsLen) {
-      figsLoad();
-    }
-
-  },170);
-
-}
-
-
 window.onload = function() {
   console.log('window.onload');
 
@@ -34,6 +17,26 @@ window.onload = function() {
   },200);
 
 }
+
+// LOOP THROUGH LOADING IMAGES
+var figsLoad = function figsLoad() {
+
+  imgTimeout = setTimeout(function() {
+
+    figs[i].classList.add('show');
+    i++;
+    // REPEAT
+    if (i < figsLen) {
+      figsLoad();
+    }
+
+  },170);
+
+};
+
+// 
+// MODALS
+// 
 
 var touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
 var modalUlOpen = false;
@@ -63,7 +66,6 @@ document.getElementById('btn-upload').addEventListener(touchEvent, function() {
 
 // UPLOAD MODAL CLOSE W/ CONTAINER CLICK
 modalUl.addEventListener(touchEvent, function() {
-  // fadeOut(modalUl);
   modalUl.classList.remove('show'),
   modalUlOpen = false;
   containerBgBlur.classList.remove('active');
@@ -108,6 +110,10 @@ Array.prototype.forEach.call( inputs, function( input )
   });
 });
 
+// 
+// HEADER
+// 
+
 window.onscroll = function() {
   var top = window.pageYOffset;
   if (top > 1 && top < 300) {
@@ -118,29 +124,29 @@ window.onscroll = function() {
   }
 };
 
-// fade out
-function fadeOut(el){
-  el.style.opacity = 1;
+// FADE OUT
+// function fadeOut(el){
+//   el.style.opacity = 1;
 
-  (function fade() {
-    if ((el.style.opacity -= .1) < 0) {
-      el.style.display = "none";
-    } else {
-      requestAnimationFrame(fade);
-    }
-  })();
-}
+//   (function fade() {
+//     if ((el.style.opacity -= .1) < 0) {
+//       el.style.display = "none";
+//     } else {
+//       requestAnimationFrame(fade);
+//     }
+//   })();
+// }
 
-// fade in
-function fadeIn(el, display){
-  el.style.opacity = 0;
-  el.style.display = display || "block";
+// // FADE IN
+// function fadeIn(el, display){
+//   el.style.opacity = 0;
+//   el.style.display = display || "block";
 
-  (function fade() {
-    var val = parseFloat(el.style.opacity);
-    if (!((val += .1) > 1)) {
-      el.style.opacity = val;
-      requestAnimationFrame(fade);
-    }
-  })();
-}
+//   (function fade() {
+//     var val = parseFloat(el.style.opacity);
+//     if (!((val += .1) > 1)) {
+//       el.style.opacity = val;
+//       requestAnimationFrame(fade);
+//     }
+//   })();
+// }
