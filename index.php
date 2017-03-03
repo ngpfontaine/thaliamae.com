@@ -49,7 +49,7 @@
 			<!-- <div class='nav-left'></div> --><div class='nav-mid'>
 				<h1>Thalia Mae</h1>
 				<!-- <h1>Heading</h1> -->
-				<h4>2012 - Feb. 18 2017</h4>
+				<h4>August 2012 - Feb. 18 2017</h4>
 				<!-- <h4>Subheading</h4> -->
 			</div><div class='nav-right clear-fix'>
 				<span id='btn-about' class='link'>ABOUT</span>
