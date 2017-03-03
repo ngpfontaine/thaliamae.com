@@ -29,7 +29,6 @@ window.onload = function() {
   
   setTimeout(function() {
     document.getElementById('loader').classList.add('hide');
-    console.log('start loading imgs...');
 
     figsLoad();
   },200);
@@ -41,28 +40,28 @@ var modalUlOpen = false;
 var modalUl = document.getElementById('modal-upload');
 var containerBgBlur = document.getElementById('container-blur');
 
-// OPEN UPLOAD MODAL VIA BTN
+var modalAboutOpen = false;
+var modalAbout = document.getElementById('modal-about');
+
+// UPLOAD MODAL OPEN/CLOSE
 document.getElementById('btn-upload').addEventListener(touchEvent, function() {
   modalUlOpen ? (
-    // fadeOut(modalUl),
     modalUl.classList.remove('show'),
     modalUlOpen = false,
     containerBgBlur.classList.remove('active')
     ) : (
-    // fadeIn(modalUl),
     modalUl.classList.add('show'),
     modalUlOpen = true,
     containerBgBlur.classList.add('active')
     );
-
-  // STOP PROP FOR CHILD
+  // STOP PROPOGATION FOR CHILD
   modalUl.getElementsByClassName('modal-inner')[0].addEventListener(touchEvent, function(event) {
     event.stopPropagation();
   });
 
 });
 
-// CLOSE MODAL W/ CONTAINER CLICK
+// UPLOAD MODAL CLOSE W/ CONTAINER CLICK
 modalUl.addEventListener(touchEvent, function() {
   // fadeOut(modalUl);
   modalUl.classList.remove('show'),
@@ -73,6 +72,17 @@ modalUl.addEventListener(touchEvent, function() {
 // SEND UPLOAD FORM VIA FAKE BTN
 document.getElementById('ul-i-btn').addEventListener(touchEvent, function() {
   document.getElementById('form-upload').submit();
+});
+
+// ABOUT MODAL OPEN/CLOSE
+document.getElementById('btn-about').addEventListener(touchEvent, function() {
+  modalAboutOpen ? (
+    modalAbout.classList.remove('show'),
+    modalAboutOpen = false
+    ) : (
+    modalAbout.classList.add('show'),
+    modalAboutOpen = true
+    );
 });
 
 // FILE SELECTOR ENHANCEMENT

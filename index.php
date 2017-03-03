@@ -36,6 +36,7 @@
 <body>
 
 	<div class='body-bg-tile'></div>
+
 	<div id='loader'>
 		<i class="fa fa-spinner"></i>
 	</div>
@@ -51,7 +52,7 @@
 				<h4>2012 - Feb. 18 2017</h4>
 				<!-- <h4>Subheading</h4> -->
 			</div><div class='nav-right clear-fix'>
-				<a href='' class='link'>ABOUT</a>
+				<span id='btn-about' class='link'>ABOUT</span>
 				<span class='btn' id='btn-upload'>UPLOAD <i class="fa fa-upload"></i></span>
 			</div>
 			<div class='clear-fix'></div>
@@ -75,6 +76,45 @@
 	?>
 
 	</article>
+
+	<aside id='modal-about'>
+	<div class='aside-inner'>
+
+		<h3>Heading</h3>
+		
+		<p>
+			Ea quaerat ipsam maiores enim provident. Ut cupiditate iusto ut in dignissimos aliquam et. Doloremque facilis autem quo pariatur molestiae fugiat distinctio perspiciatis.
+		</p>
+
+		<p>
+			Odio non et sapiente in nesciunt voluptatem. Quam deserunt quasi est aut sit sed. Ab voluptatem nulla voluptatem voluptate fugit.
+		</p>
+
+		<p>
+			Enim minus cumque ducimus velit ducimus. Ut voluptas rerum voluptate iure modi dignissimos. Aut quos rem nisi sequi minima. Quas eos voluptas mollitia. Sunt rerum et eius rerum nihil sint qui qui. Mollitia expedita nostrum consequatur itaque itaque est accusamus aliquid.
+		</p>
+
+		<p>
+			Rerum eaque aliquid fugiat. Porro culpa ducimus velit aut eum voluptates ipsa qui. Incidunt ut et occaecati non velit voluptas facere ex. Modi accusantium cum rem aut in quasi et dolorum. Rerum ullam eum impedit nulla aut rem.
+		</p>
+
+		<p>
+			Laudantium ut quo unde saepe est dolor. Est asperiores quia facilis. Tempore soluta voluptatem ex. Autem delectus voluptas consequuntur distinctio ipsum perspiciatis iure. Repellat impedit voluptates illum quisquam.
+		</p>
+
+		<p>
+			Enim minus cumque ducimus velit ducimus. Ut voluptas rerum voluptate iure modi dignissimos. Aut quos rem nisi sequi minima. Quas eos voluptas mollitia. Sunt rerum et eius rerum nihil sint qui qui. Mollitia expedita nostrum consequatur itaque itaque est accusamus aliquid.
+		</p>
+
+		<p>
+			Rerum eaque aliquid fugiat. Porro culpa ducimus velit aut eum voluptates ipsa qui. Incidunt ut et occaecati non velit voluptas facere ex. Modi accusantium cum rem aut in quasi et dolorum. Rerum ullam eum impedit nulla aut rem.
+		</p>
+
+		<p>
+			Laudantium ut quo unde saepe est dolor. Est asperiores quia facilis. Tempore soluta voluptatem ex. Autem delectus voluptas consequuntur distinctio ipsum perspiciatis iure. Repellat impedit voluptates illum quisquam.
+		</p>
+	</div>
+	</aside>
 
 	</div>
 
