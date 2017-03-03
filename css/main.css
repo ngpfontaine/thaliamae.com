@@ -313,12 +313,13 @@ aside {
 	transition: transform 0.5s;
 	max-height: 50%;
 	overflow: auto;
+	padding: 20px 0;
 }
 
 .aside-inner {
 	max-width: 80%;
 	margin: 0 auto;
-	padding: 20px 40px;
+	padding: 0 40px;
 	box-sizing: border-box;
 }
 
