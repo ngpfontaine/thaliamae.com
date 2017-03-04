@@ -138,7 +138,7 @@
 
 </body>
 
-<script src='./js/main.js'></script>
+<script async src='./js/main.js'></script>
 <script async src="./js/lightbox-plus-jquery.min.js"></script>
 
 </html>
