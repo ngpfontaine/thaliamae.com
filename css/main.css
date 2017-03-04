@@ -28,8 +28,14 @@ canvas {
 	background-image: url('../img/assets/grunge_wall.png');
 	position: fixed;
 	right: 0; left: 0; top: 0; bottom: 0;
-	opacity: 0.3;
+	opacity: 0;
 	z-index: 1;
+	animation: bodyBgTileFade 0.7s;
+}
+
+@keyframes bodyBgTileFade {
+	from { opacity: 0; }
+	to { opacity: 0.3; }
 }
 
 #loader {

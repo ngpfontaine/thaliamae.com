@@ -7,7 +7,7 @@
 		<meta name='viewport' content='width=device-width, initial-scale=1'>
 		<meta name='description' content='A damn good pup'>
 		<link rel='canonical' href='https://thaliamae.com'>
-		<link rel='stylesheet' href='./css/main.css'>
+		<link rel='stylesheet' href='./css/main.min.css'>
 		<!-- <link href="./css/lightbox.min.css" rel="stylesheet"> -->
 
 		<script>
@@ -138,7 +138,7 @@
 
 </body>
 
-<script async src='./js/main.js'></script>
+<script async src='./js/main.min.js'></script>
 <script async src="./js/lightbox-plus-jquery.min.js"></script>
 
 </html>
