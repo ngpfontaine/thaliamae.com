@@ -26,7 +26,8 @@
 
 		  var h = document.getElementsByTagName('head')[0];
 		  // h.parentNode.insertBefore(l, h);
-		  h.appendChild(l01);h.appendChild(l03);
+		  h.appendChild(l01);
+		  // h.appendChild(l03);
 		  };
 		  var raf = requestAnimationFrame || mozRequestAnimationFrame ||
 		  webkitRequestAnimationFrame || msRequestAnimationFrame;
