@@ -41,6 +41,7 @@
 
 	<div id='loader'>
 		<i class="fa fa-spinner"></i>
+		<div class='load-msg'>loading cuteness..<span class='dot-blinking'>.</span></div>
 	</div>
 
 	<div id='container-blur'>
