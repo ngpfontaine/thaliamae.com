@@ -26,13 +26,12 @@ function compress_image($source_url, $destination_url, $quality) {
     return $destination_url;
 }
 
-// if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
+if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 // if(isset($_POST["submit"])) {
 // if (!empty($_POST)) {
         // Loop $_FILES to execute all files
     foreach ($_FILES['files']['name'] as $f => $name) {     
         echo 'foreach ';
-        echo $path.basename($name);
         if ($_FILES['files']['error'][$f] != 0) {
             echo 'error found';
             continue; // Skip file if any error found
@@ -65,6 +64,6 @@ function compress_image($source_url, $destination_url, $quality) {
             }
         }
     }
-// }
+}
 
 ?>
