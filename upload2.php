@@ -50,7 +50,8 @@ echo 'foo';
             else{ // No error found! Move uploaded files 
                 echo ' no error2';
                 //All smaller files to be compressed.
-                if(is_uploaded_file($_FILES["files"]["tmp_name"][$f])) {
+                // if(is_uploaded_file($_FILES["files"]["tmp_name"][$f])) {
+                if (move_uploaded_file($_FILES["files"]["tmp_name"][$f], $path.$name) {
                     //Add a '.jpg' to the name because I'm lazy.
                     compress_image($_FILES["files"]["tmp_name"][$f], $path.basename($name).'.jpg', 90);
                     echo 'compress';
