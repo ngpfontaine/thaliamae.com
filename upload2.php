@@ -6,11 +6,10 @@ $valid_formats = array("jpg", "png", "gif");
 $max_file_size = 1500000; //300 kb
 $path = "./img/upload/"; // Upload directory
 $count = 0;
-$image;
 
 // Compress the image files
 function compress_image($source_url, $destination_url, $quality) {
-  echo $destination_url;
+  echo $destination_url . ' ';
   $info = getimagesize($source_url);
 
   if ($info['mime'] == 'image/jpeg') {
@@ -53,15 +52,17 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
       }
       else { // No error found! Move uploaded files 
         echo 'no error2 ';
+
+        if(move_uploaded_file($_FILES["files"]["tmp_name"][$f], $path.$name));
+
         //All smaller files to be compressed.
-        if(is_uploaded_file($_FILES["files"]["tmp_name"][$f])) {
-        // if (move_uploaded_file($_FILES["files"]["tmp_name"][$f], $path.$name) {
+        // if(is_uploaded_file($_FILES["files"]["tmp_name"][$f])) {
           //Add a '.jpg' to the name because I'm lazy.
-          compress_image($_FILES["files"]["tmp_name"][$f], $path.basename($name).'.jpg', 90);
-          echo 'compress';
-          $count ++; // Number of successfully uploaded files
+          // compress_image($_FILES["files"]["tmp_name"][$f], $path.basename($name).'.jpg', 90);
+          // echo 'compress';
+          // $count ++; // Number of successfully uploaded files
           // REDIRECT
-        }
+        // }
       }
     }
   }
