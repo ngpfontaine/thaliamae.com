@@ -8,16 +8,16 @@
 		<meta name='description' content='A damn good pup'>
 		<link rel='canonical' href='https://thaliamae.com'>
 		<link rel='stylesheet' href='./css/main.min.css'>
-		<!-- <link href="./css/lightbox.min.css" rel="stylesheet"> -->
+		<link href="./css/lightbox.min.css" rel="stylesheet">
 
 		<script>
 		  var cb = function() {
 		  var l01 = document.createElement('link');
 		  l01.rel = 'stylesheet';
 		  l01.href = 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css';
-		  var l02 = document.createElement('link');
-		  l02.rel = 'stylesheet';
-		  l02.href = './css/lightbox.min.css';
+		  // var l02 = document.createElement('link');
+		  // l02.rel = 'stylesheet';
+		  // l02.href = './css/lightbox.min.css';
 		  var l03 = document.createElement('link');
 		  l03.rel = 'stylesheet';
 		  l03.href = 'https://fonts.googleapis.com/css?family=Lora:400,400i,700|Open+Sans:400,600';
