@@ -22,7 +22,7 @@ function compress_image($source_url, $destination_url, $quality) {
     return $destination_url;
 }
 
-echo $_FILES['files']['name'];
+echo 'foo';
 
 if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
         // Loop $_FILES to execute all files
