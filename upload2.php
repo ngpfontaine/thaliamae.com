@@ -12,7 +12,10 @@ function compress_image($source_url, $destination_url, $quality) {
     echo 'compress_image running ';
     $info = getimagesize($source_url);
 
-    if ($info['mime'] == 'image/jpeg') $image = imagecreatefromjpeg($source_url);
+    if ($info['mime'] == 'image/jpeg') {
+        echo 'image is jpeg';
+        $image = imagecreatefromjpeg($source_url);
+    }
     elseif ($info['mime'] == 'image/gif') $image = imagecreatefromgif($source_url);
     elseif ($info['mime'] == 'image/png') $image = imagecreatefrompng($source_url);
 
@@ -35,19 +38,19 @@ function compress_image($source_url, $destination_url, $quality) {
             continue; // Skip file if any error found
         }
         if ($_FILES['files']['error'][$f] == 0) {
-            echo 'no error';
+            echo 'no error ';
             if ($_FILES['files']['size'][$f] > $max_file_size ) {
                 $message[] = "$name is too large!";
-                echo 'too large';
+                echo 'too large ';
                 continue; // Skip large files.
             }
             elseif( ! in_array(pathinfo($name, PATHINFO_EXTENSION), $valid_formats) ){
                 $message[] = "$name is not a valid format";
-                echo 'not valid format';
+                echo 'not valid format ';
                 continue; // Skip invalid file formats
             }
             else { // No error found! Move uploaded files 
-                echo ' no error2';
+                echo 'no error2 ';
                 //All smaller files to be compressed.
                 if(is_uploaded_file($_FILES["files"]["tmp_name"][$f])) {
                 // if (move_uploaded_file($_FILES["files"]["tmp_name"][$f], $path.$name) {
