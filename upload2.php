@@ -17,8 +17,8 @@ function compress_image($source_url, $destination_url, $quality) {
     $image = imagecreatefromjpeg($source_url);
     echo 'image is a jpeg ';
   }
-  elseif ($info['mime'] == 'image/gif') { $image = imagecreatefromgif($source_url) };
-  elseif ($info['mime'] == 'image/png') { $image = imagecreatefrompng($source_url) };
+  elseif ($info['mime'] == 'image/gif') { $image = imagecreatefromgif($source_url) }
+  elseif ($info['mime'] == 'image/png') { $image = imagecreatefrompng($source_url) }
   echo 'foo ';
   // save file
   imagejpeg($image, $destination_url, $quality);
