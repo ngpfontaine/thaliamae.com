@@ -184,7 +184,7 @@
 					<div id='ul-i-file-text'>Choose file(s)</div>
 				</label>
 
-				<div id='ul-i-btn'>Upload <i class="fa fa-paw"></i></div>
+				<div id='ul-i-btn' name='submit'>Upload <i class="fa fa-paw"></i></div>
 
 			</form>
 		</div>
