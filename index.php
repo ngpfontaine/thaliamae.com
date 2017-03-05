@@ -181,7 +181,7 @@
 
 				<input type='file' id='ul-i-file' name='files[]' class='input-file' data-multiple-caption='{count} files selected' multiple='multiple' accept='image/*''>
 				<label for='ul-i-file' class='input-file-label'><i class="fa fa-file-image-o"></i>
-					<input id='ul-i-file-text'>Choose file(s)</div>
+					<div id='ul-i-file-text'>Choose file(s)</div>
 				</label>
 
 				<div id='ul-i-btn'>Upload <i class="fa fa-paw"></i></div>
