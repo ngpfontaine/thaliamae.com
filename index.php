@@ -11,6 +11,8 @@
 		<link href="./css/lightbox.min.css" rel="stylesheet">
 
 		<script>
+		var foo = false;
+		if (foo) {
 		  var cb = function() {
 		  var l01 = document.createElement('link');
 		  l01.rel = 'stylesheet';
@@ -30,6 +32,7 @@
 		  webkitRequestAnimationFrame || msRequestAnimationFrame;
 		  if (raf) raf(cb);
 		  else window.addEventListener('load', cb);
+		}
 		</script>
 
 
