@@ -7,7 +7,7 @@
 		<meta name='viewport' content='width=device-width, initial-scale=1'>
 		<meta name='description' content='A damn good pup'>
 		<link rel='canonical' href='https://thaliamae.com'>
-		<link rel='stylesheet' href='./css/main.css.css'>
+		<link rel='stylesheet' href='./css/main.min.css'>
 		<!-- <link href="./css/lightbox.min.css" rel="stylesheet"> -->
 
 		<script>
