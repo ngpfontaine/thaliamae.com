@@ -51,17 +51,17 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
         //All smaller files to be compressed.
         if(is_uploaded_file($_FILES["files"]["tmp_name"][$f])) {
         // if (move_uploaded_file($_FILES["files"]["tmp_name"][$f], $path.$name) {
-            //Add a '.jpg' to the name because I'm lazy.
-            compress_image($_FILES["files"]["tmp_name"][$f], $path.basename($name), 90);
-            echo 'compress';
-            $count ++; // Number of successfully uploaded files
-            // REDIRECT
-            // header("HTTP/1.1 303 See Other");
-            // header("Location: https://$_SERVER[HTTP_HOST]/");
+          //Add a '.jpg' to the name because I'm lazy.
+          compress_image($_FILES["files"]["tmp_name"][$f], $path.basename($name), 90);
+          echo 'compress';
+          $count ++; // Number of successfully uploaded files
+          // REDIRECT
         }
       }
     }
   }
+  header("HTTP/1.1 303 See Other");
+  header("Location: https://$_SERVER[HTTP_HOST]/");
 }
 
 ?>
