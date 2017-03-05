@@ -177,6 +177,13 @@
 	<section id='modal-upload'>
 		<div class='modal-bg-blur'></div>
 		<div class='modal-inner'>
+			<p>
+				Please compress and/or resize images before uploading to prevent excess data useage and keep load time down. Thanks!
+			</p>
+			<p>
+				<a href='https://tinypng.com' target='_blank'>tinypng</a><span class='text-aside'>(best compression, use if file size is under 5MB)</span><br>
+				<a href='https://compressor.io/compress' target='_blank'>compressor.io</a><span class='text-aside'>(will allow file sizes > 5MB)</span>
+			</p>
 			<form id='form-upload' action='upload2.php' enctype='multipart/form-data' method='post'>
 
 				<input type='file' id='ul-i-file' name='files[]' class='input-file' data-multiple-caption='{count} files selected' multiple='multiple' accept='image/*''>

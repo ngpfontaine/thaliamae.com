@@ -72,6 +72,23 @@ canvas {
 :focus {outline:none;}
 ::-moz-focus-inner {border:0;}
 
+p {
+	color: #666;
+	margin-top: 0;
+}
+
+.text-aside {
+	padding-left: 8px;
+	color: #999;
+	font-style: italic;
+	font-size: 0.8em;
+}
+
+a, a:active, a:visited, a:hover {
+	color: #333;
+	font-weight: 700;
+}
+
 /**************/
 /*** HEADER ***/
 /**************/
@@ -278,9 +295,9 @@ header h1:hover:after {
 	opacity: 0.2;
 }
 
-h1 a {
+h1 a, h1 a:active, h1 a:hover, h1 a:visited {
 	text-decoration: none;
-	color: inherit;
+	color: #948eba;
 }
 
 header h4 {
@@ -429,6 +446,7 @@ aside.show {
 
 form {
 	text-align: center;
+	padding-top: 15px;
 }
 
 form input {
