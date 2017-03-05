@@ -6,6 +6,7 @@ $valid_formats = array("jpg", "png", "gif");
 $max_file_size = 1500000; //300 kb
 $path = "./img/upload/"; // Upload directory
 $count = 0;
+$image;
 
 // Compress the image files
 function compress_image($source_url, $destination_url, $quality) {
@@ -13,14 +14,12 @@ function compress_image($source_url, $destination_url, $quality) {
     $info = getimagesize($source_url);
 
     if ($info['mime'] == 'image/jpeg') {
+        echo 'image is jpeg';
         $image = imagecreatefromjpeg($source_url);
-        echo 'image is jpeg ';
     }
     elseif ($info['mime'] == 'image/gif') $image = imagecreatefromgif($source_url);
     elseif ($info['mime'] == 'image/png') $image = imagecreatefrompng($source_url);
 
-    // echo $destination_url . ' destination url ';
-    // echo $image . ' image ';
     // save file
     imagejpeg($image, $destination_url, $quality);
 
