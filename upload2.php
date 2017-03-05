@@ -25,7 +25,8 @@ function compress_image($source_url, $destination_url, $quality) {
 echo 'foo';
 
 // if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
-if(isset($_POST["submit"])) {
+// if(isset($_POST["submit"])) {
+if (!empty($_POST)) {
     echo 'submit';
         // Loop $_FILES to execute all files
     foreach ($_FILES['files']['name'] as $f => $name) {     
