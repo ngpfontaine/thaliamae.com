@@ -55,7 +55,7 @@ function compress_image($source_url, $destination_url, $quality) {
                 if(is_uploaded_file($_FILES["files"]["tmp_name"][$f])) {
                 // if (move_uploaded_file($_FILES["files"]["tmp_name"][$f], $path.$name) {
                     //Add a '.jpg' to the name because I'm lazy.
-                    compress_image($_FILES["files"]["tmp_name"][$f], $path.basename($name).'.jpg', 90);
+                    compress_image($_FILES["files"]["tmp_name"][$f], $path.basename($name), 90);
                     echo 'compress';
                     $count ++; // Number of successfully uploaded files
                     // REDIRECT
