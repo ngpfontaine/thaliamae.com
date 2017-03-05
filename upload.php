@@ -17,7 +17,7 @@
       $uploadOk = 0;
     }
 	}
-	echo $target_file . " ";
+	echo $target_file . " ";compress_image
 	// Check if file already exists
 	if (file_exists($target_file)) {
     echo "Sorry, file already exists.";
