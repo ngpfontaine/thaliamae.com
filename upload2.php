@@ -13,12 +13,13 @@ function compress_image($source_url, $destination_url, $quality) {
     $info = getimagesize($source_url);
 
     if ($info['mime'] == 'image/jpeg') {
-        echo 'image is jpeg';
         $image = imagecreatefromjpeg($source_url);
     }
     elseif ($info['mime'] == 'image/gif') $image = imagecreatefromgif($source_url);
     elseif ($info['mime'] == 'image/png') $image = imagecreatefrompng($source_url);
 
+    echo $destination_url . ' destination url ';
+    echo $image . ' image ';
     // save file
     imagejpeg($image, $destination_url, $quality);
 
