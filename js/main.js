@@ -1,4 +1,3 @@
-console.log('thalia mae');
 var figs = document.getElementsByTagName('figure');
 var figsLen = figs.length;
 var figCont = document.getElementById('fig-container');
@@ -6,9 +5,9 @@ var figCont = document.getElementById('fig-container');
 var i = 0;
 
 window.onload = function() {
-  console.log('window.onload');
+  console.log('js - window.onload');
 
-  document.getElementsByTagName('header')[0].classList.add('show');
+  // document.getElementsByTagName('header')[0].classList.add('show');
   
   setTimeout(function() {
     document.getElementById('loader').classList.add('hide');
@@ -84,7 +83,11 @@ document.getElementById('btn-about').addEventListener(touchEvent, function() {
     ) : (
     modalAbout.classList.add('show'),
     modalAboutOpen = true
-    );
+  );
+});
+
+document.getElementById('about-close').addEventListener(touchEvent, function() {
+  modalAbout.classList.remove('show');
 });
 
 // FILE SELECTOR ENHANCEMENT

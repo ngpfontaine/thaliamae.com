@@ -7,7 +7,7 @@
 		<meta name='viewport' content='width=device-width, initial-scale=1'>
 		<meta name='description' content='A damn good pup'>
 		<link rel='canonical' href='https://thaliamae.com'>
-		<link rel='stylesheet' href='./css/main.min.css'>
+		<link rel='stylesheet' href='./css/main.css.css'>
 		<!-- <link href="./css/lightbox.min.css" rel="stylesheet"> -->
 
 		<script>
@@ -48,11 +48,9 @@
 	<header>
 		<div class='header-bg-tile'></div>
 		<nav>
-			<!-- <div class='nav-left'></div> --><div class='nav-mid'>
-				<h1>Thalia Mae</h1>
-				<!-- <h1>Heading</h1> -->
+			<div class='nav-mid'>
+				<h1><a href='./'>Thalia Mae</a></h1>
 				<h4>August 2012 - Feb. 18 2017</h4>
-				<!-- <h4>Subheading</h4> -->
 			</div><div class='nav-right clear-fix'>
 				<span id='btn-about' class='link'>ABOUT</span>
 				<span class='btn' id='btn-upload'>UPLOAD <i class="fa fa-upload"></i></span>
@@ -63,23 +61,79 @@
 
 	<article id='fig-container'>
 
-	<?php 
+		<?php
+		$lbNo = 0;
+		$folder = './img/upload/';
+		$filetype = '*.*';    
+		$files = glob($folder.$filetype);    
+		$total = count($files);
+		$per_page = 9;
+		$last_page = (int)($total / $per_page);
+		// ADD A PAGE IF ANY ORPHANS
+		if (($total % $per_page) > 0) {
+			$last_page += 1;
+		}
+		if (isset($_GET["page"])  && ($_GET["page"] <=$last_page) && ($_GET["page"] > 0) ) {
+	    $page = $_GET["page"];
+	    // $offset = ($per_page + 1)*($page - 1);
+	    $offset = ($per_page)*($page - 1);
+	    // INCs ONE TOO MANY TIMES BETWEEN PAGES FOR SOME REASON
+	    // if ($_GET["page"] > 1) {
+	    // 	$offset = $offset - ($_GET['page'] - 1);
+	    // 	echo $_GET['page'];
+	    // }
+		}
+		else {
+	    echo " <script>console.log('php - page out of range showing results for page one');</script> ";
+	    $page=1;
+	    $offset=0;      
+		}    
+		$max = $offset + $per_page;    
+		if ($max>$total) {
+		  $max = $total;
+		}
 
-		$dir = "./img/upload/*";
-		$images = glob( $dir );
-		$lbNo = 1;
+		// LOG PAGIN INFO
+		echo "<script>console.log('php - processsing page : $page offset: $offset max: $max total: $total last_page: $last_page');</script>";        
 
-		foreach( $images as $image ):
-		  echo "<figure><a class='img' style='background-image:url(\"" . $image . "\");' href=\"" . $image . "\" data-lightbox='image-" . $lbNo . "' ></a></figure>";
-			$lbNo++;
+		show_pagination($page, $last_page);        
+		for ($i = $offset; $i< $max; $i++) {
+	    $file = $files[$i];
+	    $path_parts = pathinfo($file);
+	    $filename = $path_parts['filename'];        
+	    // echo ' <figure class="fake">'. $filename . '</figure> ';
 
-		endforeach;
+	  	$lbNo++;
 
-	?>
+	  	// FIGURES
+	    echo "<figure><a class='img' style='background-image:url(\"" . $file . "\");' href=\"" . $file . "\" data-lightbox='image-" . $lbNo . "' alt='".$filename."'' ></a></figure>";
+
+		} 
+
+		// PAGINATION CONTROLS
+		show_pagination($page, $last_page);
+
+		function show_pagination($current_page, $last_page){
+	    echo '<div class="container-pagin">';
+		    if( $current_page > 1 ){
+		      echo " <a href='?page=".($current_page-1)."' class='pagin-ctrl show' id='pagin-prev'><i class='fa fa-chevron-left'></i></a> ";
+		    }
+		    if( $current_page < $last_page ){
+		      echo " <a href='?page=".($current_page+1)."' class='pagin-ctrl show' id='pagin-next'><i class='fa fa-chevron-right'></i></a> ";
+		    }
+	    echo '</div>';
+		}
+
+		?>
 
 	</article>
 
 	<aside id='modal-about'>
+
+		<div id='about-close' class='btn-close'>
+			<i class="fa fa-times-circle-o"></i>
+		</div>
+
 	<div class='aside-inner'>
 
 		<h3>Heading</h3>
