@@ -48,6 +48,7 @@ echo 'foo';
                 continue; // Skip invalid file formats
             }
             else{ // No error found! Move uploaded files 
+                echo ' no error2';
                 //All smaller files to be compressed.
                 if(is_uploaded_file($_FILES["files"]["tmp_name"][$f])) {
                     //Add a '.jpg' to the name because I'm lazy.
