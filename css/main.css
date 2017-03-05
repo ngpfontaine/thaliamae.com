@@ -1,6 +1,6 @@
 body {
 	margin: 0;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	font-size: 15px;
 	/*background: #83b4a5;*/
 	background: #5F9E8A;
@@ -297,7 +297,7 @@ header h1 {
 	position: relative;
 	color: #948eba;
 	margin: 0;
-	font-family: 'Lora', serif;
+	font-family: 'Lora', Georgia, serif;
 	font-size: 2em;
 	letter-spacing: 2px;
 	word-spacing: 4px;
@@ -421,6 +421,11 @@ aside {
 	margin: 0 auto;
 	padding: 20px 40px;
 	box-sizing: border-box;
+}
+
+aside p {
+	color: #b7b7b7;
+	line-height: 1.4;
 }
 
 aside.show {
