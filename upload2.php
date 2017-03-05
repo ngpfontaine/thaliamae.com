@@ -24,15 +24,15 @@ function compress_image($source_url, $destination_url, $quality) {
 
 if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
         // Loop $_FILES to execute all files
-    foreach ($_FILES['files']['name'] as $f => $name) {     
+    foreach ($_FILES['file']['name'] as $f => $name) {     
         echo 'foreach';
-        if ($_FILES['files']['error'][$f] != 0) {
+        if ($_FILES['file']['error'][$f] != 0) {
             echo 'error found';
             continue; // Skip file if any error found
         }
-        if ($_FILES['files']['error'][$f] == 0) {
+        if ($_FILES['file']['error'][$f] == 0) {
             echo 'no error';
-            if ($_FILES['files']['size'][$f] > $max_file_size ) {
+            if ($_FILES['file']['size'][$f] > $max_file_size ) {
                 $message[] = "$name is too large!";
                 echo 'too large';
                 continue; // Skip large files.
