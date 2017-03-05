@@ -18,10 +18,10 @@ function compress_image($source_url, $destination_url, $quality) {
   }
   elseif ($info['mime'] == 'image/gif') $image = imagecreatefromgif($source_url);
   elseif ($info['mime'] == 'image/png') $image = imagecreatefrompng($source_url);
-
+  echo 'foo ';
   // save file
   imagejpeg($image, $destination_url, $quality);
-
+  echo 'bar ';
   // return destination file
   return $destination_url;
 }
