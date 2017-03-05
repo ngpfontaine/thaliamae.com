@@ -12,7 +12,6 @@
 
 		<script>
 		var foo = false;
-		if (foo) {
 		  var cb = function() {
 		  var l01 = document.createElement('link');
 		  l01.rel = 'stylesheet';
@@ -20,9 +19,9 @@
 		  // var l02 = document.createElement('link');
 		  // l02.rel = 'stylesheet';
 		  // l02.href = './css/lightbox.min.css';
-		  var l03 = document.createElement('link');
-		  l03.rel = 'stylesheet';
-		  l03.href = 'https://fonts.googleapis.com/css?family=Lora:400,400i,700|Open+Sans:400,600';
+		  // var l03 = document.createElement('link');
+		  // l03.rel = 'stylesheet';
+		  // l03.href = 'https://fonts.googleapis.com/css?family=Lora:400,400i,700|Open+Sans:400,600';
 
 		  var h = document.getElementsByTagName('head')[0];
 		  // h.parentNode.insertBefore(l, h);
@@ -32,7 +31,6 @@
 		  webkitRequestAnimationFrame || msRequestAnimationFrame;
 		  if (raf) raf(cb);
 		  else window.addEventListener('load', cb);
-		}
 		</script>
 
 
