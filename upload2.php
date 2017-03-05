@@ -26,7 +26,7 @@ echo 'foo';
 
 // if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 if(isset($_POST["submit"])) {
-
+    echo 'submit';
         // Loop $_FILES to execute all files
     foreach ($_FILES['files']['name'] as $f => $name) {     
         echo 'foreach';
