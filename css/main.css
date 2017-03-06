@@ -689,6 +689,7 @@ form #ul-i-btn i.fa {
 	}
 
 	.pagin-ctrl {
+		padding: 6px 22px;
 		position: relative;
 		top: initial;
 		transform: none;
@@ -754,6 +755,10 @@ form #ul-i-btn i.fa {
 
 	aside.show {
 		top: 81px;
+	}
+
+	.pagin-ctrl {
+		padding: 3px 18px;
 	}
 
 }
