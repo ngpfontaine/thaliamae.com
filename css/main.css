@@ -698,6 +698,10 @@ form #ul-i-btn i.fa {
 		color: rgba(255,255,255,0.8);
 	}
 
+	.pagin-ctrl.show {
+		color: rgba(255,255,255,0.8);
+	}
+
 	#pagin-next {
 		float: right;
 	}
