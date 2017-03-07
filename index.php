@@ -54,7 +54,9 @@
 		<nav>
 			<div class='nav-mid'>
 				<h1><a href='./'>Thalia Mae</a></h1>
+				<h1><a href='./'>Heading</a></h1>
 				<h4>August 2012 - Feb. 18 2017</h4>
+				<h4>Heading</h4>
 			</div><div class='nav-right clear-fix'>
 				<span id='btn-about' class='link'>ABOUT</span>
 				<span class='btn' id='btn-upload'>UPLOAD <i class="fa fa-upload"></i></span>
