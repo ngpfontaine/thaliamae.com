@@ -377,7 +377,6 @@ figure .img {
 	background-size: cover;
 	position: relative;
 	border-radius: 3px;
-	display: none !important;
 }
 
 figcaption {
