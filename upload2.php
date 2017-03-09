@@ -85,7 +85,7 @@ function resizeImage($sourceImage, $targetImage, $maxWidth, $maxHeight, $quality
 if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 // Loop $_FILES to execute all files
 
-  foreach ($_FILES['files']['name'] as str_replace(" ","_",$f => $name) {     
+  foreach ($_FILES['files']['name'] as $f => $name) {     
     echo 'foreach ';
     if ($_FILES['files']['error'][$f] != 0) {
       echo 'error found';
@@ -116,7 +116,7 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
           // compress_image($_FILES["files"]["tmp_name"][$f], $path.basename($name).'.jpg', 90);
           echo 'pre-resize ';
 
-          // $name = str_replace(" ", "_", $_FILES["files"]["tmp_name"][$f]);
+          $name = str_replace(" ", "_", $name);
           echo $path.$name;
 
 					resizeImage($filename, $path.$name, 1200, 1200);
