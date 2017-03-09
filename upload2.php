@@ -11,6 +11,7 @@ $name_array = $_FILES['files']['name'];
 $tmp_name_array = $_FILES['files']['tmp_name'];
 // Number of files
 $count_tmp_name_array = count($tmp_name_array);
+echo $count_tmp_name_array;
 
 // We define the static final name for uploaded files (in the loop we will add an number to the end)
 $static_final_name = "name";
@@ -136,8 +137,8 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
     }
   }
   // REDIRECT
-  header("HTTP/1.1 303 See Other");
-  header("Location: https://$_SERVER[HTTP_HOST]/");
+  // header("HTTP/1.1 303 See Other");
+  // header("Location: https://$_SERVER[HTTP_HOST]/");
 }
 
 ?>
