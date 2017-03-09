@@ -72,7 +72,7 @@ function resizeImage($sourceImage, $targetImage, $maxWidth, $maxHeight, $quality
 
 	imagecopyresampled($newImage, $image, 0, 0, 0, 0, $newWidth, $newHeight, $origWidth, $origHeight);
 	echo 'post resampled ';
-	imagejpeg($newImage, $targetImage, $quality);
+	imagejpeg(str_replace(" ","_",$newImage), $targetImage, $quality);
 	echo 'post imagejpeg ';
 
   // Free up the memory.
