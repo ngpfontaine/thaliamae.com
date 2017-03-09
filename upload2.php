@@ -100,10 +100,10 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
           echo 'pre-resize ';
 
           // echo $_FILES["files"]["tmp_name"][$f];
-          $name = str_replace(" ", "_", $name);
+          // $name = str_replace(" ", "_", $name);
           echo $name;
 
-					resizeImage($filename, $path.$name, 1200, 1200);
+					resizeImage($filename, $path.$name.str_replace(" ","_",$name), 1200, 1200);
 					// resize_image('max',$_FILES["files"]["tmp_name"][$f],$path.$name.'.jpg',1200,1200);
 
           echo 'post-resize ';
