@@ -118,7 +118,7 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
           //Add a '.jpg' to the name because I'm lazy.
           // compress_image($_FILES["files"]["tmp_name"][$f], $path.basename($name).'.jpg', 90);
           echo 'pre-resize ';
-          resizeImage($_FILES["files"]["tmp_name"][$f], $path.basename($name).'.jpg', 1200, 1200);
+          resizeImage($_FILES["files"]["tmp_name"][$f], $path.$name, 1200, 1200);
 
           echo 'post-resize ';
           $count ++; // Number of successfully uploaded files
