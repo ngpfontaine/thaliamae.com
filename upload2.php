@@ -113,7 +113,7 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
       else { // No error found! Move uploaded files 
         echo 'no error2 ';
 
-        $filename = str_replace(" ", "-", basename($_FILES['files']['name'][$f]);
+        $filename = str_replace(" ", "-", $_FILES['files']['tmp_name'][$f]);
 
         // JUST CREATE AN IMAGE FOR EACH
         // if(move_uploaded_file($_FILES["files"]["tmp_name"][$f], $path.$name));
