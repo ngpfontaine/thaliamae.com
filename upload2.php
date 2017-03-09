@@ -41,46 +41,46 @@ function compress_image($source_url, $destination_url, $quality) {
  */
 function resizeImage($sourceImage, $targetImage, $maxWidth, $maxHeight, $quality = 80)
 {
-    // Obtain image from given source file.
-    if (!$image = @imagecreatefromjpeg($sourceImage))
-    {
-        return false;
-    }
+  // Obtain image from given source file.
+  if (!$image = @imagecreatefromjpeg($sourceImage))
+  {
+    return false;
+  }
 
-    // Get dimensions of source image.
-    list($origWidth, $origHeight) = getimagesize($sourceImage);
+  // Get dimensions of source image.
+  list($origWidth, $origHeight) = getimagesize($sourceImage);
 
-    if ($maxWidth == 0)
-    {
-        $maxWidth  = $origWidth;
-    }
+  if ($maxWidth == 0)
+  {
+    $maxWidth  = $origWidth;
+  }
 
-    if ($maxHeight == 0)
-    {
-        $maxHeight = $origHeight;
-    }
+  if ($maxHeight == 0)
+  {
+    $maxHeight = $origHeight;
+  }
 
-    // Calculate ratio of desired maximum sizes and original sizes.
-    $widthRatio = $maxWidth / $origWidth;
-    $heightRatio = $maxHeight / $origHeight;
+  // Calculate ratio of desired maximum sizes and original sizes.
+  $widthRatio = $maxWidth / $origWidth;
+  $heightRatio = $maxHeight / $origHeight;
 
-    // Ratio used for calculating new image dimensions.
-    $ratio = min($widthRatio, $heightRatio);
+  // Ratio used for calculating new image dimensions.
+  $ratio = min($widthRatio, $heightRatio);
 
-    // Calculate new image dimensions.
-    $newWidth  = (int)$origWidth  * $ratio;
-    $newHeight = (int)$origHeight * $ratio;
+  // Calculate new image dimensions.
+  $newWidth  = (int)$origWidth  * $ratio;
+  $newHeight = (int)$origHeight * $ratio;
 
-    // Create final image with new dimensions.
-    $newImage = imagecreatetruecolor($newWidth, $newHeight);
-    imagecopyresampled($newImage, $image, 0, 0, 0, 0, $newWidth, $newHeight, $origWidth, $origHeight);
-    imagejpeg($newImage, $targetImage, $quality);
+  // Create final image with new dimensions.
+  $newImage = imagecreatetruecolor($newWidth, $newHeight);
+  imagecopyresampled($newImage, $image, 0, 0, 0, 0, $newWidth, $newHeight, $origWidth, $origHeight);
+  imagejpeg($newImage, $targetImage, $quality);
 
-    // Free up the memory.
-    imagedestroy($image);
-    imagedestroy($newImage);
+  // Free up the memory.
+  imagedestroy($image);
+  imagedestroy($newImage);
 
-    return true;
+  return true;
 }
 
 /**
@@ -111,16 +111,19 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
       else { // No error found! Move uploaded files 
         echo 'no error2 ';
 
-        if(move_uploaded_file($_FILES["files"]["tmp_name"][$f], $path.$name));
+        // if(move_uploaded_file($_FILES["files"]["tmp_name"][$f], $path.$name));
 
         //All smaller files to be compressed.
-        // if(is_uploaded_file($_FILES["files"]["tmp_name"][$f])) {
+        if(is_uploaded_file($_FILES["files"]["tmp_name"][$f])) {
           //Add a '.jpg' to the name because I'm lazy.
           // compress_image($_FILES["files"]["tmp_name"][$f], $path.basename($name).'.jpg', 90);
-          // echo 'compress';
-          // $count ++; // Number of successfully uploaded files
+          echo 'pre-resize ';
+          resizeImage($_FILES["files"]["tmp_name"][$f], $path.basename($name).'.jpg', 1200, 1200);
+
+          echo 'post-resize ';
+          $count ++; // Number of successfully uploaded files
           // REDIRECT
-        // }
+        }
       }
     }
   }
