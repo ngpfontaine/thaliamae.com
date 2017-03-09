@@ -37,7 +37,7 @@ $static_final_name = "name";
 function resizeImage($sourceImage, $targetImage, $maxWidth, $maxHeight, $quality = 80) {
   echo 'resizeImage() ';
   // Obtain image from given source file.
-	if (!$imageb = @imagecreatefromjpeg($sourceImage)) {
+	if (!$image = @imagecreatefromjpeg($sourceImage)) {
 		echo 'false';
     return false;
   }
@@ -68,7 +68,7 @@ function resizeImage($sourceImage, $targetImage, $maxWidth, $maxHeight, $quality
 	$newImage = imagecreatetruecolor($newWidth, $newHeight);
 	echo 'post true color ';
 
-  $targetImage  = str_replace(' ','_',$targetImage);
+  // $image  = str_replace(' ','_',$image);
 
 	imagecopyresampled($newImage, $image, 0, 0, 0, 0, $newWidth, $newHeight, $origWidth, $origHeight);
 	echo 'post resampled ';
