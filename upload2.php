@@ -11,8 +11,8 @@ $name_array = $_FILES['files']['name'];
 $tmp_name_array = $_FILES['files']['tmp_name'];
 // Number of files
 $count_tmp_name_array = count($tmp_name_array);
-echo 'filessss';
-echo $count_tmp_name_array;
+echo 'tmp_name_array';
+echo $tmp_name_array;
 
 // We define the static final name for uploaded files (in the loop we will add an number to the end)
 $static_final_name = "name";
