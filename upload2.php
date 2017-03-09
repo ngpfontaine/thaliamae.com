@@ -11,8 +11,7 @@ $name_array = $_FILES['files']['name'];
 $tmp_name_array = $_FILES['files']['tmp_name'];
 // Number of files
 $count_tmp_name_array = count($tmp_name_array);
-echo 'tmp_name_array';
-echo $_FILES['files']['name'][0];
+
 
 // We define the static final name for uploaded files (in the loop we will add an number to the end)
 $static_final_name = "name";
@@ -21,6 +20,8 @@ for($i = 0; $i < $count_tmp_name_array; $i++){
      // Get extension of current file
      // $extension = pathinfo($name_array[$i] , PATHINFO_EXTENSION);
   $name_array[$i] = str_replace(" ","_",$name_array[$i]);
+  echo 'tmp_name_array';
+  echo $_FILES['files']['name'][0];
 
      // Pay attention to $static_final_name 
      // if(move_uploaded_file($tmp_name_array[$i], "uploads/".$static_final_name.$i.".".$extension)){
