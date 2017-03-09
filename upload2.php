@@ -114,10 +114,10 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
         echo 'no error2 ';
 
         $filename = str_replace(" ", "-", $_FILES['files']['name'][$f]);
-        $res = copy($_FILES['files']['tmp_name'][$f], $path.$filename);
+        // $res = copy($_FILES['files']['tmp_name'][$f], $path.$filename);
 
         // JUST CREATE AN IMAGE FOR EACH
-        // if(move_uploaded_file($_FILES["files"]["tmp_name"][$f], $path.$name));
+        if(move_uploaded_file($_FILES["files"]["tmp_name"][$f], $path.$filename));
 
         //All smaller files to be resized
         if(is_uploaded_file($_FILES["files"]["tmp_name"][$f])) {
@@ -126,7 +126,8 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
           // $name = str_replace(" ", "_", $name);
           echo $path.$name;
 
-					resizeImage($_FILES["files"]["tmp_name"][$f], $res, 1200, 1200);
+					// resizeImage($_FILES["files"]["tmp_name"][$f], $path.$name, 1200, 1200);
+          resizeImage($path.$filename, $path.$name, 1200, 1200);
 					// resize_image('max',$_FILES["files"]["tmp_name"][$f],$path.$name.'.jpg',1200,1200);
 
           echo 'post-resize ';
