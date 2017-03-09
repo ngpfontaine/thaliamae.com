@@ -19,9 +19,16 @@ $static_final_name = "name";
 for($i = 0; $i < $count_tmp_name_array; $i++){
      // Get extension of current file
      // $extension = pathinfo($name_array[$i] , PATHINFO_EXTENSION);
-  $_FILES['files']['name'][$i] = str_replace(" ","_",$name_array[$i]);
+  $name_array[$i] = str_replace(" ","_",$name_array[$i]);
   echo 'tmp_name_array';
-  echo $_FILES['files']['name'][i];
+  echo $name_array[0];
+
+     // Pay attention to $static_final_name 
+     // if(move_uploaded_file($tmp_name_array[$i], "uploads/".$static_final_name.$i.".".$extension)){
+          // echo $name_array[$i]." upload is complete<br>";
+     // } else {
+          // echo "move_uploaded_file function failed for ".$name_array[$i]."<br>";
+     // }
 
 }
 
