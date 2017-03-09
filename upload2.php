@@ -16,12 +16,14 @@ $count_tmp_name_array = count($tmp_name_array);
 // We define the static final name for uploaded files (in the loop we will add an number to the end)
 $static_final_name = "name";
 
-// for($i = 0; $i < $count_tmp_name_array; $i++){
-  // $extension = pathinfo($name_array[$i] , PATHINFO_EXTENSION);
-  // $_FILES['files']['name'][$i] = str_replace(" ","_",$name_array[$i]);
-  // echo 'tmp_name_array';
-  // echo $_FILES['files']['name'][i];
-// }
+for($i = 0; $i < $count_tmp_name_array; $i++){
+     // Get extension of current file
+     // $extension = pathinfo($name_array[$i] , PATHINFO_EXTENSION);
+  $_FILES['files']['name'][$i] = str_replace(" ","_",$name_array[$i]);
+  echo 'tmp_name_array';
+  echo $_FILES['files']['name'][i];
+
+}
 
 /**
  * Resize image - preserve ratio of width and height.
@@ -85,7 +87,7 @@ function resizeImage($sourceImage, $targetImage, $maxWidth, $maxHeight, $quality
 if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 // Loop $_FILES to execute all files
 
-  foreach ($_FILES['files']['name'] as str_replace(" ","_",$f) => $name) {     
+  foreach ($_FILES['files']['name'] as $f => $name) {     
     echo 'foreach ';
     if ($_FILES['files']['error'][$f] != 0) {
       echo 'error found';
