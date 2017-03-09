@@ -86,7 +86,7 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
   
 
   $filesTrimmed = array_map('trim',$_FILES['files']['name']);
-  echo $filesTrimmed;
+  print_r($filesTrimmed);
 
   // Loop $_FILES to execute all files
   // foreach ($_FILES['files']['name'] as $f => $name) {     
