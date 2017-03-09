@@ -68,7 +68,7 @@ function resizeImage($sourceImage, $targetImage, $maxWidth, $maxHeight, $quality
 	$newImage = imagecreatetruecolor($newWidth, $newHeight);
 	echo 'post true color ';
 
-  $image  = str_replace(' ','_',$image);
+  // $image  = str_replace(' ','_',$image);
 
 	imagecopyresampled($newImage, $image, 0, 0, 0, 0, $newWidth, $newHeight, $origWidth, $origHeight);
 	echo 'post resampled ';
@@ -108,12 +108,11 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 
         $filename = str_replace(" ", "_", $_FILES['files']['tmp_name'][$f]);
 
+        // JUST CREATE AN IMAGE FOR EACH
         // if(move_uploaded_file($_FILES["files"]["tmp_name"][$f], $path.$name));
 
-        //All smaller files to be compressed.
+        //All smaller files to be resized
         if(is_uploaded_file($_FILES["files"]["tmp_name"][$f])) {
-          //Add a '.jpg' to the name because I'm lazy.
-          // compress_image($_FILES["files"]["tmp_name"][$f], $path.basename($name).'.jpg', 90);
           echo 'pre-resize ';
 
           $name = str_replace(" ", "_", $name);
