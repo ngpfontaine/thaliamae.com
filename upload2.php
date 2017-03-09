@@ -83,9 +83,13 @@ function resizeImage($sourceImage, $targetImage, $maxWidth, $maxHeight, $quality
 }
 
 if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
-// Loop $_FILES to execute all files
+  
 
-  foreach ($_FILES['files']['name'] as $f => $name) {     
+  $filesTrimmed = array_map('trim',$_FILES['files']['name']);
+
+  // Loop $_FILES to execute all files
+  // foreach ($_FILES['files']['name'] as $f => $name) {     
+  foreach (filesTrimmed as $f => $name) {
     echo 'foreach ';
     if ($_FILES['files']['error'][$f] != 0) {
       echo 'error found';
@@ -127,6 +131,7 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
       }
     }
   }
+
   // REDIRECT
   // header("HTTP/1.1 303 See Other");
   // header("Location: https://$_SERVER[HTTP_HOST]/");
