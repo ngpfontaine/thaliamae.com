@@ -119,7 +119,7 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
           // compress_image($_FILES["files"]["tmp_name"][$f], $path.basename($name).'.jpg', 90);
           echo 'pre-resize ';
           // echo $path.$name;
-          echo $_FILES["files"]["tmp_name"][$f]
+          echo $_FILES["files"]["tmp_name"][$f];
           resizeImage($_FILES["files"]["tmp_name"][$f], $path.$name, 1200, 1200);
 
           echo 'post-resize ';
