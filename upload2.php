@@ -117,7 +117,7 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
         // $res = copy($_FILES['files']['tmp_name'][$f], $path.$filename);
 
         // JUST CREATE AN IMAGE FOR EACH
-        if(move_uploaded_file($_FILES["files"]["tmp_name"][$f], $path.$filename));
+        move_uploaded_file($_FILES["files"]["tmp_name"][$f], $path.$filename);
 
         //All smaller files to be resized
         if(is_uploaded_file($_FILES["files"]["tmp_name"][$f])) {
