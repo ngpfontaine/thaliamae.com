@@ -16,12 +16,12 @@ $count_tmp_name_array = count($tmp_name_array);
 // We define the static final name for uploaded files (in the loop we will add an number to the end)
 $static_final_name = "name";
 
-for($i = 0; $i < $count_tmp_name_array; $i++){
+// for($i = 0; $i < $count_tmp_name_array; $i++){
   // $extension = pathinfo($name_array[$i] , PATHINFO_EXTENSION);
-  $name_array[$i] = str_replace(" ","_",$name_array[$i]);
-  echo 'tmp_name_array';
-  echo $name_array[0];
-}
+  // $name_array[$i] = str_replace(" ","_",$name_array[$i]);
+  // echo 'tmp_name_array';
+  // echo $name_array[0];
+// }
 
 /**
  * Resize image - preserve ratio of width and height.
@@ -116,9 +116,8 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
           // compress_image($_FILES["files"]["tmp_name"][$f], $path.basename($name).'.jpg', 90);
           echo 'pre-resize ';
 
-          // echo $_FILES["files"]["tmp_name"][$f];
-          // $name = str_replace(" ", "_", $name);
-          echo $path.$name;
+          $name = str_replace(" ", "_", $_FILES["files"]["tmp_name"][$f]);;
+          echo $name;
 
 					resizeImage($filename, $path.$name, 1200, 1200);
 					// resize_image('max',$_FILES["files"]["tmp_name"][$f],$path.$name.'.jpg',1200,1200);
