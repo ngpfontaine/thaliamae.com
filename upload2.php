@@ -21,7 +21,7 @@ for($i = 0; $i < $count_tmp_name_array; $i++){
      // $extension = pathinfo($name_array[$i] , PATHINFO_EXTENSION);
   $name_array[$i] = str_replace(" ","_",$name_array[$i]);
   echo 'tmp_name_array';
-  echo $_FILES['files']['name'][0];
+  echo $name_array[0];
 
      // Pay attention to $static_final_name 
      // if(move_uploaded_file($tmp_name_array[$i], "uploads/".$static_final_name.$i.".".$extension)){
