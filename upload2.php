@@ -42,10 +42,10 @@ function compress_image($source_url, $destination_url, $quality) {
 function resizeImage($sourceImage, $targetImage, $maxWidth, $maxHeight, $quality = 80) {
   echo 'resizeImage() ';
   // Obtain image from given source file.
-//	if (!$image = @imagecreatefromjpeg($sourceImage)) {
-//		echo 'false';
-//    return false;
-//  }
+	if (!$image = @imagecreatefromjpeg($sourceImage)) {
+		echo 'false';
+    return false;
+  }
 	echo 'pre list ';
   // Get dimensions of source image.
   list($origWidth, $origHeight) = getimagesize($sourceImage);
@@ -93,14 +93,15 @@ function resize_image($method,$image_loc,$new_loc,$width,$height) {
   else {
     if ((substr(strtolower($image_loc),0,7) == 'http://') || (substr(strtolower($image_loc),0,7) == 'https://')) { /*don't check to see if file exists since it's not local*/ }
     elseif (!file_exists($image_loc)) { $GLOBALS['errors'][] = 'Image source file does not exist.'; }
-    $extension = strtolower(substr($image_loc,strrpos($image_loc,'.')));
-    if (!in_array($extension,array('.jpg','.jpeg','.png','.gif','.bmp'))) { $GLOBALS['errors'][] = 'Invalid source file extension!'; }
+		$extension = strtolower(substr($image_loc,strrpos($image_loc,'.')));
+		echo $image_loc;
+    if (!in_array($extension,array('.jpg','.JPG','.JPEG','.jpeg','.png','.gif','.bmp'))) { $GLOBALS['errors'][] = 'Invalid source file extension!'; }
   }
   
   if (!$new_loc) { $GLOBALS['errors'][] = 'No destination image location specified.'; }
   else {
     $new_extension = strtolower(substr($new_loc,strrpos($new_loc,'.')));
-    if (!in_array($new_extension,array('.jpg','.jpeg','.png','.gif','.bmp'))) { $GLOBALS['errors'][] = 'Invalid destination file extension!'; }
+    if (!in_array($new_extension,array('.jpg','.JPG','.JPEG','.jpeg','.png','.gif','.bmp'))) { $GLOBALS['errors'][] = 'Invalid destination file extension!'; }
   }
 
   $width = abs(intval($width));
@@ -187,18 +188,18 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
           echo 'pre-resize ';
           // echo $path.$name;
           echo $_FILES["files"]["tmp_name"][$f];
-					// resizeImage($_FILES["files"]["tmp_name"][$f], $path.$name, 1200, 1200);
-					resize_image('max',$_FILES["files"]["tmp_name"][$f],$path.$name,1200,1200);
+					resizeImage($_FILES["files"]["tmp_name"][$f], $path.$name, 1200, 1200);
+					// resize_image('max',$_FILES["files"]["tmp_name"][$f],$path.$name.'.jpg',1200,1200);
 
           echo 'post-resize ';
           $count ++; // Number of successfully uploaded files
-          // REDIRECT
         }
       }
     }
   }
-  // header("HTTP/1.1 303 See Other");
-  // header("Location: https://$_SERVER[HTTP_HOST]/");
+  // REDIRECT
+  header("HTTP/1.1 303 See Other");
+  header("Location: https://$_SERVER[HTTP_HOST]/");
 }
 
 ?>
