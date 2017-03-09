@@ -103,7 +103,7 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
           // $name = str_replace(" ", "_", $name);
           echo $name;
 
-					resizeImage($filename, $path.$name.str_replace(" ","_",$name), 1200, 1200);
+					resizeImage($filename, $path.str_replace(" ","_",$name), 1200, 1200);
 					// resize_image('max',$_FILES["files"]["tmp_name"][$f],$path.$name.'.jpg',1200,1200);
 
           echo 'post-resize ';
@@ -113,8 +113,8 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
     }
   }
   // REDIRECT
-  // header("HTTP/1.1 303 See Other");
-  // header("Location: https://$_SERVER[HTTP_HOST]/");
+  header("HTTP/1.1 303 See Other");
+  header("Location: https://$_SERVER[HTTP_HOST]/");
 }
 
 ?>
