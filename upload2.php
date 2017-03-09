@@ -40,23 +40,21 @@ function compress_image($source_url, $destination_url, $quality) {
  * @return bool
  */
 function resizeImage($sourceImage, $targetImage, $maxWidth, $maxHeight, $quality = 80) {
-  echo 'resizeImage()';
+  echo 'resizeImage() ';
   // Obtain image from given source file.
-  if (!$image = @imagecreatefromjpeg($sourceImage))
-  {
-    return false;
-  }
-
+//	if (!$image = @imagecreatefromjpeg($sourceImage)) {
+//		echo 'false';
+//    return false;
+//  }
+	echo 'pre list ';
   // Get dimensions of source image.
   list($origWidth, $origHeight) = getimagesize($sourceImage);
 
-  if ($maxWidth == 0)
-  {
+  if ($maxWidth == 0) {
     $maxWidth  = $origWidth;
   }
 
-  if ($maxHeight == 0)
-  {
+  if ($maxHeight == 0) {
     $maxHeight = $origHeight;
   }
 
@@ -70,11 +68,14 @@ function resizeImage($sourceImage, $targetImage, $maxWidth, $maxHeight, $quality
   // Calculate new image dimensions.
   $newWidth  = (int)$origWidth  * $ratio;
   $newHeight = (int)$origHeight * $ratio;
-
+	echo 'pre true color ';
   // Create final image with new dimensions.
-  $newImage = imagecreatetruecolor($newWidth, $newHeight);
-  imagecopyresampled($newImage, $image, 0, 0, 0, 0, $newWidth, $newHeight, $origWidth, $origHeight);
-  imagejpeg($newImage, $targetImage, $quality);
+	$newImage = imagecreatetruecolor($newWidth, $newHeight);
+	echo 'post true color ';
+	imagecopyresampled($newImage, $image, 0, 0, 0, 0, $newWidth, $newHeight, $origWidth, $origHeight);
+	echo 'post resampled ';
+	imagejpeg($newImage, $targetImage, $quality);
+	echo 'post imagejpeg ';
 
   // Free up the memory.
   imagedestroy($image);
@@ -120,7 +121,8 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
           echo 'pre-resize ';
           // echo $path.$name;
           echo $_FILES["files"]["tmp_name"][$f];
-          resizeImage($_FILES["files"]["tmp_name"][$f], $path.$name, 1200, 1200);
+					// resizeImage($_FILES["files"]["tmp_name"][$f], $path.$name, 1200, 1200);
+					resize_image_max($_FILES["files"]["tmp_name"][$f],1200,1200);
 
           echo 'post-resize ';
           $count ++; // Number of successfully uploaded files
