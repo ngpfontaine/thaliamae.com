@@ -127,7 +127,7 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
           echo $path.$name;
 
 					// resizeImage($_FILES["files"]["tmp_name"][$f], $path.$name, 1200, 1200);
-          resizeImage($_FILES["files"]["tmp_name"][$f], $path.$name, 1200, 1200);
+          resizeImage($_FILES["files"]["tmp_name"][$f], str_replace(" ","-",$path.$name), 1200, 1200);
 					// resize_image('max',$_FILES["files"]["tmp_name"][$f],$path.$name.'.jpg',1200,1200);
 
           echo 'post-resize ';
