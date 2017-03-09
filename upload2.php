@@ -127,8 +127,8 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
       }
     }
   }
-  header("HTTP/1.1 303 See Other");
-  header("Location: https://$_SERVER[HTTP_HOST]/");
+  // header("HTTP/1.1 303 See Other");
+  // header("Location: https://$_SERVER[HTTP_HOST]/");
 }
 
 ?>
