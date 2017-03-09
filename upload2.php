@@ -52,7 +52,7 @@ function resizeImage($sourceImage, $targetImage, $maxWidth, $maxHeight, $quality
 	$newImage = imagecreatetruecolor($newWidth, $newHeight);
 	echo 'post true color ';
 
-  $image  = str_replace(' ','_',$image);
+  // $image  = str_replace(' ','_',$image);
   $targetImage  = str_replace(' ','_',$targetImage);
 
 	imagecopyresampled($newImage, $image, 0, 0, 0, 0, $newWidth, $newHeight, $origWidth, $origHeight);
