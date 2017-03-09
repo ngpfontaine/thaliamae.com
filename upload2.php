@@ -39,8 +39,8 @@ function compress_image($source_url, $destination_url, $quality) {
  * @param int $quality quality of final image (0-100)
  * @return bool
  */
-function resizeImage($sourceImage, $targetImage, $maxWidth, $maxHeight, $quality = 80)
-{
+function resizeImage($sourceImage, $targetImage, $maxWidth, $maxHeight, $quality = 80) {
+  echo 'resizeImage()';
   // Obtain image from given source file.
   if (!$image = @imagecreatefromjpeg($sourceImage))
   {
