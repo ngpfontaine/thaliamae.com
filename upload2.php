@@ -75,7 +75,7 @@ function resizeImage($sourceImage, $targetImage, $maxWidth, $maxHeight, $quality
 	imagejpeg($newImage, $targetImage, $quality);
 	echo 'post imagejpeg ';
 
-  // Free up the memory.
+  // FREE UP MEMORY
   imagedestroy($image);
   imagedestroy($newImage);
 
@@ -85,10 +85,11 @@ function resizeImage($sourceImage, $targetImage, $maxWidth, $maxHeight, $quality
 if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
   
   // TRIM SPACES INTO FILES ARRAY
+  // (NOTE) THIS SOLVES FOR RESIZING FILES W/ SPACES IN NAME,
+  // BUT DOESN'T REMOVE SPACES FROM DESTINATION FILE NAME
   $filesTrimmed = array_map('trim',$_FILES['files']['name']);
-  // print_r($filesTrimmed);
 
-  // Loop $_FILES to execute all files
+  // LOOP $_FILES TO EXECUTE ALL FILES
   // foreach ($_FILES['files']['name'] as $f => $name) {     
   foreach ($filesTrimmed as $f => $name) {
     echo 'foreach ';
