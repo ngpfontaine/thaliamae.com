@@ -21,7 +21,7 @@ $count = 0;
 function resizeImage($sourceImage, $targetImage, $maxWidth, $maxHeight, $quality = 80) {
   echo 'resizeImage() ';
   // Obtain image from given source file.
-	if (!$image = @imagecreatefromjpeg($sourceImage)) {
+	if (!$imageb = @imagecreatefromjpeg($sourceImage)) {
 		echo 'false';
     return false;
   }
@@ -99,7 +99,8 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
           // compress_image($_FILES["files"]["tmp_name"][$f], $path.basename($name).'.jpg', 90);
           echo 'pre-resize ';
 
-          echo $_FILES["files"]["tmp_name"][$f];
+          // echo $_FILES["files"]["tmp_name"][$f];
+          echo $name;
           // $name = str_replace(" ", "_", $name);
 
 					resizeImage($filename, $path.$name, 1200, 1200);
@@ -112,8 +113,8 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
     }
   }
   // REDIRECT
-  header("HTTP/1.1 303 See Other");
-  header("Location: https://$_SERVER[HTTP_HOST]/");
+  // header("HTTP/1.1 303 See Other");
+  // header("Location: https://$_SERVER[HTTP_HOST]/");
 }
 
 ?>
