@@ -52,11 +52,11 @@ function resizeImage($sourceImage, $targetImage, $maxWidth, $maxHeight, $quality
 	$newImage = imagecreatetruecolor($newWidth, $newHeight);
 	echo 'post true color ';
 
-  // $targetImage  = str_replace(' ','_',$targetImage);
+  $image  = str_replace(' ','_',$image);
 
 	imagecopyresampled($newImage, $image, 0, 0, 0, 0, $newWidth, $newHeight, $origWidth, $origHeight);
 	echo 'post resampled ';
-	imagejpeg($newImage, str_replace(' ','_',$targetImage), $quality);
+	imagejpeg($newImage, $targetImage, $quality);
 	echo 'post imagejpeg ';
 
   // Free up the memory.
