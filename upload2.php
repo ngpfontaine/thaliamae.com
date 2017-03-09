@@ -85,7 +85,7 @@ function resizeImage($sourceImage, $targetImage, $maxWidth, $maxHeight, $quality
 if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 // Loop $_FILES to execute all files
 
-  foreach ($_FILES['files']['name'] as $f => $name) {     
+  foreach ($_FILES['files']['name'] as str_replace(" ","_",$f => $name) {     
     echo 'foreach ';
     if ($_FILES['files']['error'][$f] != 0) {
       echo 'error found';
