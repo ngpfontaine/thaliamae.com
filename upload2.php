@@ -84,9 +84,9 @@ function resizeImage($sourceImage, $targetImage, $maxWidth, $maxHeight, $quality
 
 if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
   
-
+  // TRIM SPACES INTO FILES ARRAY
   $filesTrimmed = array_map('trim',$_FILES['files']['name']);
-  print_r($filesTrimmed);
+  // print_r($filesTrimmed);
 
   // Loop $_FILES to execute all files
   // foreach ($_FILES['files']['name'] as $f => $name) {     
@@ -134,8 +134,8 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
   }
 
   // REDIRECT
-  // header("HTTP/1.1 303 See Other");
-  // header("Location: https://$_SERVER[HTTP_HOST]/");
+  header("HTTP/1.1 303 See Other");
+  header("Location: https://$_SERVER[HTTP_HOST]/");
 }
 
 ?>
