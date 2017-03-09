@@ -7,29 +7,6 @@ $max_file_size = 1500000; //300 kb
 $path = "./img/upload/"; // Upload directory
 $count = 0;
 
-// Compress the image files
-function compress_image($source_url, $destination_url, $quality) {
-  echo $destination_url . ' ';
-  $info = getimagesize($source_url);
-
-  if ($info['mime'] == 'image/jpeg') {
-    echo 'image is a jpeg ';
-    $image = imagecreatefromjpeg($source_url);
-  }
-  elseif ($info['mime'] == 'image/gif') {
-    $image = imagecreatefromgif($source_url);
-  }
-  elseif ($info['mime'] == 'image/png') {
-    $image = imagecreatefrompng($source_url);
-  }
-  echo 'foo ';
-  // save file
-  imagejpeg($image, $destination_url, $quality);
-  echo 'bar ';
-  // return destination file
-  return $destination_url;
-}
-
 /**
  * Resize image - preserve ratio of width and height.
  * @param string $sourceImage path to source JPEG image
@@ -38,7 +15,9 @@ function compress_image($source_url, $destination_url, $quality) {
  * @param int $maxHeight maximum height of final image (value 0 - height is optional)
  * @param int $quality quality of final image (0-100)
  * @return bool
- */
+ * Example:
+ * resizeImage('image.jpg', 'resized.jpg', 200, 200);
+*/
 function resizeImage($sourceImage, $targetImage, $maxWidth, $maxHeight, $quality = 80) {
   echo 'resizeImage() ';
   // Obtain image from given source file.
@@ -72,6 +51,10 @@ function resizeImage($sourceImage, $targetImage, $maxWidth, $maxHeight, $quality
   // Create final image with new dimensions.
 	$newImage = imagecreatetruecolor($newWidth, $newHeight);
 	echo 'post true color ';
+
+  $image  = str_replace(' ','_',$image);
+  $targetImage  = str_replace(' ','_',$targetImage);
+
 	imagecopyresampled($newImage, $image, 0, 0, 0, 0, $newWidth, $newHeight, $origWidth, $origHeight);
 	echo 'post resampled ';
 	imagejpeg($newImage, $targetImage, $quality);
@@ -83,11 +66,6 @@ function resizeImage($sourceImage, $targetImage, $maxWidth, $maxHeight, $quality
 
   return true;
 }
-
-/**
- * Example
- * resizeImage('image.jpg', 'resized.jpg', 200, 200);
-*/
 
 if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 // Loop $_FILES to execute all files
@@ -119,7 +97,7 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
           //Add a '.jpg' to the name because I'm lazy.
           // compress_image($_FILES["files"]["tmp_name"][$f], $path.basename($name).'.jpg', 90);
           echo 'pre-resize ';
-          
+
           echo $_FILES["files"]["tmp_name"][$f];
 					resizeImage($_FILES["files"]["tmp_name"][$f], $path.$name, 1200, 1200);
 					// resize_image('max',$_FILES["files"]["tmp_name"][$f],$path.$name.'.jpg',1200,1200);

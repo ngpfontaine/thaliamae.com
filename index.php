@@ -184,7 +184,7 @@
 		<div class='modal-bg-blur'></div>
 		<div class='modal-inner'>
 			<p>
-				Please compress and/or resize images before uploading to prevent excess data useage and keep load time down. Thanks!
+				Please compress images before uploading to prevent excess data useage and keep load time down. Thanks!
 			</p>
 			<p>
 				<a href='https://tinypng.com' target='_blank'>tinypng</a><span class='text-aside'>(best compression, use if file size is under 5MB)</span><br>
