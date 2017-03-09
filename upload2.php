@@ -88,7 +88,7 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
   // (NOTE) THIS SOLVES FOR RESIZING FILES W/ SPACES IN NAME,
   // BUT DOESN'T REMOVE SPACES FROM DESTINATION FILE NAME
   // $filesTrimmed = array_map('trim',basename($_FILES['files']['name']);
-  $filesTrimmed = array_map(function($el) { return str_replace(' ','-',$el); }, $_FILES['files']['name'];
+  // $filesTrimmed = array_map(function($el) { return str_replace(' ','-',$el); }, $_FILES['files']['name'];
 
   // LOOP $_FILES TO EXECUTE ALL FILES
   // foreach ($_FILES['files']['name'] as $f => $name) {     
@@ -113,7 +113,7 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
       else { // No error found! Move uploaded files 
         echo 'no error2 ';
 
-        $filename = str_replace(" ", "-", $_FILES['files']['tmp_name'][$f]);
+        $filename = str_replace(" ", "-", $_FILES['files']['name'][$f]);
 
         // JUST CREATE AN IMAGE FOR EACH
         // if(move_uploaded_file($_FILES["files"]["tmp_name"][$f], $path.$name));
