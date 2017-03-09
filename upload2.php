@@ -84,8 +84,6 @@ function resizeImage($sourceImage, $targetImage, $maxWidth, $maxHeight, $quality
   return true;
 }
 
-<?php
-
 function resize_image($method,$image_loc,$new_loc,$width,$height) {
   if (!is_array(@$GLOBALS['errors'])) { $GLOBALS['errors'] = array(); }
   
@@ -145,6 +143,11 @@ function resize_image($method,$image_loc,$new_loc,$width,$height) {
   imagedestroy($new_image);
   
   return true;
+}
+
+function echo_errors() {
+  if (!is_array(@$GLOBALS['errors'])) { $GLOBALS['errors'] = array('Unknown error!'); }
+  foreach ($GLOBALS['errors'] as $error) { echo '<p style="color:red;font-weight:bold;">Error: '.$error.'</p>'; }
 }
 
 /**
