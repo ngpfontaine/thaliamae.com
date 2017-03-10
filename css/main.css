@@ -621,7 +621,7 @@ form #ul-i-btn i.fa {
 	margin-left: 12px;
 }
 
-form #ul-i-btn i.loader-spin {
+form #ul-i-btn i.fa.loader-spin {
 	top: auto;
 }
 
