@@ -20,18 +20,20 @@ window.onload = function() {
 
 // LOOP THROUGH LOADING IMAGES
 var figsLoad = function figsLoad() {
+  if (figsLen > 0) {
 
-  imgTimeout = setTimeout(function() {
+    imgTimeout = setTimeout(function() {
 
-    figs[i].classList.add('show');
-    i++;
-    // REPEAT
-    if (i < figsLen) {
-      figsLoad();
-    }
+      figs[i].classList.add('show');
+      i++;
+      // REPEAT
+      if (i < figsLen) {
+        figsLoad();
+      }
 
-  },170);
+    },170);
 
+  }
 };
 
 // 
