@@ -77,8 +77,8 @@
 		if (($total % $per_page) > 0) {
 			$last_page += 1;
 		}
-		if (isset($_GET["page"])  && ($_GET["page"] <=$last_page) && ($_GET["page"] > 0) ) {
-	    $page = $_GET["page"];
+		if (isset($_GET["p"])  && ($_GET["p"] <=$last_page) && ($_GET["p"] > 0) ) {
+	    $page = $_GET["p"];
 	    // $offset = ($per_page + 1)*($page - 1);
 	    $offset = ($per_page)*($page - 1);
 	    // INCs ONE TOO MANY TIMES BETWEEN PAGES FOR SOME REASON
@@ -120,10 +120,10 @@
 		function show_pagination($current_page, $last_page){
 	    echo '<div class="container-pagin">';
 		    if( $current_page > 1 ){
-		      echo " <a href='?page=".($current_page-1)."' class='pagin-ctrl show' id='pagin-prev'><i class='fa fa-chevron-left'></i></a> ";
+		      echo " <a href='?p=".($current_page-1)."' class='pagin-ctrl show' id='pagin-prev'><i class='fa fa-chevron-left'></i></a> ";
 		    }
 		    if( $current_page < $last_page ){
-		      echo " <a href='?page=".($current_page+1)."' class='pagin-ctrl show' id='pagin-next'><i class='fa fa-chevron-right'></i></a> ";
+		      echo " <a href='?p=".($current_page+1)."' class='pagin-ctrl show' id='pagin-next'><i class='fa fa-chevron-right'></i></a> ";
 		    }
 	    echo '</div>';
 		}
