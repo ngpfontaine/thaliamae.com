@@ -43,7 +43,7 @@
 	<div class='body-bg-tile'></div>
 
 	<div id='loader'>
-		<i class="fa fa-spinner"></i>
+		<i class="fa fa-spinner loader-spin"></i>
 		<div class='load-msg'>loading cuteness..<span class='dot-blinking'>.</span></div>
 	</div>
 
