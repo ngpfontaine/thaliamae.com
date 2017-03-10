@@ -85,7 +85,7 @@ function resizeImage($sourceImage, $targetImage, $maxWidth, $maxHeight, $quality
   // FREE UP MEMORY
   imagedestroy($image);
   imagedestroy($newImage);
-  imagedestroy($imageProg);
+  // imagedestroy($imageProg);
 
   return true;
 }
@@ -131,10 +131,10 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
         if(is_uploaded_file($_FILES["files"]["tmp_name"][$f])) {
           echo 'pre-resize ';
 
-          // $name = str_replace(" ", "_", $name);
           echo $path.$name;
 
 					// resizeImage($_FILES["files"]["tmp_name"][$f], $path.$name, 1200, 1200);
+
           // REPLACE DESTINATION PATH NAME " " W/ - char
           resizeImage($_FILES["files"]["tmp_name"][$f], str_replace(" ","-",$path.$name), 1200, 1200);
 					// resize_image('max',$_FILES["files"]["tmp_name"][$f],$path.$name.'.jpg',1200,1200);
