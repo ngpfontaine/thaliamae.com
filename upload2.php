@@ -35,13 +35,16 @@ $static_final_name = "name";
  * resizeImage('image.jpg', 'resized.jpg', 200, 200);
 */
 function resizeImage($sourceImage, $targetImage, $maxWidth, $maxHeight, $quality = 80) {
-  echo 'resizeImage() ';
+  echo 'sourceImage ';
+  echo $sourceImage;
+  echo ' targetImage ';
+  echo $targetImage;
   // Obtain image from given source file.
 	if (!$image = @imagecreatefromjpeg($sourceImage)) {
 		echo 'false';
     return false;
   }
-	echo 'pre list ';
+	echo ' pre list ';
   // Get dimensions of source image.
   list($origWidth, $origHeight) = getimagesize($sourceImage);
 
@@ -147,8 +150,8 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
   }
 
   // REDIRECT
-  header("HTTP/1.1 303 See Other");
-  header("Location: https://$_SERVER[HTTP_HOST]/");
+  // header("HTTP/1.1 303 See Other");
+  // header("Location: https://$_SERVER[HTTP_HOST]/");
 }
 
 ?>
