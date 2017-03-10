@@ -205,7 +205,7 @@
 
 </body>
 
-<script async src='./js/main.min.js'></script>
+<script async src='./js/main.js'></script>
 <script async src="./js/lightbox-plus-jquery.min.js"></script>
 
 </html>
