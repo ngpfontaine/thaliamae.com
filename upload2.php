@@ -74,7 +74,7 @@ function resizeImage($sourceImage, $targetImage, $maxWidth, $maxHeight, $quality
 	echo 'post resampled ';
 
   // CREATE PROGRESSIVE IMG INSTANCE
-  $imageProg = imagecreatefromjpeg($newImage);
+  $imageProg = imagecreatefromjpeg($sourceImage);
   imageinterlace($imageProg, true);
   echo 'post progressive';
 
