@@ -72,13 +72,19 @@ function resizeImage($sourceImage, $targetImage, $maxWidth, $maxHeight, $quality
 
 	imagecopyresampled($newImage, $image, 0, 0, 0, 0, $newWidth, $newHeight, $origWidth, $origHeight);
 	echo 'post resampled ';
-  imageinterlace($newImage, true);
-	imagejpeg($newImage, $targetImage, $quality);
+
+  // CREATE PROGRESSIVE IMG INSTANCE
+  $imageProg = imagescreatefromjpeg($newImage);
+  imageinterlace($imageProg, true);
+
+	// imagejpeg($newImage, $targetImage, $quality);
+  imagejpeg($imageProg, $targetImage, $quality);
 	echo 'post imagejpeg ';
 
   // FREE UP MEMORY
   imagedestroy($image);
   imagedestroy($newImage);
+  imagedestroy($imageProg);
 
   return true;
 }
