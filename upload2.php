@@ -72,6 +72,7 @@ function resizeImage($sourceImage, $targetImage, $maxWidth, $maxHeight, $quality
 
 	imagecopyresampled($newImage, $image, 0, 0, 0, 0, $newWidth, $newHeight, $origWidth, $origHeight);
 	echo 'post resampled ';
+  imageinterlace($newImage, true);
 	imagejpeg($newImage, $targetImage, $quality);
 	echo 'post imagejpeg ';
 
