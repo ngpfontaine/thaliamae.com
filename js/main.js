@@ -73,7 +73,7 @@ modalUl.addEventListener(touchEvent, function() {
 // SEND UPLOAD FORM VIA FAKE BTN
 document.getElementById('ul-i-btn').addEventListener(touchEvent, function() {
   this.innerHTML = 'Processing <i class="fa fa-spinner loader-spin"></i>';
-  document.getElementById('form-upload').submit();
+  // document.getElementById('form-upload').submit();
 
 });
 
