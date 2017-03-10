@@ -11,8 +11,9 @@ window.onload = function() {
   
   setTimeout(function() {
     document.getElementById('loader').classList.add('hide');
-
-    figsLoad();
+    if (figsLen > 0) {
+      figsLoad();      
+    }
   },200);
 
 }
