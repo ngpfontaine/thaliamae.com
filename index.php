@@ -8,15 +8,15 @@
 		<meta name='description' content='A damn good pup'>
 		<link rel='canonical' href='https://thaliamae.com'>
 		<link rel='stylesheet' href='./css/main.min.css'>
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lora:400,400i,700|Open+Sans:400,600'>
 		<link href="./css/lightbox.min.css" rel="stylesheet">
 
 		<script>
-		var foo = false;
-		  var cb = function() {
-		  var l01 = document.createElement('link');
-		  l01.rel = 'stylesheet';
-		  l01.href = 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css';
+		  // var cb = function() {
+		  // var l01 = document.createElement('link');
+		  // l01.rel = 'stylesheet';
+		  // l01.href = 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css';
 		  // var l02 = document.createElement('link');
 		  // l02.rel = 'stylesheet';
 		  // l02.href = './css/lightbox.min.css';
@@ -24,15 +24,13 @@
 		  // l03.rel = 'stylesheet';
 		  // l03.href = 'https://fonts.googleapis.com/css?family=Lora:400,400i,700|Open+Sans:400,600';
 
-		  var h = document.getElementsByTagName('head')[0];
-		  // h.parentNode.insertBefore(l, h);
-		  h.appendChild(l01);
-		  // h.appendChild(l03);
-		  };
-		  var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-		  webkitRequestAnimationFrame || msRequestAnimationFrame;
-		  if (raf) raf(cb);
-		  else window.addEventListener('load', cb);
+		  // var h = document.getElementsByTagName('head')[0];
+		  // h.appendChild(l01);
+		  // };
+		  // var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+		  // webkitRequestAnimationFrame || msRequestAnimationFrame;
+		  // if (raf) raf(cb);
+		  // else window.addEventListener('load', cb);
 		</script>
 
 
