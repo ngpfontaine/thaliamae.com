@@ -621,6 +621,10 @@ form #ul-i-btn i.fa {
 	margin-left: 12px;
 }
 
+form #ul-i-btn i.loader-spin {
+	top: auto;
+}
+
 /*******************/
 /*** PAGINATION ***/
 /*******************/
