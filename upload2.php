@@ -93,46 +93,6 @@ function resizeImage($sourceImage, $targetImage, $maxWidth, $maxHeight, $quality
   return true;
 }
 
-function resize($file, $imgpath, $width, $height){
-    /* Get original image x y*/
-    list($w, $h) = getimagesize($file['tmp_name']);
-    /* calculate new image size with ratio */
-    $ratio = max($width/$w, $height/$h);
-    $h = ceil($height / $ratio);
-    $x = ($w - $width / $ratio) / 2;
-    $w = ceil($width / $ratio);
-
-    /* new file name */
-    $path = $imgpath;
-    /* read binary data from image file */
-    $imgString = file_get_contents($file['tmp_name']);
-    /* create image from string */
-    $image = imagecreatefromstring($imgString);
-    $tmp = imagecreatetruecolor($width, $height);
-    imagecopyresampled($tmp, $image, 0, 0, $x, 0, $width, $height, $w, $h);
-    /* Save image */
-    switch ($file['type']) {
-       case 'image/jpeg':
-          imagejpeg($tmp, $path, 100);
-          break;
-       case 'image/png':
-          imagepng($tmp, $path, 0);
-          break;
-       case 'image/gif':
-          imagegif($tmp, $path);
-          break;
-          default:
-          //exit;
-          break;
-        }
-     return $path;
-
-     /* cleanup memory */
-     imagedestroy($image);
-     imagedestroy($tmp);
-}
-
-
 if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
   
   // TRIM SPACES INTO FILES ARRAY
@@ -179,9 +139,7 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 					// resizeImage($_FILES["files"]["tmp_name"][$f], $path.$name, 1200, 1200);
 
           // REPLACE DESTINATION PATH NAME " " W/ - char
-          // resizeImage($_FILES["files"]["tmp_name"][$f], str_replace(" ","-",$path.$name), 1200, 1200);
-          resize($_FILES["files"]["tmp_name"][$f], str_replace(" ","-",$path.$name), 1200, 1200);
-
+          resizeImage($_FILES["files"]["tmp_name"][$f], str_replace(" ","-",$path.$name), 1200, 1200, 80);
 					// resize_image('max',$_FILES["files"]["tmp_name"][$f],$path.$name.'.jpg',1200,1200);
 
           echo 'post-resize ';
