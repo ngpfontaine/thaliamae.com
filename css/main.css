@@ -776,6 +776,9 @@ form #ul-i-btn i.fa.loader-spin {
 
 	aside.show {
 		top: 81px;
+	}
+
+	.aside-inner {
 		width: 90%;
 	}
 
@@ -819,6 +822,9 @@ form #ul-i-btn i.fa.loader-spin {
 
 	aside.show {
 		top: 59px;
+	}
+
+	.aside-inner {
 		width: 100%;
 	}
 
