@@ -93,6 +93,7 @@ document.getElementById('btn-about').addEventListener(touchEvent, function() {
 
 document.getElementById('about-close').addEventListener(touchEvent, function() {
   modalAbout.classList.remove('show');
+  modalAboutOpen = false;
 });
 
 // FILE SELECTOR ENHANCEMENT
