@@ -776,6 +776,7 @@ form #ul-i-btn i.fa.loader-spin {
 
 	aside.show {
 		top: 81px;
+		width: 90%;
 	}
 
 	.pagin-ctrl {
@@ -817,7 +818,8 @@ form #ul-i-btn i.fa.loader-spin {
 	}
 
 	aside.show {
-		top: 78px;
+		top: 59px;
+		width: 100%;
 	}
 
 	header h4 {
