@@ -37,7 +37,7 @@ var figsLoad = function figsLoad(inc) {
       inc++;
       // REPEAT
       if (inc < figsLen) {
-        figsLoad();
+        figsLoad(inc);
       }
 
     },170);
