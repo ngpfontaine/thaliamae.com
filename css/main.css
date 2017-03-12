@@ -101,6 +101,13 @@ p {
 	font-size: 0.8em;
 }
 
+.text-italic {
+	font-style: italic;
+	word-spacing: 4px;
+	color: #ccc;
+	font-size: 0.9em;
+}
+
 a, a:active, a:visited, a:hover {
 	color: #333;
 	font-weight: 700;
@@ -423,9 +430,11 @@ aside {
 	color: #fff;
 	z-index: 2;
 	transform: translateY(100%);
-	transition: transform 0.5s;
+	transition: transform 0.5s, opacity 0.3s;
+	opacity: 0;
 	max-height: 80%;
 	overflow: auto;
+	top: 100%;
 }
 
 .aside-inner {
@@ -441,8 +450,21 @@ aside p {
 	line-height: 1.4;
 }
 
+aside p a, aside p a:active, aside p a:visited, aside p a:hover {
+	color: #ddd;
+}
+
+aside hr {
+	background: rgba(255,255,255,0.1);
+	height: 1px;
+	border: none;
+	margin: 25px 0;
+}
+
 aside.show {
 	transform: translateY(0);
+	opacity: 1;
+	top: initial;
 }
 
 /*************/
@@ -519,18 +541,18 @@ form input[type='file'] {
 
 .input-file + label {
 	font-size: 1em;
-  color: #888;
+  color: #6b6b6b;
   display: inline-block;
   background: #ddd;
-  border: 3px dashed #ccc;
-  padding: 12px 20px;
+  border: 3px dashed #b3b3b3;
+  padding: 22px 30px;
   margin-bottom: 30px;
 }
 
 .input-file:focus + label,
 .input-file + label:hover {
   background: #cfcfcf;
-  border-color: #bbb;
+  border-color: #aaa;
 }
 
 .input-file + label {
@@ -625,6 +647,11 @@ form #ul-i-btn i.fa.loader-spin {
 	top: auto;
 }
 
+form #ul-i-btn.disabled {
+	cursor: not-allowed;
+	display: none;
+}
+
 /*******************/
 /*** PAGINATION ***/
 /*******************/
@@ -676,7 +703,7 @@ form #ul-i-btn i.fa.loader-spin {
 	article {
 		max-width: 100%;
 		padding: 20px;
-		padding-top: 110px;
+		padding-top: 120px;
 		padding-bottom: 100px;
 	}
 
@@ -800,11 +827,24 @@ form #ul-i-btn i.fa.loader-spin {
 	}
 
 	article {
-		padding: 90px 0 100px;
+		padding: 75px 0 100px;
 	}
 
 	figure {
 		padding: 10px 20px;
+	}
+
+	header.scroll {
+		padding-bottom: 5px;
+	}
+
+	nav {
+		padding-bottom: 6px;
+	}
+
+	header.scroll nav {
+		padding-top: 8px;
+		border-bottom: 3px dashed rgba(231, 231, 231, 1);
 	}
 
 	header.scroll .nav-right {
@@ -818,6 +858,7 @@ form #ul-i-btn i.fa.loader-spin {
 
 	header h1 {
 		font-size: 1.8em;
+		line-height: 37px;
 	}
 
 	aside.show {
@@ -836,8 +877,13 @@ form #ul-i-btn i.fa.loader-spin {
 
 @media (max-width: 400px) {
 
+	article {
+		padding-top: 60px;
+	}
+
 	nav {
-		padding: 0 6px;
+		padding: 2px 6px;
+		border-bottom: none;
 	}
 
 	.nav-right {
@@ -849,4 +895,10 @@ form #ul-i-btn i.fa.loader-spin {
 		top: 60px;
 	}
 
+}
+
+@media (max-width: 335px) {
+	#btn-about {
+		display: none;
+	}
 }

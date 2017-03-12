@@ -56,7 +56,7 @@
 				<h4>August 2012 - Feb. 18 2017</h4>
 				<!-- <h4>Heading</h4> -->
 			</div><div class='nav-right clear-fix'>
-				<span id='btn-about' class='link'>ABOUT</span>
+				<span id='btn-about' class='link noselect'>ABOUT</span>
 				<span class='btn' id='btn-upload'>UPLOAD <i class="fa fa-upload"></i></span>
 			</div>
 			<div class='clear-fix'></div>
@@ -140,38 +140,31 @@
 
 	<div class='aside-inner'>
 
-		<h3>Heading</h3>
+		<h3>Sweet, Nervous Little Dingus</h3>
 		
 		<p>
-			Ea quaerat ipsam maiores enim provident. Ut cupiditate iusto ut in dignissimos aliquam et. Doloremque facilis autem quo pariatur molestiae fugiat distinctio perspiciatis.
+			Thalia was dopey, awkward, growled at her own reflection, walked around when she pooped, and hid when people visited. It took her time to come around to a new person, but she was iteratively improving each time. She was skittish on walks in-town, regularly had an upset stomach, and took up too much room in the bed; but we wouldn't have her any other way.
+		</p>
+		<p>
+			She was the best climbing, trail-running, napping, tv-watching, coding, even bathing (one weird time) - partner. We're just thankful we could give the abandoned litter-runt who no one wanted to adopt a warm home, smelly food, and some great memories.
 		</p>
 
-		<p>
-			Odio non et sapiente in nesciunt voluptatem. Quam deserunt quasi est aut sit sed. Ab voluptatem nulla voluptatem voluptate fugit.
-		</p>
+		<hr>
+
+		<h3>Thank You</h3>
 
 		<p>
-			Enim minus cumque ducimus velit ducimus. Ut voluptas rerum voluptate iure modi dignissimos. Aut quos rem nisi sequi minima. Quas eos voluptas mollitia. Sunt rerum et eius rerum nihil sint qui qui. Mollitia expedita nostrum consequatur itaque itaque est accusamus aliquid.
+			During the quick onset of Thalia's condition we made the decision to not get carried away trying to explore every possible option that may or may not produce any diagnostic information while her suffering and time spent scared and alone was extended. We received amazing support from family and friends to help with the medical costs accrued in easing her comfort and gaining enough information to make a decision, and are forever grateful to the following:
 		</p>
 
-		<p>
-			Rerum eaque aliquid fugiat. Porro culpa ducimus velit aut eum voluptates ipsa qui. Incidunt ut et occaecati non velit voluptas facere ex. Modi accusantium cum rem aut in quasi et dolorum. Rerum ullam eum impedit nulla aut rem.
+		<p class='text-italic'>
+			Robin Alexix, Art Bendixen, Briana Buss, Mark Fontaine, Nancy Fontaine, Ryan Fontaine &amp; Erick Ortiz, Jennifer Hoehne, Cecile Parker, Mike &amp; Sarah Powers, Nancy Powers-Kirsch, Frank Rohter, Kim Rohter, Megan Skop, Nathan Skop, Carolyn Stalvey, Haley Stewart Carson, Rachel Tutwiler.
 		</p>
 
-		<p>
-			Laudantium ut quo unde saepe est dolor. Est asperiores quia facilis. Tempore soluta voluptatem ex. Autem delectus voluptas consequuntur distinctio ipsum perspiciatis iure. Repellat impedit voluptates illum quisquam.
-		</p>
+		<hr>
 
 		<p>
-			Enim minus cumque ducimus velit ducimus. Ut voluptas rerum voluptate iure modi dignissimos. Aut quos rem nisi sequi minima. Quas eos voluptas mollitia. Sunt rerum et eius rerum nihil sint qui qui. Mollitia expedita nostrum consequatur itaque itaque est accusamus aliquid.
-		</p>
-
-		<p>
-			Rerum eaque aliquid fugiat. Porro culpa ducimus velit aut eum voluptates ipsa qui. Incidunt ut et occaecati non velit voluptas facere ex. Modi accusantium cum rem aut in quasi et dolorum. Rerum ullam eum impedit nulla aut rem.
-		</p>
-
-		<p>
-			Laudantium ut quo unde saepe est dolor. Est asperiores quia facilis. Tempore soluta voluptatem ex. Autem delectus voluptas consequuntur distinctio ipsum perspiciatis iure. Repellat impedit voluptates illum quisquam.
+			Website <a href='https://github.com/ngpfontaine/thaliamae.com' target="_blank">github repo</a>
 		</p>
 	</div>
 	</aside>
@@ -195,7 +188,7 @@
 					<div id='ul-i-file-text'>Choose file(s)</div>
 				</label>
 
-				<div id='ul-i-btn'>Upload <i class="fa fa-paw"></i></div>
+				<div id='ul-i-btn' class='disabled'>Upload <i class="fa fa-paw"></i></div>
 
 			</form>
 		</div>

@@ -2,7 +2,13 @@ var figs = document.getElementsByTagName('figure');
 var figsLen = figs.length;
 var figCont = document.getElementById('fig-container');
 
-var i = 0;
+// GET PAGE NUMBER PARAMETER
+var paramP = window.location.toString();
+paramP.indexOf('?p=') > -1 ? paramP = paramP.split('?p=')[1] : paramP = '1';
+
+// 
+// ONLOAD
+//
 
 window.onload = function() {
   console.log('js - window.onload');
@@ -12,22 +18,25 @@ window.onload = function() {
   setTimeout(function() {
     document.getElementById('loader').classList.add('hide');
     if (figsLen > 0) {
-      figsLoad();      
+      figsLoad(0);
     }
   },200);
 
 }
 
-// LOOP THROUGH LOADING IMAGES
-var figsLoad = function figsLoad() {
+//
+// LOAD IMAGE FIGURES
+//
+
+var figsLoad = function figsLoad(inc) {
   if (figsLen > 0) {
 
     imgTimeout = setTimeout(function() {
 
-      figs[i].classList.add('show');
-      i++;
+      figs[inc].classList.add('show');
+      inc++;
       // REPEAT
-      if (i < figsLen) {
+      if (inc < figsLen) {
         figsLoad();
       }
 
@@ -97,25 +106,35 @@ document.getElementById('about-close').addEventListener(touchEvent, function() {
 });
 
 // FILE SELECTOR ENHANCEMENT
-var inputs = document.querySelectorAll( '.input-file' );
-Array.prototype.forEach.call( inputs, function( input )
-{
+var inputs = document.querySelectorAll('.input-file');
+Array.prototype.forEach.call(inputs,function(input) {
   var label  = input.nextElementSibling,
     labelVal = label.innerHTML;
 
   input.addEventListener( 'change', function( e )
   {
+    // ENABLE UPLOAD BTN WHEN FILES ADDED
+    if (this.files) {
+      document.getElementById('ul-i-btn').classList.remove('disabled');
+    }
+    else {
+      document.getElementById('ul-i-btn').classList.add('disabled');
+    }
     var fileName = '';
-    if( this.files && this.files.length > 1 )
+    if ( this.files && this.files.length > 1 ) {
       fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
-    else
+    }
+    else {
       fileName = e.target.value.split( '\\' ).pop();
+    }
 
-    if( fileName )
+    if (fileName) {
       label.querySelector( 'div' ).innerHTML = fileName;
+    }
     // label.getElementById('ul-i-file-text').innerHTML = fileName;
-    else
+    else {
       label.innerHTML = labelVal;
+    }
   });
 });
 
@@ -132,30 +151,3 @@ window.onscroll = function() {
     document.getElementsByTagName('header')[0].classList.remove('scroll');
   }
 };
-
-// FADE OUT
-// function fadeOut(el){
-//   el.style.opacity = 1;
-
-//   (function fade() {
-//     if ((el.style.opacity -= .1) < 0) {
-//       el.style.display = "none";
-//     } else {
-//       requestAnimationFrame(fade);
-//     }
-//   })();
-// }
-
-// // FADE IN
-// function fadeIn(el, display){
-//   el.style.opacity = 0;
-//   el.style.display = display || "block";
-
-//   (function fade() {
-//     var val = parseFloat(el.style.opacity);
-//     if (!((val += .1) > 1)) {
-//       el.style.opacity = val;
-//       requestAnimationFrame(fade);
-//     }
-//   })();
-// }

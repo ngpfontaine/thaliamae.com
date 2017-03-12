@@ -1,6 +1,6 @@
 <?php
 //I removed the zip entry as you don't have any code to handle them here.
-$valid_formats = array("jpg", "JPG", "jpeg", "png", "gif");
+$valid_formats = array("jpg", "JPG", "JPEG", "jpeg", "png", "gif");
 //Edit: compress_image doesn't handle bmp files either, though it would
 //easy enough to add with another elseif.
 $max_file_size = 1500000; //300 kb
