@@ -175,10 +175,10 @@ for (var i=0; i<(pagesNo-1); i++) {
 
   // ACTIVE PAGE BY NUMBER
   if ((i+1) == Number(paramP)) {
-    contPagin.getElementsByTagName('i')[i].classList.add('active');
+    contPagin.getElementsByTagName('a')[0].getElementsByTagName('i')[i].classList.add('active');
   }
   // SET LINKS
   else {
-    contPagin.getElementsByTagName('i')[i].setAttribute('href','https://thaliamae.com?p=' + (i+1));
+    contPagin.getElementsByTagName('a')[i].setAttribute('href','https://thaliamae.com?p=' + (i+1));
   }
 } 
