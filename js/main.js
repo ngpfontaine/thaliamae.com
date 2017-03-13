@@ -159,3 +159,19 @@ window.onscroll = function() {
     document.getElementsByTagName('header')[0].classList.remove('scroll');
   }
 };
+
+// 
+// PAGE PAWS
+// 
+
+var contPagin = document.getElementById('container-pagin');
+
+for (var i=0; i<(pagesNo-1); i++) {
+  var itm = document.getElementById("page-paw-source").lastChild;
+  var cln = itm.cloneNode(true);
+  contPagin.appendChild(cln);
+  cln.setAttribute('href','https://thaliamae.com?p=' + (pagesNo-1));
+  if (i == Number(paramP)) {
+    cln.classList.add('active');
+  }
+} 

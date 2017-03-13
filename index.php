@@ -73,6 +73,7 @@
 		$total = count($files);
 		$per_page = 9;
 		$last_page = (int)($total / $per_page);
+		echo '<script>var pagesNo = ' . $last_page . ';</script>';
 		// ADD A PAGE IF ANY ORPHANS
 		if (($total % $per_page) > 0) {
 			$last_page += 1;
@@ -118,7 +119,7 @@
 		show_pagination($page, $last_page);
 
 		function show_pagination($current_page, $last_page){
-	    echo '<div class="container-pagin">';
+	    echo '<div id="container-pagin">';
 		    if( $current_page > 1 ){
 		      echo " <a href='?p=".($current_page-1)."' class='pagin-ctrl show' id='pagin-prev'><i class='fa fa-chevron-left'></i></a> ";
 		    }
@@ -196,6 +197,10 @@
 			</form>
 		</div>
 	</section>
+
+	<div id='page-paw-source'>
+		<i class="fa fa-paw page-paw"></i>		
+	</div>
 
 </body>
 

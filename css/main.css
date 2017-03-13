@@ -695,6 +695,18 @@ form #ul-i-btn.disabled {
 	left: 0;
 }
 
+#page-paw-source {
+	display: none;
+}
+
+#container-pagin i.page-paw {
+	color: rgba(255,255,255,0.2);
+}
+
+#container-pagin i.page-paw.active {
+	color: rgba(255,255,255,0.8);
+}
+
 /*******************/
 /*** MEDIA QUERY ***/
 /*******************/
@@ -724,7 +736,7 @@ form #ul-i-btn.disabled {
 		max-width: 100%;
 	}
 
-	.container-pagin {
+	#container-pagin {
 		position: fixed;
 		bottom: 0;
 		right: 0;
