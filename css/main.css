@@ -701,10 +701,22 @@ form #ul-i-btn.disabled {
 
 #container-pagin i.page-paw {
 	color: rgba(255,255,255,0.2);
+	marginn: 0 20px;
 }
 
 #container-pagin i.page-paw.active {
 	color: rgba(255,255,255,0.8);
+}
+
+#container-pagin-paw {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	text-align: center;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 /*******************/
