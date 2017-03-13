@@ -708,11 +708,11 @@ form #ul-i-btn.disabled {
 	text-align: center;
 	padding: 4px 0;
 	box-sizing: border-box;
-	background: rgba(0,0,0,0.2);
+	background: rgba(0,0,0,0.7);
 }
 
 #container-pagin-paw a, #container-pagin-paw a {
-	color: rgba(255,255,255,0.2);
+	color: rgba(255,255,255,0.3);
 	padding: 0 10px;
 	cursor: pointer;
 	text-decoration: none;
