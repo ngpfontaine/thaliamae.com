@@ -175,7 +175,7 @@ for (var i=0; i<(pagesNo-1); i++) {
 
   // ACTIVE PAGE BY NUMBER
   if ((i+1) == Number(paramP)) {
-    contPagin.getElementsByTagName('a')[0].getElementsByTagName('i')[i].classList.add('active');
+    contPagin.getElementsByTagName('a')[i].getElementsByTagName('i')[0].classList.add('active');
   }
   // SET LINKS
   else {
