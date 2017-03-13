@@ -168,7 +168,7 @@ pagesNo++;
 var contPagin = document.getElementById('container-pagin');
 var contPaginPaw = document.getElementById('container-pagin-paw');
 
-for (var i=0; i<(pagesNo-1); i++) {
+for (var i=0; i<pagesNo; i++) {
   var itm = document.getElementById("page-paw-source").lastChild;
   var cln = itm.cloneNode(true);
   contPaginPaw.appendChild(cln);
