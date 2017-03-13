@@ -296,6 +296,7 @@ nav .btn:hover:after {
 	padding: 6px 12px;
 	right: 0;
 	top: 0;
+	z-index: 5;
 }
 
 .nav-mid {
@@ -871,6 +872,29 @@ form #ul-i-btn.disabled {
 
 	header h4 {
 		display: none;
+	}
+
+	#modal-upload {
+		right: initial;
+		left: initial;
+		bottom: initial;
+		transform: none;
+		position: absolute;
+	}
+
+	.modal-inner {
+		position: relative;
+		top: initial;
+		right: initial;
+		left: initial;
+		bottom: initial;
+		transform: none;
+		border-radius: 0;
+		z-index: 3;
+	}
+
+	#modal-upload.show .modal-inner {
+		transform: none;
 	}
 
 }

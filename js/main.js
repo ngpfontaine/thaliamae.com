@@ -75,6 +75,13 @@ document.getElementById('btn-upload').addEventListener(touchEvent, function() {
 
 });
 
+// UPLOAD CLOSE BTN
+document.getElementById('upload-close').addEventListener(touchEvent, function() {
+  modalUl.classList.remove('show'),
+  modalUlOpen = false;
+  containerBgBlur.classList.remove('active');
+});
+
 // UPLOAD MODAL CLOSE W/ CONTAINER CLICK
 modalUl.addEventListener(touchEvent, function() {
   modalUl.classList.remove('show'),
@@ -100,6 +107,7 @@ document.getElementById('btn-about').addEventListener(touchEvent, function() {
   );
 });
 
+// ABOUT CLOSE BTN
 document.getElementById('about-close').addEventListener(touchEvent, function() {
   modalAbout.classList.remove('show');
   modalAboutOpen = false;

@@ -172,6 +172,9 @@
 	</div>
 
 	<section id='modal-upload'>
+		<div id='upload-close' class='btn-close'>
+			<i class="fa fa-times-circle-o"></i>
+		</div>
 		<div class='modal-bg-blur'></div>
 		<div class='modal-inner'>
 			<p>
