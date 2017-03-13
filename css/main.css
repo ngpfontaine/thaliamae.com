@@ -881,16 +881,6 @@ form #ul-i-btn.disabled {
 		padding-top: 60px;
 	}
 
-	nav {
-		padding: 2px 6px;
-		border-bottom: none;
-	}
-
-	.nav-right {
-		/*top: 21px;*/
-		transform: translateY(11px);
-	}
-
 	aside.show {
 		top: 60px;
 	}
