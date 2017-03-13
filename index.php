@@ -119,14 +119,14 @@
 		show_pagination($page, $last_page);
 
 		function show_pagination($current_page, $last_page){
-	    echo '<div id="container-pagin"><div id="container-pagin-paw">';
+	    echo '<div id="container-pagin"><div id="container-pagin-paw"></div>';
 		    if( $current_page > 1 ){
 		      echo " <a href='?p=".($current_page-1)."' class='pagin-ctrl show' id='pagin-prev'><i class='fa fa-chevron-left'></i></a> ";
 		    }
 		    if( $current_page < $last_page ){
 		      echo " <a href='?p=".($current_page+1)."' class='pagin-ctrl show' id='pagin-next'><i class='fa fa-chevron-right'></i></a> ";
 		    }
-	    echo '</div></div>';
+	    echo '</div>';
 		}
 
 		?>
