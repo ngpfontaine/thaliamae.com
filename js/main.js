@@ -175,7 +175,9 @@ for (var i=0; i<pagesNo; i++) {
 
   // ACTIVE PAGE BY NUMBER
   if ((i+1) == Number(paramP)) {
-    contPagin.getElementsByTagName('a')[i].getElementsByTagName('i')[0].classList.add('active');
+    setTimeout(function() {
+      contPagin.getElementsByTagName('a')[i].getElementsByTagName('i')[0].classList.add('active');      
+    },200);
   }
   // SET LINKS
   else {
