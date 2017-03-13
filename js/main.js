@@ -164,6 +164,7 @@ window.onscroll = function() {
 // PAGE PAWS
 // 
 
+pagesNo++;
 var contPagin = document.getElementById('container-pagin');
 
 for (var i=0; i<(pagesNo-1); i++) {
