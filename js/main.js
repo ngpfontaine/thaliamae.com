@@ -170,7 +170,7 @@ for (var i=0; i<(pagesNo-1); i++) {
   var itm = document.getElementById("page-paw-source").lastChild;
   var cln = itm.cloneNode(true);
   contPagin.appendChild(cln);
-  cln.setAttribute('href','https://thaliamae.com?p=' + (pagesNo-1));
+  contPagin.getElementsByTagName('i')[i].setAttribute('href','https://thaliamae.com?p=' + (pagesNo-1));
   if (i == Number(paramP)) {
     cln.classList.add('active');
   }
