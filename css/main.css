@@ -712,10 +712,14 @@ form #ul-i-btn.disabled {
 }
 
 #container-pagin-paw a, #container-pagin-paw a {
-	color: rgba(255,255,255,0.3);
 	padding: 0 10px;
 	cursor: pointer;
 	text-decoration: none;
+}
+
+#container-pagin-paw i {
+	color: rgba(255,255,255,0.3);
+	transition: color 0.7s;
 }
 
 #container-pagin-paw i.active {
