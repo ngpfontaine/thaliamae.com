@@ -164,8 +164,9 @@
 
 		<hr>
 
+		<h3>Website</h3>
 		<p>
-			Website <a href='https://github.com/ngpfontaine/thaliamae.com' target="_blank">github repo</a>
+			I (Nic) made this site to give myself something productive to do as a distraction, to collect and showcase some memories of our pup, and as a excuse to learn a little php. The site code is available at this <a href='https://github.com/ngpfontaine/thaliamae.com' target="_blank">github repo</a>.
 		</p>
 	</div>
 	</aside>
