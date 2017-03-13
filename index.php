@@ -198,7 +198,7 @@
 		</div>
 	</section>
 
-	<div id='page-paw-source'><a><i class="fa fa-paw page-paw"></i><a></div>
+	<div id='page-paw-source'><a><i class="fa fa-paw page-paw"></i></a></div>
 
 </body>
 
