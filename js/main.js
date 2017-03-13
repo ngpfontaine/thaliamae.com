@@ -172,9 +172,13 @@ for (var i=0; i<(pagesNo-1); i++) {
   var itm = document.getElementById("page-paw-source").lastChild;
   var cln = itm.cloneNode(true);
   contPaginPaw.appendChild(cln);
-  contPagin.getElementsByTagName('i')[i].setAttribute('href','https://thaliamae.com?p=' + (i+1));
-  console.log('running paw pagin loop - ' + i);
+
+  // ACTIVE PAGE BY NUMBER
   if ((i+1) == Number(paramP)) {
     contPagin.getElementsByTagName('i')[i].classList.add('active');
+  }
+  // SET LINKS
+  else {
+    contPagin.getElementsByTagName('i')[i].setAttribute('href','https://thaliamae.com?p=' + (i+1));
   }
 } 
