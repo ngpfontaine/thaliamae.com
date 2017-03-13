@@ -199,7 +199,7 @@
 	</section>
 
 	<div id='page-paw-source'>
-		<i class="fa fa-paw page-paw"></i>		
+		<i class="fa fa-paw page-paw"></i>
 	</div>
 
 </body>
