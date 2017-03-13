@@ -699,6 +699,18 @@ form #ul-i-btn.disabled {
 	display: none;
 }
 
+#container-pagin-paw {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	text-align: center;
+	padding: 4px 0;
+	box-sizing: border-box;
+	background: rgba(0,0,0,0.2);
+}
+
 #container-pagin-paw a, #container-pagin-paw a {
 	color: rgba(255,255,255,0.2);
 	padding: 0 10px;
@@ -708,17 +720,6 @@ form #ul-i-btn.disabled {
 
 #container-pagin-paw i.active {
 	color: rgba(255,255,255,0.8);
-}
-
-#container-pagin-paw {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	margin: 0 auto;
-	text-align: center;
-	top: 50%;
-	transform: translateY(-50%);
 }
 
 /*******************/
@@ -779,6 +780,14 @@ form #ul-i-btn.disabled {
 
 	#pagin-prev {
 		float: left;
+	}
+
+	#container-pagin-paw {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		padding: 0;
+		background: transparent;
 	}
 
 }
