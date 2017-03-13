@@ -146,7 +146,7 @@
 			Thalia was dopey, awkward, growled at her own reflection, walked around when she pooped, hid when people visited, and ate mail sometimes. It took her time to come around to a new person, but she was iteratively improving each time. She was skittish on walks in-town, regularly had an upset stomach, and took up too much room in the bed; but we wouldn't have her any other way.
 		</p>
 		<p>
-			She was the best climbing, trail-running, napping, tv-watching, coding, even bathing (one weird time) - partner. We're just thankful we could give the abandoned litter-runt who no one wanted to adopt a warm home, smelly food, and some great memories.
+			She was the best climbing, trail-running, napping, tv-watching, coding, even bathing (one weird time) - partner. We're just thankful we could give the "abandoned litter-runt who no one wanted to adopt" a warm home, smelly food, and some great memories.
 		</p>
 
 		<hr>
