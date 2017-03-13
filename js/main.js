@@ -166,11 +166,12 @@ window.onscroll = function() {
 
 pagesNo++;
 var contPagin = document.getElementById('container-pagin');
+var contPaginPaw = document.getElementById('container-pagin-paw');
 
 for (var i=0; i<(pagesNo-1); i++) {
   var itm = document.getElementById("page-paw-source").lastChild;
   var cln = itm.cloneNode(true);
-  contPagin.appendChild(cln);
+  contPaginPaw.appendChild(cln);
   // contPagin.getElementsByTagName('i')[i].setAttribute('href','https://thaliamae.com?p=' + (pagesNo-1));
   console.log('running paw pagin loop - ' + i);
   if (i == Number(paramP)) {
