@@ -174,6 +174,6 @@ for (var i=0; i<(pagesNo-1); i++) {
   // contPagin.getElementsByTagName('i')[i].setAttribute('href','https://thaliamae.com?p=' + (pagesNo-1));
   console.log('running paw pagin loop - ' + i);
   if (i == Number(paramP)) {
-    cln.classList.add('active');
+    // cln.classList.add('active');
   }
 } 
