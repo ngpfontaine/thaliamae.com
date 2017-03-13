@@ -699,12 +699,12 @@ form #ul-i-btn.disabled {
 	display: none;
 }
 
-#container-pagin i.page-paw {
+#container-pagin-paw i {
 	color: rgba(255,255,255,0.2);
 	marginn: 0 20px;
 }
 
-#container-pagin i.page-paw.active {
+#container-pagin-paw i.active {
 	color: rgba(255,255,255,0.8);
 }
 
