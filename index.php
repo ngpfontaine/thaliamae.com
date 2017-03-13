@@ -101,7 +101,7 @@
 		// LOG PAGIN INFO
 		echo "<script>console.log('php - processsing page : $page offset: $offset max: $max total: $total last_page: $last_page');</script>";        
 
-		show_pagination($page, $last_page);        
+		// show_pagination($page, $last_page);        
 		for ($i = $offset; $i< $max; $i++) {
 	    $file = $files[$i];
 	    $path_parts = pathinfo($file);
