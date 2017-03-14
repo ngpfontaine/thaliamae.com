@@ -380,7 +380,7 @@ figure {
 	display: block;
 	opacity: 0;
 	will-change: auto;
-	transform: translateY(-10px);
+	transform: translateY(-7px);
 	transition: all 0.8s;
 }
 

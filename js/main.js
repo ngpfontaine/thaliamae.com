@@ -40,7 +40,7 @@ var figsLoad = function figsLoad(inc) {
         figsLoad(inc);
       }
 
-    },170);
+    },140);
 
   }
 };
