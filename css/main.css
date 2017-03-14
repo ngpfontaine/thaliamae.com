@@ -379,11 +379,14 @@ figure {
 	/*display: none;*/
 	display: block;
 	opacity: 0;
+	will-change: auto;
+	transform: translateY(-10px);
 	transition: all 0.8s;
 }
 
 figure.show {
 	opacity: 1;
+	transform: translateY(0);
 	/*display: block;*/
 }
 
