@@ -124,6 +124,8 @@ a, a:active, a:visited, a:hover {
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently
   supported by Chrome and Opera */
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .dot-blinking {
@@ -717,11 +719,15 @@ form #ul-i-btn.disabled {
 	background: rgba(0,0,0,0.7);
 }
 
-#container-pagin-paw a, #container-pagin-paw a {
-	padding: 4px;
-	margin: 0 6px;
+#container-pagin-paw a {
+	padding: 4px 6px;
+	margin: 0 4px;
 	cursor: pointer;
 	text-decoration: none;
+}
+
+#container-pagin-paw a:active {
+	background: rgba(0,0,0,0.3);
 }
 
 #container-pagin-paw i {
@@ -731,10 +737,6 @@ form #ul-i-btn.disabled {
 
 #container-pagin-paw i.active {
 	color: rgba(255,255,255,0.8);
-}
-
-#container-pagin-paw i:active {
-	background: rgba(0,0,0,0.3);
 }
 
 /*******************/
