@@ -690,7 +690,7 @@ form #ul-i-btn.disabled {
 }
 
 .pagin-ctrl.show:active {
-	background: rgba(0,0,0,0.4);
+	background: rgba(0,0,0,0.5);
 }
 
 #pagin-next {
@@ -712,13 +712,14 @@ form #ul-i-btn.disabled {
 	right: 0;
 	margin: 0 auto;
 	text-align: center;
-	padding: 4px 0;
+	padding: 0;
 	box-sizing: border-box;
 	background: rgba(0,0,0,0.7);
 }
 
 #container-pagin-paw a, #container-pagin-paw a {
-	padding: 0 10px;
+	padding: 4px;
+	margin: 0 6px;
 	cursor: pointer;
 	text-decoration: none;
 }
@@ -730,6 +731,10 @@ form #ul-i-btn.disabled {
 
 #container-pagin-paw i.active {
 	color: rgba(255,255,255,0.8);
+}
+
+#container-pagin-paw i:active {
+	background: rgba(0,0,0,0.3);
 }
 
 /*******************/
@@ -778,10 +783,15 @@ form #ul-i-btn.disabled {
 		display: inline-block;
 		background: rgba(0,0,0,0.5);
 		color: rgba(255,255,255,0.8);
+		transition: none;
 	}
 
 	.pagin-ctrl.show {
 		color: rgba(255,255,255,0.8);
+	}
+
+	.pagin-ctrl.show:active {
+		background: rgba(0,0,0,0.7);
 	}
 
 	#pagin-next {
