@@ -936,7 +936,9 @@ form #ul-i-btn.disabled {
 		left: initial;
 		bottom: initial;
 		transform: none;
-		position: absolute;
+		position: fixed;
+		height: 100%;
+		backgroud: #eee;
 	}
 
 	.modal-inner {
