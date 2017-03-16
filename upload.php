@@ -26,6 +26,19 @@ $static_final_name = "name";
   // echo $name_array[0];
 // }
 
+function tin($sourceImg,$targetImg,$maxWidth,$maxHeight) {
+
+  $source = \Tinify\fromFile($sourceImg);
+  $resized = $source->resize(array(
+    "method" => "fit",
+    "width" => $maxWidth,
+    "heigth" => $maxHeight
+  ));
+  $resized->toFile($targetImg);
+
+  return true;
+}
+
 /**
  * Resize image - preserve ratio of width and height.
  * @param string $sourceImage path to source JPEG image
@@ -140,10 +153,13 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
           echo $path.$name;
 
 					// resizeImage($_FILES["files"]["tmp_name"][$f], $path.$name, 1200, 1200);
+          // resize_image('max',$_FILES["files"]["tmp_name"][$f],$path.$name.'.jpg',1200,1200);
 
           // REPLACE DESTINATION PATH NAME " " W/ - char
-          resizeImage($_FILES["files"]["tmp_name"][$f], str_replace(" ","-",$path.$name), 1200, 1200, 80);
-					// resize_image('max',$_FILES["files"]["tmp_name"][$f],$path.$name.'.jpg',1200,1200);
+          // resizeImage($_FILES["files"]["tmp_name"][$f], str_replace(" ","-",$path.$name), 1200, 1200, 80);
+
+          // TINIFY FILE
+          tin($_FILES["files"]["tmp_name"][$f], str_replace(" ","-",$path.$name), 1200, 1200);
 
           echo 'post-resize ';
           $count ++; // Number of successfully uploaded files
@@ -153,8 +169,8 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
   }
 
   // REDIRECT
-  header("HTTP/1.1 303 See Other");
-  header("Location: https://$_SERVER[HTTP_HOST]/");
+  // header("HTTP/1.1 303 See Other");
+  // header("Location: https://$_SERVER[HTTP_HOST]/");
 }
 
 ?>
