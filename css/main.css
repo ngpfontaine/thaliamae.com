@@ -963,6 +963,14 @@ form #ul-i-btn.disabled {
 		transform: none;
 	}
 
+	#container-blur.active {
+		-webkit-filter: none;
+		-ms-filter: none;
+		filter: none;
+		-moz-filter: none;
+		-o-filter: none;
+	}
+
 }
 
 @media (max-width: 400px) {
