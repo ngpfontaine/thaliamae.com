@@ -1,4 +1,5 @@
 <?php
+echo 'pre require';
 require_once("vendor/autoload.php");
 echo 'post require';
 Tinify\setKey("ZrEIGd3xqQWhLG6n1wlPGnOdsvETz4-M");
