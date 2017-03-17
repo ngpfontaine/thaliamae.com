@@ -6,7 +6,7 @@
 $valid_formats = array("jpg", "JPG", "JPEG", "jpeg", "png", "gif");
 //Edit: compress_image doesn't handle bmp files either, though it would
 //easy enough to add with another elseif.
-$max_file_size = 4000000; //300 kb
+$max_file_size = 4500000; //300 kb
 // $max_file_size = 9000000; //300 kb
 $path = "./img/upload/"; // Upload directory
 $count = 0;
@@ -15,17 +15,6 @@ $name_array = $_FILES['files']['name'];
 $tmp_name_array = $_FILES['files']['tmp_name'];
 // Number of files
 $count_tmp_name_array = count($tmp_name_array);
-
-
-// We define the static final name for uploaded files (in the loop we will add an number to the end)
-$static_final_name = "name";
-
-// for($i = 0; $i < $count_tmp_name_array; $i++){
-  // $extension = pathinfo($name_array[$i] , PATHINFO_EXTENSION);
-  // $name_array[$i] = str_replace(" ","_",$name_array[$i]);
-  // echo 'tmp_name_array';
-  // echo $name_array[0];
-// }
 
 // function tin($sourceImg,$targetImg,$maxWidth,$maxHeight) {
 //   echo 'tin()';
