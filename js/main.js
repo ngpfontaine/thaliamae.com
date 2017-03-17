@@ -89,10 +89,14 @@ modalUl.addEventListener(touchEvent, function() {
   containerBgBlur.classList.remove('active');
 });
 
+var sendBtnClicked = false;
 // SEND UPLOAD FORM VIA FAKE BTN
 document.getElementById('ul-i-btn').addEventListener(touchEvent, function() {
   this.innerHTML = 'Processing <i class="fa fa-spinner loader-spin"></i>';
-  document.getElementById('form-upload').submit();
+  if (!sendBtnClicked) {
+    document.getElementById('form-upload').submit();
+    sendBtnClicked = true;    
+  }
 
 });
 
