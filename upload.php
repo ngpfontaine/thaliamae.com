@@ -16,20 +16,20 @@ $tmp_name_array = $_FILES['files']['tmp_name'];
 // Number of files
 $count_tmp_name_array = count($tmp_name_array);
 
-// function tin($sourceImg,$targetImg,$maxWidth,$maxHeight) {
-//   echo 'tin()';
-//   $source = \Tinify\fromFile($sourceImg);
-//   $source->toFile($targetImg);
+function tin($sourceImg,$targetImg,$maxWidth,$maxHeight) {
+  echo 'tin()';
+  $source = \Tinify\fromFile($sourceImg);
+  $source->toFile($targetImg);
 
-//   // $resized = $source->resize(array(
-//   //   "method" => "fit",
-//   //   "width" => $maxWidth,
-//   //   "heigth" => $maxHeight
-//   // ));
-//   // $resized->toFile($targetImg);
+  // $resized = $source->resize(array(
+  //   "method" => "fit",
+  //   "width" => $maxWidth,
+  //   "heigth" => $maxHeight
+  // ));
+  // $resized->toFile($targetImg);
 
-//   return true;
-// }
+  return true;
+}
 
 /**
  * Resize image - preserve ratio of width and height.
@@ -148,10 +148,10 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
           // resize_image('max',$_FILES["files"]["tmp_name"][$f],$path.$name.'.jpg',1200,1200);
 
           // REPLACE DESTINATION PATH NAME " " W/ - char
-          resizeImage($_FILES["files"]["tmp_name"][$f], str_replace(" ","-",$path.$name), 1200, 1200, 80);
+          // resizeImage($_FILES["files"]["tmp_name"][$f], str_replace(" ","-",$path.$name), 1200, 1200, 80);
 
           // TINIFY FILE
-          // tin($_FILES["files"]["tmp_name"][$f], str_replace(" ","-",$path.$name), 1200, 1200);
+          tin($_FILES["files"]["tmp_name"][$f], str_replace(" ","-",$path.$name), 1200, 1200);
 
           echo 'post-resize ';
           $count ++; // Number of successfully uploaded files
