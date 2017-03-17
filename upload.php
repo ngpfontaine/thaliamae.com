@@ -6,8 +6,8 @@ Tinify\setKey("ZrEIGd3xqQWhLG6n1wlPGnOdsvETz4-M");
 $valid_formats = array("jpg", "JPG", "JPEG", "jpeg", "png", "gif");
 //Edit: compress_image doesn't handle bmp files either, though it would
 //easy enough to add with another elseif.
-// $max_file_size = 1500000; //300 kb
-$max_file_size = 9000000; //300 kb
+$max_file_size = 4000000; //300 kb
+// $max_file_size = 9000000; //300 kb
 $path = "./img/upload/"; // Upload directory
 $count = 0;
 
