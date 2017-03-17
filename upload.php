@@ -19,14 +19,14 @@ $count_tmp_name_array = count($tmp_name_array);
 function tin($sourceImg,$targetImg,$maxWidth,$maxHeight) {
   echo 'tin()';
   $source = \Tinify\fromFile($sourceImg);
-  $source->toFile($targetImg);
+  // $source->toFile($targetImg);
 
-  // $resized = $source->resize(array(
-  //   "method" => "fit",
-  //   "width" => $maxWidth,
-  //   "heigth" => $maxHeight
-  // ));
-  // $resized->toFile($targetImg);
+  $resized = $source->resize(array(
+    "method" => "fit",
+    "width" => $maxWidth,
+    "heigth" => $maxHeight
+  ));
+  $resized->toFile($targetImg);
 
   return true;
 }
