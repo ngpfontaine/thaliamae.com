@@ -1,6 +1,6 @@
 <?php
-require_once("/home/nic/vendor/autoload.php");
-Tinify\setKey("ZrEIGd3xqQWhLG6n1wlPGnOdsvETz4-M");
+// require_once("/home/nic/vendor/autoload.php");
+// Tinify\setKey("ZrEIGd3xqQWhLG6n1wlPGnOdsvETz4-M");
 
 //I removed the zip entry as you don't have any code to handle them here.
 $valid_formats = array("jpg", "JPG", "JPEG", "jpeg", "png", "gif");
@@ -159,10 +159,10 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
           // resize_image('max',$_FILES["files"]["tmp_name"][$f],$path.$name.'.jpg',1200,1200);
 
           // REPLACE DESTINATION PATH NAME " " W/ - char
-          // resizeImage($_FILES["files"]["tmp_name"][$f], str_replace(" ","-",$path.$name), 1200, 1200, 80);
+          resizeImage($_FILES["files"]["tmp_name"][$f], str_replace(" ","-",$path.$name), 1200, 1200, 80);
 
           // TINIFY FILE
-          tin($_FILES["files"]["tmp_name"][$f], str_replace(" ","-",$path.$name), 1200, 1200);
+          // tin($_FILES["files"]["tmp_name"][$f], str_replace(" ","-",$path.$name), 1200, 1200);
 
           echo 'post-resize ';
           $count ++; // Number of successfully uploaded files
