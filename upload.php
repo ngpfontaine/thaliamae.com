@@ -27,20 +27,20 @@ $static_final_name = "name";
   // echo $name_array[0];
 // }
 
-function tin($sourceImg,$targetImg,$maxWidth,$maxHeight) {
-  echo 'tin()';
-  $source = \Tinify\fromFile($sourceImg);
-  $source->toFile($targetImg);
+// function tin($sourceImg,$targetImg,$maxWidth,$maxHeight) {
+//   echo 'tin()';
+//   $source = \Tinify\fromFile($sourceImg);
+//   $source->toFile($targetImg);
 
-  // $resized = $source->resize(array(
-  //   "method" => "fit",
-  //   "width" => $maxWidth,
-  //   "heigth" => $maxHeight
-  // ));
-  // $resized->toFile($targetImg);
+//   // $resized = $source->resize(array(
+//   //   "method" => "fit",
+//   //   "width" => $maxWidth,
+//   //   "heigth" => $maxHeight
+//   // ));
+//   // $resized->toFile($targetImg);
 
-  return true;
-}
+//   return true;
+// }
 
 /**
  * Resize image - preserve ratio of width and height.
