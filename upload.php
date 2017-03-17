@@ -1,15 +1,13 @@
 <?php
-echo 'pre require';
 require_once("/home/nic/vendor/autoload.php");
-echo 'post require';
 Tinify\setKey("ZrEIGd3xqQWhLG6n1wlPGnOdsvETz4-M");
-echo 'post setKey';
 
 //I removed the zip entry as you don't have any code to handle them here.
 $valid_formats = array("jpg", "JPG", "JPEG", "jpeg", "png", "gif");
 //Edit: compress_image doesn't handle bmp files either, though it would
 //easy enough to add with another elseif.
-$max_file_size = 1500000; //300 kb
+// $max_file_size = 1500000; //300 kb
+$max_file_size = 9000000; //300 kb
 $path = "./img/upload/"; // Upload directory
 $count = 0;
 
@@ -126,10 +124,10 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
   // foreach ($_FILES['files']['name'] as $f => $name) {     
   foreach ($filesTrimmed as $f => $name) {
     echo 'foreach ';
-    // if ($_FILES['files']['error'][$f] != 0) {
-    //   echo 'error found';
-    //   continue; // Skip file if any error found
-    // }
+    if ($_FILES['files']['error'][$f] != 0) {
+      echo 'error found';
+      continue; // Skip file if any error found
+    }
     if ($_FILES['files']['error'][$f] == 0) {
       echo 'no error ';
       if ($_FILES['files']['size'][$f] > $max_file_size ) {
