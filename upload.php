@@ -30,17 +30,16 @@ $static_final_name = "name";
 // }
 
 function tin($sourceImg,$targetImg,$maxWidth,$maxHeight) {
-  echo $sourceImg;
-  echo ' ';
-  echo $targetImg;
+  echo 'tin()';
   $source = \Tinify\fromFile($sourceImg);
-  $resized = $source->resize(array(
-    "method" => "fit",
-    "width" => $maxWidth,
-    "heigth" => $maxHeight
-  ));
-  echo 'post resized';
-  $resized->toFile($targetImg);
+  $source->toFile($targetImg);
+
+  // $resized = $source->resize(array(
+  //   "method" => "fit",
+  //   "width" => $maxWidth,
+  //   "heigth" => $maxHeight
+  // ));
+  // $resized->toFile($targetImg);
 
   return true;
 }
