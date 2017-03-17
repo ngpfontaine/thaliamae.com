@@ -124,13 +124,13 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
   // $filesTrimmed = array_map(function($el) { return str_replace(' ','-',$el); }, $_FILES['files']['name'];
 
   // LOOP $_FILES TO EXECUTE ALL FILES
-  foreach ($_FILES['files']['name'] as $f => $name) {     
-  // foreach ($filesTrimmed as $f => $name) {
+  // foreach ($_FILES['files']['name'] as $f => $name) {     
+  foreach ($filesTrimmed as $f => $name) {
     echo 'foreach ';
-    if ($_FILES['files']['error'][$f] != 0) {
-      echo 'error found';
-      continue; // Skip file if any error found
-    }
+    // if ($_FILES['files']['error'][$f] != 0) {
+    //   echo 'error found';
+    //   continue; // Skip file if any error found
+    // }
     if ($_FILES['files']['error'][$f] == 0) {
       echo 'no error ';
       if ($_FILES['files']['size'][$f] > $max_file_size ) {
