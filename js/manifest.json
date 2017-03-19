@@ -1,0 +1,26 @@
+{
+  "short_name": "Thalia",
+  "name": "Thalia Mae Powers-Fontaine",
+  // "icons": [
+  //   {
+  //     "src": "images/launcher-icon-48px.png",
+  //     "type": "image/png",
+  //     "sizes": "48x48"
+  //   },
+  //   {
+  //     "src": "images/launcher-icon-96px.png",
+  //     "type": "image/png",
+  //     "sizes": "96x96"
+  //   },
+  //   {
+  //     "src": "images/launcher-icon-192px.png",
+  //     "type": "image/png",
+  //     "sizes": "192x192"
+  //   }
+  // ],
+  "start_url": "index.php?launcher=true",
+  "background_color": "#85B183",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#948eba"
+}
