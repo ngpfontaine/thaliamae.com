@@ -19,7 +19,7 @@
     }
   ],
   "start_url": "../index.php?launcher=true",
-  "background_color": "#F1F2EB",
+  "background_color": "#948eba",
   "display": "standalone",
   "orientation": "portrait",
   "theme_color": "#948eba"
