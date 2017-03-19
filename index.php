@@ -7,8 +7,8 @@
 		<meta name='viewport' content='width=device-width, initial-scale=1'>
 		<meta name='description' content='A damn good pup'>
 		<link rel='canonical' href='https://thaliamae.com'>
-		<link rel="manifest" href="./manifest.json">
-		
+		<link rel="manifest" href="./js/manifest.json">
+
 		<link rel='stylesheet' href='./css/main.min.css'>
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lora:400,400i,700|Open+Sans:400,600'>
