@@ -3,17 +3,17 @@
   "name": "Thalia Mae Powers-Fontaine",
   "icons": [
     {
-      "src": "images/launcher-icon-48px.png",
+      "src": "../img/launcher/launcher-icon-48px.png",
       "type": "image/png",
       "sizes": "48x48"
     },
     {
-      "src": "images/launcher-icon-96px.png",
+      "src": "../img/launcher/launcher-icon-96px.png",
       "type": "image/png",
       "sizes": "96x96"
     },
     {
-      "src": "images/launcher-icon-192px.png",
+      "src": "../img/launcher/launcher-icon-192px.png",
       "type": "image/png",
       "sizes": "192x192"
     }
