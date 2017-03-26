@@ -473,8 +473,8 @@ aside hr {
 aside.show {
 	transform: translateY(0);
 	opacity: 1;
-	/*top: initial;*/
-	top: 0px;
+	top: initial;
+	/*top: 0px;*/
 }
 
 /*************/
