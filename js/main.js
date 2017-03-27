@@ -189,6 +189,9 @@ var pullToggle = true;
 // HEIGHT SUCCES FLAG FOR TOUCHEND
 var pullSuccess = false;
 
+// var touchEvDown = 'ontouchstart' in window ? 'touchstart' : 'mousedown';
+// var touchEvUp = 'ontouchend' in window ? 'touchend' : 'mouseup';
+// var touchEvMove = 'ontouchmove' in window ? 'touchmove' : 'mousemove';
 // FLAG TO SWAP INPUT'S Y POS
 var mobile = 'ontouchstart' in window ? true : false;
 
@@ -207,14 +210,14 @@ window.onscroll = function(ev) {
   if (mobile) {
     // SCROLLED TO BOTTOM, ENABLE
     if ((wInnerH + window.scrollY) >= docOffsetH) {
-      document.addEventListener(touchstart, pullOnHandler);
-      document.addEventListener(touchend, pullOffHandler);
+      document.addEventListener('touchstart', pullOnHandler);
+      document.addEventListener('touchend', pullOffHandler);
     }
     // DISABLE/REMOVE EVENTS
     else {
       pullToggle = false;
-      document.removeEventListener(touchstart, pullOnHandler);
-      document.removeEventListener(touchend, pullOffHandler);
+      document.removeEventListener('touchstart', pullOnHandler);
+      document.removeEventListener('touchend', pullOffHandler);
     }
   }
 
@@ -228,7 +231,7 @@ window.onscroll = function(ev) {
 var pullOnHandler = function(e) {
   pullToggle = true;
   pull.style.transition = 'none';
-  document.addEventListener(touchmove,function foo(e) {
+  document.addEventListener('touchmove',function foo(e) {
     pullHeight(e,pullToggle);
   });
   cursorClickOffset = mobile ? wOuterH-(e.targetTouches[0].pageY) : wOuterH-(e.clientY);
@@ -237,7 +240,7 @@ var pullOnHandler = function(e) {
 // INPUT RELEASE
 var pullOffHandler = function(e) {
   pullToggle = false;
-  document.removeEventListener(touchmove, function(e) {
+  document.removeEventListener('touchmove', function(e) {
     pullHeight(e,pullToggle);
   });
   
