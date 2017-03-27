@@ -179,6 +179,7 @@ var msg = document.getElementById('overpull-msg');
 var height = pull.clientHeight;
 var cursorClickOffset = 0;
 var wHeight = window.outerHeight;
+var docOffsetH = document.body.offsetHeight
 
 var maxH = 120;
 
@@ -187,9 +188,9 @@ var pullToggle = true;
 // HEIGHT SUCCES FLAG FOR TOUCHEND
 var pullSuccess = false;
 
-var touchEvDown = 'ontouchstart' in window ? 'touchstart' : 'mousedown';
-var touchEvUp = 'ontouchend' in window ? 'touchend' : 'mouseup';
-var touchEvMove = 'ontouchmove' in window ? 'touchmove' : 'mousemove';
+// var touchEvDown = 'ontouchstart' in window ? 'touchstart' : 'mousedown';
+// var touchEvUp = 'ontouchend' in window ? 'touchend' : 'mouseup';
+// var touchEvMove = 'ontouchmove' in window ? 'touchmove' : 'mousemove';
 // FLAG TO SWAP INPUT'S Y POS
 var mobile = 'ontouchstart' in window ? true : false;
 
@@ -204,30 +205,32 @@ window.onscroll = function(ev) {
     document.getElementsByTagName('header')[0].classList.remove('scroll');
   }
 
-  // if (mobile) {
+  // OVERPULL ON MOBILE
+  if (mobile) {
     // SCROLLED TO BOTTOM, ENABLE
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-      console.log('scrolled to bottom');
-      document.addEventListener(touchEvDown, pullOnHandler);
-      document.addEventListener(touchEvUp, pullOffHandler);
+    if ((wHeight + window.scrollY) >= docOffsetH) {
+      document.addEventListener(touchstart, pullOnHandler);
+      document.addEventListener(touchend, pullOffHandler);
     }
     // DISABLE/REMOVE EVENTS
     else {
       pullToggle = false;
-      document.removeEventListener(touchEvDown, pullOnHandler);
-      document.removeEventListener(touchEvUp, pullOffHandler);
+      document.removeEventListener(touchstart, pullOnHandler);
+      document.removeEventListener(touchend, pullOffHandler);
     }
-  // }
+  }
 
 };
 
+// 
 // OVERPULL
+// 
+
 // TAKE INPUT, CALCULATE OFFSET & ADD pullHeight EventListener
 var pullOnHandler = function(e) {
-  console.log('pullOnHandler');
   pullToggle = true;
   pull.style.transition = 'none';
-  document.addEventListener(touchEvMove,function foo(e) {
+  document.addEventListener(touchmove,function foo(e) {
     pullHeight(e,pullToggle);
   });
   cursorClickOffset = mobile ? wHeight-(e.targetTouches[0].pageY) : wHeight-(e.clientY);
@@ -235,9 +238,8 @@ var pullOnHandler = function(e) {
 
 // INPUT RELEASE
 var pullOffHandler = function(e) {
-  console.log('pullOffHandler');
   pullToggle = false;
-  document.removeEventListener(touchEvMove, function(e) {
+  document.removeEventListener(touchmove, function(e) {
     pullHeight(e,pullToggle);
   });
   
@@ -265,7 +267,6 @@ function pullHeight(inp,trueFalse) {
       if (algPull < 0.3) { algPull = 0.3; }
       overpull.style.opacity = algPull;
       overpull.style.transform = 'translateY(-' + (pullHeightZeroed/2) + 'px)';
-      console.log('changing height');
     }
     // TRIGGER W/ A LITTLE EXTRA ROOM TO SPARE
     if ((pullHeightZeroed*2/3) > maxH) {
@@ -285,5 +286,5 @@ function pullHeight(inp,trueFalse) {
 var nextPage = paramP == pagesNo ? 1 : Number(paramP)+1; 
 
 var dragNext = function dragNext() {
-  window.location = 'https://thaliamae.com?p=' + nextPage;
+  window.location = './?p=' + nextPage;
 }
