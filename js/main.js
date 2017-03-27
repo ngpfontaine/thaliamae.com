@@ -207,6 +207,7 @@ window.onscroll = function(ev) {
   // if (mobile) {
     // SCROLLED TO BOTTOM, ENABLE
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      console.log('scrolled to bottom');
       document.addEventListener(touchEvDown, pullOnHandler);
       document.addEventListener(touchEvUp, pullOffHandler);
     }
@@ -216,7 +217,6 @@ window.onscroll = function(ev) {
       document.removeEventListener(touchEvDown, pullOnHandler);
       document.removeEventListener(touchEvUp, pullOffHandler);
     }
-  };
   // }
 
   // TAKE INPUT, CALCULATE OFFSET & ADD pullHeight EventListener
