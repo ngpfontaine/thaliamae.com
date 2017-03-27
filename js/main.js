@@ -219,65 +219,67 @@ window.onscroll = function(ev) {
     }
   // }
 
-  // TAKE INPUT, CALCULATE OFFSET & ADD pullHeight EventListener
-  var pullOnHandler = function(e) {
-    console.log('pullOnHandler');
-    pullToggle = true;
-    pull.style.transition = 'none';
-    document.addEventListener(touchEvMove,function foo(e) {
-      pullHeight(e,pullToggle);
-    });
-    cursorClickOffset = mobile ? wHeight-(e.targetTouches[0].pageY) : wHeight-(e.clientY);
-  };
+};
 
-  // INPUT RELEASE
-  var pullOffHandler = function(e) {
-    console.log('pullOffHandler');
-    pullToggle = false;
-    document.removeEventListener(touchEvMove, function(e) {
-      pullHeight(e,pullToggle);
-    });
+// OVERPULL
+// TAKE INPUT, CALCULATE OFFSET & ADD pullHeight EventListener
+var pullOnHandler = function(e) {
+  console.log('pullOnHandler');
+  pullToggle = true;
+  pull.style.transition = 'none';
+  document.addEventListener(touchEvMove,function foo(e) {
+    pullHeight(e,pullToggle);
+  });
+  cursorClickOffset = mobile ? wHeight-(e.targetTouches[0].pageY) : wHeight-(e.clientY);
+};
+
+// INPUT RELEASE
+var pullOffHandler = function(e) {
+  console.log('pullOffHandler');
+  pullToggle = false;
+  document.removeEventListener(touchEvMove, function(e) {
+    pullHeight(e,pullToggle);
+  });
+  
+  pull.style.transition = 'transform 0.25s ease-in';
+  pull.style.transform = 'translateY(0)';
+  
+  if (pullSuccess) {
+    pull.style.transform = 'translateY(-40px)';
+    cursorClickOffset = 0;
     
-    pull.style.transition = 'transform 0.25s ease-in';
-    pull.style.transform = 'translateY(0)';
+    // PUT STATE CHANGE FUNCTION HERE TO TRIGGER ON RELEASE
     
-    if (pullSuccess) {
-      pull.style.transform = 'translateY(-40px)';
-      cursorClickOffset = 0;
-      
-      // PUT STATE CHANGE FUNCTION HERE TO TRIGGER ON RELEASE
-      
-    }
-  };
-
-  function pullHeight(inp,trueFalse) {
-    if (trueFalse) {
-      // CALC FROM DOC HEIGHT, INITIAL CLICK POS, & CLICK MOVE
-      var pullHeightZeroed = mobile ? (window.outerHeight-inp.targetTouches[0].pageY)-cursorClickOffset
-        :
-        (window.outerHeight-inp.clientY)-cursorClickOffset;
-      // LIMIT DRAG DISTANCE, & TRANSLATE BY HALF
-      if (pullHeightZeroed/2 < maxH) {
-        var algPull = pullHeightZeroed/(maxH*2);
-        if (algPull < 0.3) { algPull = 0.3; }
-        overpull.style.opacity = algPull;
-        overpull.style.transform = 'translateY(-' + (pullHeightZeroed/2) + 'px)';
-        console.log('changing height');
-      }
-      // TRIGGER W/ A LITTLE EXTRA ROOM TO SPARE
-      if ((pullHeightZeroed*2/3) > maxH) {
-        msg.classList.add('show');
-        pullSuccess = true;
-        
-        // PUT STATE CHANGE FUNCTION HERE FOR IMMEDIATE
-        setTimeout(function() {
-          dragNext();
-        },500);
-
-      }
-    }
   }
 };
+
+function pullHeight(inp,trueFalse) {
+  if (trueFalse) {
+    // CALC FROM DOC HEIGHT, INITIAL CLICK POS, & CLICK MOVE
+    var pullHeightZeroed = mobile ? (window.outerHeight-inp.targetTouches[0].pageY)-cursorClickOffset
+      :
+      (window.outerHeight-inp.clientY)-cursorClickOffset;
+    // LIMIT DRAG DISTANCE, & TRANSLATE BY HALF
+    if (pullHeightZeroed/2 < maxH) {
+      var algPull = pullHeightZeroed/(maxH*2);
+      if (algPull < 0.3) { algPull = 0.3; }
+      overpull.style.opacity = algPull;
+      overpull.style.transform = 'translateY(-' + (pullHeightZeroed/2) + 'px)';
+      console.log('changing height');
+    }
+    // TRIGGER W/ A LITTLE EXTRA ROOM TO SPARE
+    if ((pullHeightZeroed*2/3) > maxH) {
+      msg.classList.add('show');
+      pullSuccess = true;
+      
+      // PUT STATE CHANGE FUNCTION HERE FOR IMMEDIATE
+      setTimeout(function() {
+        dragNext();
+      },500);
+
+    }
+  }
+}
 
 // FIND NEXT PAGE NUMBER
 var nextPage = paramP == pagesNo ? 1 : Number(paramP)+1; 
