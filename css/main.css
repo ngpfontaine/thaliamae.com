@@ -754,6 +754,7 @@ form #ul-i-btn.disabled {
   height: 100%;
   top: 100%;
   opacity: 0.3;
+  z-index: 5;
 }
 
 #overpull-msg {
@@ -767,7 +768,7 @@ form #ul-i-btn.disabled {
   text-align: center;
   transform: translate(0,0);
   color: #fff;
-  z-index: 3;
+  z-index: 6;
 }
 
 #overpull-msg.show {
