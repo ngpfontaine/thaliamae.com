@@ -151,20 +151,6 @@ Array.prototype.forEach.call(inputs,function(input) {
 });
 
 // 
-// HEADER
-// 
-
-window.onscroll = function() {
-  var top = window.pageYOffset;
-  if (top > 1 && top < 300) {
-    document.getElementsByTagName('header')[0].classList.add('scroll');
-  }
-  else if (top < 1) {
-    document.getElementsByTagName('header')[0].classList.remove('scroll');
-  }
-};
-
-// 
 // PAGE PAWS
 // 
 
@@ -185,4 +171,114 @@ for (var i=0; i<pagesNo; i++) {
   else {
     contPagin.getElementsByTagName('a')[i].setAttribute('href','https://thaliamae.com?p=' + (i+1));
   }
-} 
+}
+
+// OVERPULL REFRESH
+var pull = document.getElementById('overpull');
+var msg = document.getElementById('overpull-msg');
+var height = pull.clientHeight;
+var cursorClickOffset = 0;
+var wHeight = window.outerHeight;
+
+var maxH = 120;
+
+// TOGGLE DISABLE FOR TOUCHEND
+var pullToggle = true;
+// HEIGHT SUCCES FLAG FOR TOUCHEND
+var pullSuccess = false;
+
+var touchEvDown = 'ontouchstart' in window ? 'touchstart' : 'mousedown';
+var touchEvUp = 'ontouchend' in window ? 'touchend' : 'mouseup';
+var touchEvMove = 'ontouchmove' in window ? 'touchmove' : 'mousemove';
+// FLAG TO SWAP INPUT'S Y POS
+var mobile = 'ontouchstart' in window ? true : false;
+
+window.onscroll = function(ev) {
+
+  // HEADER
+  var top = window.pageYOffset;
+  if (top > 1 && top < 300) {
+    document.getElementsByTagName('header')[0].classList.add('scroll');
+  }
+  else if (top < 1) {
+    document.getElementsByTagName('header')[0].classList.remove('scroll');
+  }
+
+  // if (mobile) {
+    // SCROLLED TO BOTTOM, ENABLE
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      document.addEventListener(touchEvDown, pullOnHandler);
+      document.addEventListener(touchEvUp, pullOffHandler);
+    }
+    // DISABLE/REMOVE EVENTS
+    else {
+      pullToggle = false;
+      document.removeEventListener(touchEvDown, pullOnHandler);
+      document.removeEventListener(touchEvUp, pullOffHandler);
+    }
+  };
+  // }
+
+  // TAKE INPUT, CALCULATE OFFSET & ADD pullHeight EventListener
+  var pullOnHandler = function(e) {
+    pullToggle = true;
+    pull.style.transition = 'none';
+    document.addEventListener(touchEvMove,function foo(e) {
+      pullHeight(e,pullToggle);
+    });
+    cursorClickOffset = mobile ? wHeight-(e.targetTouches[0].pageY) : wHeight-(e.clientY);
+  };
+
+  // INPUT RELEASE
+  var pullOffHandler = function(e) {
+    pullToggle = false;
+    document.removeEventListener(touchEvMove, function(e) {
+      pullHeight(e,pullToggle);
+    });
+    
+    pull.style.transition = 'transform 0.25s ease-in';
+    pull.style.transform = 'translateY(0)';
+    
+    if (pullSuccess) {
+      pull.style.transform = 'translateY(-40px)';
+      cursorClickOffset = 0;
+      
+      // PUT STATE CHANGE FUNCTION HERE TO TRIGGER ON RELEASE
+      
+    }
+  };
+
+  function pullHeight(inp,trueFalse) {
+    if (trueFalse) {
+      // CALC FROM DOC HEIGHT, INITIAL CLICK POS, & CLICK MOVE
+      var pullHeightZeroed = mobile ? (window.outerHeight-inp.targetTouches[0].pageY)-cursorClickOffset
+        :
+        (window.outerHeight-inp.clientY)-cursorClickOffset;
+      // LIMIT DRAG DISTANCE, & TRANSLATE BY HALF
+      if (pullHeightZeroed/2 < maxH) {
+        var algPull = pullHeightZeroed/(maxH*2);
+        if (algPull < 0.3) { algPull = 0.3; }
+        overpull.style.opacity = algPull;
+        overpull.style.transform = 'translateY(-' + (pullHeightZeroed/2) + 'px)';
+      }
+      // TRIGGER W/ A LITTLE EXTRA ROOM TO SPARE
+      if ((pullHeightZeroed*2/3) > maxH) {
+        msg.classList.add('show');
+        pullSuccess = true;
+        
+        // PUT STATE CHANGE FUNCTION HERE FOR IMMEDIATE
+        setTimeout(function() {
+          dragNext();
+        },500);
+
+      }
+    }
+  }
+};
+
+// FIND NEXT PAGE NUMBER
+var nextPage = paramP == pagesNo ? 1 : Number(paramP)+1; 
+
+var dragNext = function dragNext() {
+  window.location = 'https://thaliamae.com?p=' + nextPage;
+}
