@@ -206,7 +206,7 @@ window.onscroll = function(ev) {
   }
 
   // OVERPULL ON MOBILE
-  if (mobile) {
+  // if (mobile) {
     // SCROLLED TO BOTTOM, ENABLE
     if ((wHeight + window.scrollY) >= docOffsetH) {
       document.addEventListener(touchstart, pullOnHandler);
@@ -218,7 +218,7 @@ window.onscroll = function(ev) {
       document.removeEventListener(touchstart, pullOnHandler);
       document.removeEventListener(touchend, pullOffHandler);
     }
-  }
+  // }
 
 };
 
