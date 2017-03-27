@@ -189,11 +189,25 @@ var pullToggle = true;
 // HEIGHT SUCCES FLAG FOR TOUCHEND
 var pullSuccess = false;
 
-// var touchEvDown = 'ontouchstart' in window ? 'touchstart' : 'mousedown';
-// var touchEvUp = 'ontouchend' in window ? 'touchend' : 'mouseup';
-// var touchEvMove = 'ontouchmove' in window ? 'touchmove' : 'mousemove';
 // FLAG TO SWAP INPUT'S Y POS
 var mobile = 'ontouchstart' in window ? true : false;
+
+// RECALC PAGE HEIGHT VARS ON RESIZE
+var resizeTimer;
+window.onresize = function() {
+
+  windowIW = window.innerWidth;
+
+  // DISABLE IF USER IS STILL RESIZING, SO NOT CONSTANTLY FIRING
+  clearTimeout(resizeTimer);
+
+  resizeTimer = setTimeout(function() {
+    wOuterH = window.outerHeight;
+    wInnerH = window.innerHeight;
+    docOffsetH = document.body.offsetHeight;
+  }, 250);
+
+}
 
 window.onscroll = function(ev) {
 
