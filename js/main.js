@@ -301,5 +301,5 @@ function pullHeight(inp,trueFalse) {
 var nextPage = paramP == pagesNo ? 1 : Number(paramP)+1; 
 
 var dragNext = function dragNext() {
-  window.location = 'https://thaliamae.com?p=' + nextPage;
+  window.location = './?p=' + nextPage;
 }
