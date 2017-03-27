@@ -773,7 +773,7 @@ form #ul-i-btn.disabled {
 
 #overpull-msg.show {
   opacity: 1;
-  transform: translateY(-47px);
+  transform: translateY(-14px);
 }
 
 

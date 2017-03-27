@@ -245,7 +245,7 @@ var pullOffHandler = function(e) {
   pull.style.transform = 'translateY(0)';
   
   if (pullSuccess) {
-    // pull.style.transform = 'translateY(-40px)';
+    pull.style.transform = 'translateY(-47px)';
     cursorClickOffset = 0;
     
     // PUT STATE CHANGE FUNCTION HERE TO TRIGGER ON RELEASE
