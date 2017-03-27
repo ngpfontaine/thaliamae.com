@@ -182,7 +182,7 @@ var wOuterH = window.outerHeight;
 var wInnerH = window.innerHeight;
 var docOffsetH = document.body.offsetHeight;
 
-var maxH = 120;
+var maxH = 100;
 
 // TOGGLE DISABLE FOR TOUCHEND
 var pullToggle = true;
