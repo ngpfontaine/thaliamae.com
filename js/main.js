@@ -221,6 +221,7 @@ window.onscroll = function(ev) {
 
   // TAKE INPUT, CALCULATE OFFSET & ADD pullHeight EventListener
   var pullOnHandler = function(e) {
+    console.log('pullOnHandler');
     pullToggle = true;
     pull.style.transition = 'none';
     document.addEventListener(touchEvMove,function foo(e) {
@@ -231,6 +232,7 @@ window.onscroll = function(ev) {
 
   // INPUT RELEASE
   var pullOffHandler = function(e) {
+    console.log('pullOffHandler');
     pullToggle = false;
     document.removeEventListener(touchEvMove, function(e) {
       pullHeight(e,pullToggle);
@@ -260,6 +262,7 @@ window.onscroll = function(ev) {
         if (algPull < 0.3) { algPull = 0.3; }
         overpull.style.opacity = algPull;
         overpull.style.transform = 'translateY(-' + (pullHeightZeroed/2) + 'px)';
+        console.log('changing height');
       }
       // TRIGGER W/ A LITTLE EXTRA ROOM TO SPARE
       if ((pullHeightZeroed*2/3) > maxH) {
