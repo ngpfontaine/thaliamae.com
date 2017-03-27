@@ -180,7 +180,7 @@ var height = pull.clientHeight;
 var cursorClickOffset = 0;
 var wOuterH = window.outerHeight;
 var wInnerH = window.innerHeight;
-var docOffsetH = document.body.offsetHeight
+var docOffsetH = document.body.offsetHeight;
 
 var maxH = 120;
 
@@ -207,7 +207,7 @@ window.onscroll = function(ev) {
   }
 
   // OVERPULL ON MOBILE
-  if (mobile) {
+  // if (mobile) {
     // SCROLLED TO BOTTOM, ENABLE
     if ((wInnerH + window.scrollY) >= docOffsetH) {
       document.addEventListener('touchstart', pullOnHandler);
@@ -219,7 +219,7 @@ window.onscroll = function(ev) {
       document.removeEventListener('touchstart', pullOnHandler);
       document.removeEventListener('touchend', pullOffHandler);
     }
-  }
+  // }
 
 };
 
