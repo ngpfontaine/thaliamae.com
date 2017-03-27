@@ -178,7 +178,8 @@ var pull = document.getElementById('overpull');
 var msg = document.getElementById('overpull-msg');
 var height = pull.clientHeight;
 var cursorClickOffset = 0;
-var wHeight = window.outerHeight;
+var wOuterH = window.outerHeight;
+var wInnerH = window.innerHeight;
 var docOffsetH = document.body.offsetHeight
 
 var maxH = 120;
@@ -188,9 +189,6 @@ var pullToggle = true;
 // HEIGHT SUCCES FLAG FOR TOUCHEND
 var pullSuccess = false;
 
-// var touchEvDown = 'ontouchstart' in window ? 'touchstart' : 'mousedown';
-// var touchEvUp = 'ontouchend' in window ? 'touchend' : 'mouseup';
-// var touchEvMove = 'ontouchmove' in window ? 'touchmove' : 'mousemove';
 // FLAG TO SWAP INPUT'S Y POS
 var mobile = 'ontouchstart' in window ? true : false;
 
@@ -206,9 +204,9 @@ window.onscroll = function(ev) {
   }
 
   // OVERPULL ON MOBILE
-  // if (mobile) {
+  if (mobile) {
     // SCROLLED TO BOTTOM, ENABLE
-    if ((wHeight + window.scrollY) >= docOffsetH) {
+    if ((wInnerH + window.scrollY) >= docOffsetH) {
       document.addEventListener(touchstart, pullOnHandler);
       document.addEventListener(touchend, pullOffHandler);
     }
@@ -218,7 +216,7 @@ window.onscroll = function(ev) {
       document.removeEventListener(touchstart, pullOnHandler);
       document.removeEventListener(touchend, pullOffHandler);
     }
-  // }
+  }
 
 };
 
@@ -233,7 +231,7 @@ var pullOnHandler = function(e) {
   document.addEventListener(touchmove,function foo(e) {
     pullHeight(e,pullToggle);
   });
-  cursorClickOffset = mobile ? wHeight-(e.targetTouches[0].pageY) : wHeight-(e.clientY);
+  cursorClickOffset = mobile ? wOuterH-(e.targetTouches[0].pageY) : wOuterH-(e.clientY);
 };
 
 // INPUT RELEASE
