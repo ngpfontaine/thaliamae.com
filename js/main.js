@@ -209,7 +209,7 @@ window.onscroll = function(ev) {
   // OVERPULL ON MOBILE
   // if (mobile) {
     // SCROLLED TO BOTTOM, ENABLE
-    if ((wInnerH + window.scrollY) >= document.body.offsetHeight) {
+    if ((window.innerHeight + window.scrollY) >= docOffsetH) {
       document.addEventListener('touchstart', pullOnHandler);
       document.addEventListener('touchend', pullOffHandler);
     }
