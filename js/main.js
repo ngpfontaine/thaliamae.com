@@ -1,3 +1,4 @@
+'use strict';
 var figs = document.getElementsByTagName('figure');
 var figsLen = figs.length;
 var figCont = document.getElementById('fig-container');
@@ -31,7 +32,7 @@ window.onload = function() {
 var figsLoad = function figsLoad(inc) {
   if (figsLen > 0) {
 
-    imgTimeout = setTimeout(function() {
+    var imgTimeout = setTimeout(function() {
 
       figs[inc].classList.add('show');
       inc++;
@@ -196,7 +197,7 @@ var mobile = 'ontouchstart' in window ? true : false;
 var resizeTimer;
 window.onresize = function() {
 
-  windowIW = window.innerWidth;
+  // var windowIW = window.innerWidth;
 
   // DISABLE IF USER IS STILL RESIZING, SO NOT CONSTANTLY FIRING
   clearTimeout(resizeTimer);
