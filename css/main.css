@@ -769,6 +769,7 @@ form #ul-i-btn.disabled {
   transform: translate(0,0);
   color: #fff;
   z-index: 6;
+  pointer-events: none;
 }
 
 #overpull-msg.show {
