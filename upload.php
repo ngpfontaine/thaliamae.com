@@ -1,6 +1,6 @@
 <?php
 require_once("vendor/autoload.php");
-Tinify\setKey("ZrEIGd3xqQWhLG6n1wlPGnOdsvETz4-M");
+Tinify\setKey("");
 
 //I removed the zip entry as you don't have any code to handle them here.
 $valid_formats = array("jpg", "JPG", "JPEG", "jpeg", "png", "gif");
